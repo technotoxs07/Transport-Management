@@ -1,0 +1,541 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props" Condition="Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E2359673-7F7A-4937-990C-1B364D39EA39}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CurierManagementSystemCSharp</RootNamespace>
+    <AssemblyName>CurierManagementSystemCSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.160.1000.6\lib\net462\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="addcustomerr.cs">
+      <DependentUpon>addcustomerr.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="addcustomerr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>addcustomerr.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="add_business.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>add_business.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ADD_CUSTOMER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ADD_CUSTOMER.Designer.cs">
+      <DependentUpon>ADD_CUSTOMER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consignment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consignment.Designer.cs">
+      <DependentUpon>Consignment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchases%28real%29.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Purchases%28real%29.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Homeway.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Homeway.Designer.cs">
+      <DependentUpon>Homeway.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchasesss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchasesss.Designer.cs">
+      <DependentUpon>Purchasesss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="courierDataSet.cs">
+      <DependentUpon>courierDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="courierDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>courierDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="courierDataSet1.cs">
+      <DependentUpon>courierDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="courierDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>courierDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="courierDataSet2.cs">
+      <DependentUpon>courierDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="courierDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>courierDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="courierDataSet3.cs">
+      <DependentUpon>courierDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="courierDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>courierDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="courierDataSet4.cs">
+      <DependentUpon>courierDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="courierDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>courierDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="customerpayement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customerpayement.Designer.cs">
+      <DependentUpon>customerpayement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customer_payement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>customer_payement.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeliveryDetails.Designer.cs">
+      <DependentUpon>DeliveryDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Internalcompanydetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Internalcompanydetails.Designer.cs">
+      <DependentUpon>Internalcompanydetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="itemcalculation.cs">
+      <DependentUpon>itemcalculation.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="itemcalculation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>itemcalculation.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchase.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Purchase.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\consignreport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\consignreport.Designer.cs">
+      <DependentUpon>consignreport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Cstpayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Cstpayment.Designer.cs">
+      <DependentUpon>Cstpayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\custmerdetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\custmerdetails.Designer.cs">
+      <DependentUpon>custmerdetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Purchase1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Purchase1.Designer.cs">
+      <DependentUpon>Purchase1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Sale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Sale.Designer.cs">
+      <DependentUpon>Sale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffDetails.Designer.cs">
+      <DependentUpon>StaffDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateStaff.Designer.cs">
+      <DependentUpon>UpdateStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAllCouriers%28sale%29.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewAllCouriers%28sale%29.Designer.cs">
+      <DependentUpon>ViewAllCouriers%28sale%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA_CURIERMANAGEMENTSYSTEMCSHARP_CURIERMANAGEMENTSYSTEMCSHARP_COURIER_MDFDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA_CURIERMANAGEMENTSYSTEMCSHARP_CURIERMANAGEMENTSYSTEMCSHARP_COURIER_MDFDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ADD_CUSTOMER.resx">
+      <DependentUpon>ADD_CUSTOMER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Release\consignments.rdlc" />
+    <EmbeddedResource Include="bin\Release\cstpayments.rdlc" />
+    <EmbeddedResource Include="bin\Release\customerreportsdetails.rdlc" />
+    <EmbeddedResource Include="bin\Release\purchase.rdlc" />
+    <EmbeddedResource Include="bin\Release\Salesss.rdlc" />
+    <EmbeddedResource Include="Consignment.resx">
+      <DependentUpon>Consignment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Homeway.resx">
+      <DependentUpon>Homeway.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchasesss.resx">
+      <DependentUpon>Purchasesss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customerpayement.resx">
+      <DependentUpon>customerpayement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeliveryDetails.resx">
+      <DependentUpon>DeliveryDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Internalcompanydetails.resx">
+      <DependentUpon>Internalcompanydetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reports\consignreport.resx">
+      <DependentUpon>consignreport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Cstpayment.resx">
+      <DependentUpon>Cstpayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\custmerdetails.resx">
+      <DependentUpon>custmerdetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Purchase1.resx">
+      <DependentUpon>Purchase1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Sale.resx">
+      <DependentUpon>Sale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffDetails.resx">
+      <DependentUpon>StaffDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateStaff.resx">
+      <DependentUpon>UpdateStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewAllCouriers%28sale%29.resx">
+      <DependentUpon>ViewAllCouriers%28sale%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="addcustomerr.xsc">
+      <DependentUpon>addcustomerr.xsd</DependentUpon>
+    </None>
+    <None Include="addcustomerr.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>addcustomerr.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="addcustomerr.xss">
+      <DependentUpon>addcustomerr.xsd</DependentUpon>
+    </None>
+    <None Include="add_business.xsc">
+      <DependentUpon>add_business.xsd</DependentUpon>
+    </None>
+    <None Include="add_business.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>add_business.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="add_business.xss">
+      <DependentUpon>add_business.xsd</DependentUpon>
+    </None>
+    <None Include="courierDataSet.xsc">
+      <DependentUpon>courierDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="courierDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>courierDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="courierDataSet.xss">
+      <DependentUpon>courierDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="courierDataSet1.xsc">
+      <DependentUpon>courierDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="courierDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>courierDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="courierDataSet1.xss">
+      <DependentUpon>courierDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="courierDataSet2.xsc">
+      <DependentUpon>courierDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="courierDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>courierDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="courierDataSet2.xss">
+      <DependentUpon>courierDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="courierDataSet3.xsc">
+      <DependentUpon>courierDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="courierDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>courierDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="courierDataSet3.xss">
+      <DependentUpon>courierDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="courierDataSet4.xsc">
+      <DependentUpon>courierDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="courierDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>courierDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="courierDataSet4.xss">
+      <DependentUpon>courierDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="customer_payement.xsc">
+      <DependentUpon>customer_payement.xsd</DependentUpon>
+    </None>
+    <None Include="customer_payement.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>customer_payement.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="customer_payement.xss">
+      <DependentUpon>customer_payement.xsd</DependentUpon>
+    </None>
+    <None Include="Purchases%28real%29.xsc">
+      <DependentUpon>Purchases%28real%29.xsd</DependentUpon>
+    </None>
+    <None Include="Purchases%28real%29.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Purchases%28real%29.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Purchases%28real%29.xss">
+      <DependentUpon>Purchases%28real%29.xsd</DependentUpon>
+    </None>
+    <None Include="itemcalculation.xsc">
+      <DependentUpon>itemcalculation.xsd</DependentUpon>
+    </None>
+    <None Include="itemcalculation.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>itemcalculation.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="itemcalculation.xss">
+      <DependentUpon>itemcalculation.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Purchase.xsc">
+      <DependentUpon>Purchase.xsd</DependentUpon>
+    </None>
+    <None Include="Purchase.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Purchase.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Purchase.xss">
+      <DependentUpon>Purchase.xsd</DependentUpon>
+    </None>
+    <None Include="_3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA_CURIERMANAGEMENTSYSTEMCSHARP_CURIERMANAGEMENTSYSTEMCSHARP_COURIER_MDFDataSet.xsc">
+      <DependentUpon>_3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA_CURIERMANAGEMENTSYSTEMCSHARP_CURIERMANAGEMENTSYSTEMCSHARP_COURIER_MDFDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA_CURIERMANAGEMENTSYSTEMCSHARP_CURIERMANAGEMENTSYSTEMCSHARP_COURIER_MDFDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA_CURIERMANAGEMENTSYSTEMCSHARP_CURIERMANAGEMENTSYSTEMCSHARP_COURIER_MDFDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA_CURIERMANAGEMENTSYSTEMCSHARP_CURIERMANAGEMENTSYSTEMCSHARP_COURIER_MDFDataSet.xss">
+      <DependentUpon>_3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA_CURIERMANAGEMENTSYSTEMCSHARP_CURIERMANAGEMENTSYSTEMCSHARP_COURIER_MDFDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="courier.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="courier_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>courier.mdf</DependentUpon>
+    </Content>
+    <None Include="Resources\Deliver Food.png" />
+    <None Include="Resources\Ticket Purchase.png" />
+    <None Include="Resources\Business Building.png" />
+    <None Include="Resources\icons8-maximize-50.png" />
+    <None Include="Resources\icons8-maximize-100.png" />
+    <None Include="Resources\icons8-maximize-25.png" />
+    <None Include="Resources\icons8-minimize-25 %281%29.png" />
+    <None Include="Resources\icons8-cross-25.png" />
+    <None Include="Resources\icons8-staff-50.png" />
+    <None Include="Resources\icons8-right-30.png" />
+    <None Include="Resources\icons8-customer-30.png" />
+    <None Include="Resources\icons8-customer-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
