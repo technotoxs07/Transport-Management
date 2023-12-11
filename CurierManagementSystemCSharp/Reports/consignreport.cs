@@ -91,6 +91,8 @@ namespace CurierManagementSystemCSharp.Reports
             this.consignTableAdapter.Fill(this.courierDataSet.consign);
             // TODO: This line of code loads data into the 'add_business._add_business' table. You can move, or remove it, as needed.
             this.add_businessTableAdapter.Fill(this.add_business._add_business);
+            // TODO: This line of code loads data into the 'courierDataSet.consign' table. You can move, or remove it, as needed.
+           
 
             this.reportViewer1.RefreshReport();
             getconsign();

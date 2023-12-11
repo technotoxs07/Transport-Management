@@ -25,6 +25,8 @@ namespace CurierManagementSystemCSharp.Reports
             this.add_businessTableAdapter.Fill(this.add_business._add_business);
             // TODO: This line of code loads data into the 'customer_payement.Customer_payment' table. You can move, or remove it, as needed.
             this.customer_paymentTableAdapter.Fill(this.customer_payement.Customer_payment);
+            // TODO: This line of code loads data into the 'add_business._add_business' table. You can move, or remove it, as needed.
+          
             this.reportViewer1.RefreshReport();
             getname();
         }

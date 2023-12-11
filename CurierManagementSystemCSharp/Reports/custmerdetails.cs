@@ -22,6 +22,8 @@ namespace CurierManagementSystemCSharp.Reports
         private void custmerdetails_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'addcustomer.addcustomers' table. You can move, or remove it, as needed.
+            
+            // TODO: This line of code loads data into the 'addcustomer.addcustomers' table. You can move, or remove it, as needed.
             // TODO: This line of code loads data into the 'add_business._add_business' table. You can move, or remove it, as needed.
             this.add_businessTableAdapter.Fill(this.add_business._add_business);
 

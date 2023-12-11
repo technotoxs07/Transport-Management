@@ -34,11 +34,11 @@
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.add_business = new CurierManagementSystemCSharp.add_business();
             this.addbusinessBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.add_business = new CurierManagementSystemCSharp.add_business();
             this.add_businessTableAdapter = new CurierManagementSystemCSharp.add_businessTableAdapters.add_businessTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.add_business)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addbusinessBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.add_business)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
@@ -81,15 +81,15 @@
             this.comboBox1.Size = new System.Drawing.Size(271, 28);
             this.comboBox1.TabIndex = 7;
             // 
-            // add_business
-            // 
-            this.add_business.DataSetName = "add_business";
-            this.add_business.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // addbusinessBindingSource
             // 
             this.addbusinessBindingSource.DataMember = "add_business";
             this.addbusinessBindingSource.DataSource = this.add_business;
+            // 
+            // add_business
+            // 
+            this.add_business.DataSetName = "add_business";
+            this.add_business.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // add_businessTableAdapter
             // 
@@ -106,8 +106,8 @@
             this.Name = "custmerdetails";
             this.Text = "custmerdetails";
             this.Load += new System.EventHandler(this.custmerdetails_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.add_business)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addbusinessBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.add_business)).EndInit();
             this.ResumeLayout(false);
 
         }

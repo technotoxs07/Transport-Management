@@ -31,11 +31,124 @@ namespace CurierManagementSystemCSharp
         {
             loadingstaffrow();
             loadingcustomerrow();
-
             DisplayTotalGrandTotal();
             loadingconsignment();
             loadallconsigngrandtotal();
             DisplayGrandtotalfromrealpurchase();
+            loadingpurchaserow();
+            loadingsalesrow();
+            loadingdeliverydetails();
+        }
+
+        private void loadingdeliverydetails()
+        {
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Execute a SQL query to get data
+                    string sqlQuery = "SELECT * FROM delivery";
+                    using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                    {
+                        SqlDataAdapter adapter = new SqlDataAdapter(command);
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+
+                        // Display the count in a label
+                        if (dataTable.Rows.Count > 0)
+                        {
+                            int rowCount = dataTable.Rows.Count;
+                            label30.Text = $"Number of Delivery: {rowCount}";
+                        }
+                        else
+                        {
+                            label30.Text = "Delivery : 0";
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle exceptions
+                    MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void loadingsalesrow()
+        {
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Execute a SQL query to get data
+                    string sqlQuery = "SELECT * FROM Purchase";
+                    using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                    {
+                        SqlDataAdapter adapter = new SqlDataAdapter(command);
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+
+                        // Display the count in a label
+                        if (dataTable.Rows.Count > 0)
+                        {
+                            int rowCount = dataTable.Rows.Count;
+                            label29.Text = $"Number of Sales: {rowCount}";
+                        }
+                        else
+                        {
+                            label29.Text = "Sales : 0";
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle exceptions
+                    MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void loadingpurchaserow()
+        {
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Execute a SQL query to get data
+                    string sqlQuery = "SELECT * FROM [Purchase(real)]";
+                    using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                    {
+                        SqlDataAdapter adapter = new SqlDataAdapter(command);
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+
+                        // Display the count in a label
+                        if (dataTable.Rows.Count > 0)
+                        {
+                            int rowCount = dataTable.Rows.Count;
+                            label7.Text = $"Number of Purchases: {rowCount}";
+                        }
+                        else
+                        {
+                            label7.Text = "Purchase : 0";
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle exceptions
+                    MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void DisplayGrandtotalfromrealpurchase()

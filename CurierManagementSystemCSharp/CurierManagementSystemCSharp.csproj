@@ -192,11 +192,11 @@
     <Compile Include="DeliveryDetails.Designer.cs">
       <DependentUpon>DeliveryDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -224,6 +224,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Purchase.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="register.Designer.cs">
+      <DependentUpon>register.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\consignreport.cs">
       <SubType>Form</SubType>
@@ -301,8 +307,8 @@
     <EmbeddedResource Include="DeliveryDetails.resx">
       <DependentUpon>DeliveryDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -320,6 +326,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="register.resx">
+      <DependentUpon>register.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\consignreport.resx">
       <DependentUpon>consignreport.cs</DependentUpon>
     </EmbeddedResource>
@@ -498,6 +507,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>courier.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Add User Male.png" />
+    <None Include="Resources\Sent.png" />
+    <None Include="Resources\Reset.png" />
+    <None Include="Resources\Authentication1.png" />
+    <None Include="Resources\Authentication.png" />
     <None Include="Resources\Deliver Food.png" />
     <None Include="Resources\Ticket Purchase.png" />
     <None Include="Resources\Business Building.png" />

@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label28 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -53,7 +56,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -71,11 +73,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -85,7 +86,6 @@
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -106,6 +106,45 @@
             this.panel1.Size = new System.Drawing.Size(1182, 587);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
+            // 
+            // panel11
+            // 
+            this.panel11.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel11.BackColor = System.Drawing.Color.Orchid;
+            this.panel11.BackgroundImage = global::CurierManagementSystemCSharp.Properties.Resources.Ticket_Purchase;
+            this.panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel11.Controls.Add(this.label29);
+            this.panel11.Controls.Add(this.button5);
+            this.panel11.Controls.Add(this.label28);
+            this.panel11.Location = new System.Drawing.Point(809, 36);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(171, 188);
+            this.panel11.TabIndex = 6;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Orchid;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Image = global::CurierManagementSystemCSharp.Properties.Resources.icons8_right_30;
+            this.button5.Location = new System.Drawing.Point(56, 153);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(53, 32);
+            this.button5.TabIndex = 2;
+            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(57, 19);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(42, 19);
+            this.label28.TabIndex = 0;
+            this.label28.Text = "Sales";
             // 
             // panel10
             // 
@@ -357,8 +396,8 @@
             this.panel6.BackColor = System.Drawing.Color.Aqua;
             this.panel6.BackgroundImage = global::CurierManagementSystemCSharp.Properties.Resources.Deliver_Food;
             this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel6.Controls.Add(this.label30);
             this.panel6.Controls.Add(this.button4);
-            this.panel6.Controls.Add(this.label9);
             this.panel6.Controls.Add(this.label10);
             this.panel6.Location = new System.Drawing.Point(999, 33);
             this.panel6.Name = "panel6";
@@ -379,15 +418,6 @@
             this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(16, 133);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(0, 17);
-            this.label9.TabIndex = 1;
             // 
             // label10
             // 
@@ -432,7 +462,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(16, 133);
+            this.label7.Location = new System.Drawing.Point(20, 133);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(0, 17);
             this.label7.TabIndex = 1;
@@ -592,53 +622,23 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Staff Details";
             // 
-            // panel11
+            // label29
             // 
-            this.panel11.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel11.BackColor = System.Drawing.Color.Orchid;
-            this.panel11.BackgroundImage = global::CurierManagementSystemCSharp.Properties.Resources.Ticket_Purchase;
-            this.panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel11.Controls.Add(this.button5);
-            this.panel11.Controls.Add(this.label27);
-            this.panel11.Controls.Add(this.label28);
-            this.panel11.Location = new System.Drawing.Point(809, 36);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(171, 188);
-            this.panel11.TabIndex = 6;
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(10, 133);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(0, 17);
+            this.label29.TabIndex = 3;
             // 
-            // button5
+            // label30
             // 
-            this.button5.BackColor = System.Drawing.Color.Orchid;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Image = global::CurierManagementSystemCSharp.Properties.Resources.icons8_right_30;
-            this.button5.Location = new System.Drawing.Point(56, 153);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(53, 32);
-            this.button5.TabIndex = 2;
-            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click_1);
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(16, 133);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(0, 17);
-            this.label27.TabIndex = 1;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(57, 19);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(42, 19);
-            this.label28.TabIndex = 0;
-            this.label28.Text = "Sales";
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(10, 136);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(0, 17);
+            this.label30.TabIndex = 3;
             // 
             // Homeway
             // 
@@ -650,6 +650,8 @@
             this.Text = "Homeway";
             this.Load += new System.EventHandler(this.Homeway_Load);
             this.panel1.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.panel9.ResumeLayout(false);
@@ -668,8 +670,6 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -687,7 +687,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button3;
@@ -721,7 +720,8 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
     }
 }
