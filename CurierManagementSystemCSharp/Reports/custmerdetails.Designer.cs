@@ -31,15 +31,25 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.addbusinessBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.add_business = new CurierManagementSystemCSharp.add_business();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.addbusinessBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.add_business = new CurierManagementSystemCSharp.add_business();
             this.add_businessTableAdapter = new CurierManagementSystemCSharp.add_businessTableAdapters.add_businessTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.addbusinessBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.add_business)).BeginInit();
             this.SuspendLayout();
+            // 
+            // addbusinessBindingSource
+            // 
+            this.addbusinessBindingSource.DataMember = "add_business";
+            this.addbusinessBindingSource.DataSource = this.add_business;
+            // 
+            // add_business
+            // 
+            this.add_business.DataSetName = "add_business";
+            this.add_business.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -47,11 +57,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             reportDataSource1.Name = "addcustomers";
+            reportDataSource1.Value = null;
             reportDataSource2.Name = "add_business";
             reportDataSource2.Value = this.addbusinessBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CurierManagementSystemCSharp.bin.Release.customerreportsdetails.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CurierManagementSystemCSharp.customerreportsdetails.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(2, 57);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
@@ -80,16 +91,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(271, 28);
             this.comboBox1.TabIndex = 7;
-            // 
-            // addbusinessBindingSource
-            // 
-            this.addbusinessBindingSource.DataMember = "add_business";
-            this.addbusinessBindingSource.DataSource = this.add_business;
-            // 
-            // add_business
-            // 
-            this.add_business.DataSetName = "add_business";
-            this.add_business.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // add_businessTableAdapter
             // 

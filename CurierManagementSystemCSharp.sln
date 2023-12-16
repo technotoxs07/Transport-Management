@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34302.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurierManagementSystemCSharp", "CurierManagementSystemCSharp\CurierManagementSystemCSharp.csproj", "{E2359673-7F7A-4937-990C-1B364D39EA39}"
 EndProject

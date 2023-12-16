@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,7 @@ namespace CurierManagementSystemCSharp.Reports
         {
             // TODO: This line of code loads data into the 'add_business._add_business' table. You can move, or remove it, as needed.
             this.add_businessTableAdapter.Fill(this.add_business._add_business);
+            // TODO: This line of code loads data into the 'add_business._add_business' table. You can move, or remove it, as needed.
 
 
             this.reportViewer1.RefreshReport();
@@ -94,7 +96,7 @@ namespace CurierManagementSystemCSharp.Reports
                                         reportViewer1.LocalReport.DataSources.Add(source1);
 
                                         // Set the report path
-                                        string reportPath = "purchase.rdlc";
+                                        string reportPath = Path.Combine(Application.StartupPath, "purchase.rdlc");
                                         reportViewer1.LocalReport.ReportPath = reportPath;
 
                                         // Refresh the report

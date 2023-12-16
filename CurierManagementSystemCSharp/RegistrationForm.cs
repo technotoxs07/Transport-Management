@@ -105,7 +105,24 @@ namespace CurierManagementSystemCSharp
 
         private void RegisterLicense(string licenseKey)
         {
-            string filePath = Path.Combine(Application.StartupPath, "RegisteredLicenses.txt");
+            // Create the directory if it doesn't exist
+            string directoryPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Transportation Management System");
+
+            if (!Directory.Exists(directoryPath))
+            {
+                try
+                {
+                    Directory.CreateDirectory(directoryPath);
+                }
+                catch (IOException ex)
+                {
+                    MessageBox.Show($"Error creating the directory: {ex.Message}", "Directory Creation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+            // Now create the file path
+            string filePath = Path.Combine(directoryPath, "RegisteredLicense.txt");
 
             // Check if the file exists; if not, create the file
             if (!File.Exists(filePath))
@@ -113,7 +130,7 @@ namespace CurierManagementSystemCSharp
                 try
                 {
                     // Create the file
-                    File.Create(filePath).Close();
+                    using (File.Create(filePath)) { }
                 }
                 catch (IOException ex)
                 {
@@ -136,11 +153,13 @@ namespace CurierManagementSystemCSharp
 
         private bool IsLicenseAlreadyRegistered(string licenseKey)
         {
-            string filePath = Path.Combine(Application.StartupPath, "RegisteredLicenses.txt");
+
+            string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Transportation Management System", "RegisteredLicense.txt");
 
             // Check if the license key exists in the file
-            return System.IO.File.Exists(filePath) && System.IO.File.ReadAllLines(filePath).Contains(licenseKey);
-            
+            return File.Exists(filePath) && File.ReadAllLines(filePath).Contains(licenseKey);
+
+
         }
 
         private bool HasExperienceDaysPassed(int experienceDays)
@@ -182,7 +201,9 @@ namespace CurierManagementSystemCSharp
 
         private void RegistrationForm_Load(object sender, EventArgs e)
         {
-            if (IsLicenseAlreadyRegistered(textBox2.Text))
+            string licenseKey = textBox2.Text.Trim();
+
+            if (IsLicenseAlreadyRegistered(licenseKey))
             {
               
                 Login lg = new Login();

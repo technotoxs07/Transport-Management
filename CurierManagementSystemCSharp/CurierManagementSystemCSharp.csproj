@@ -13,7 +13,11 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>C:\Users\Ronit\OneDrive\Desktop\New folder\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -23,14 +27,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <UpdateUrl>http://localhost/CurierManagementSystemCSharp/</UpdateUrl>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -76,6 +77,8 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -293,11 +296,11 @@
     <EmbeddedResource Include="ADD_CUSTOMER.resx">
       <DependentUpon>ADD_CUSTOMER.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="bin\Release\consignments.rdlc" />
-    <EmbeddedResource Include="bin\Release\cstpayments.rdlc" />
-    <EmbeddedResource Include="bin\Release\customerreportsdetails.rdlc" />
-    <EmbeddedResource Include="bin\Release\purchase.rdlc" />
-    <EmbeddedResource Include="bin\Release\Salesss.rdlc" />
+    <EmbeddedResource Include="consignments.rdlc" />
+    <EmbeddedResource Include="cstpayments.rdlc" />
+    <EmbeddedResource Include="customerreportsdetails.rdlc" />
+    <EmbeddedResource Include="purchase.rdlc" />
+    <EmbeddedResource Include="Salesss.rdlc" />
     <EmbeddedResource Include="Consignment.resx">
       <DependentUpon>Consignment.cs</DependentUpon>
     </EmbeddedResource>
@@ -509,13 +512,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="courier.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="courier_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>courier.mdf</DependentUpon>
-    </Content>
     <None Include="Resources\Add User Male.png" />
     <None Include="Resources\Sent.png" />
     <None Include="Resources\Reset.png" />
@@ -546,7 +542,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

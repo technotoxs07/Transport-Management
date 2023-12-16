@@ -48,7 +48,7 @@
             reportDataSource1.Name = "add_business";
             reportDataSource1.Value = this.addbusinessBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CurierManagementSystemCSharp.bin.Release.purchase.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CurierManagementSystemCSharp.purchase.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 54);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;

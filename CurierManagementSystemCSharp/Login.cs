@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.IO;
+using System.IO.Compression;
+using System.Net;
+using System.Diagnostics;
 
 namespace CurierManagementSystemCSharp
 {
@@ -9,6 +13,39 @@ namespace CurierManagementSystemCSharp
         public Login()
         {
             InitializeComponent();
+            WebClient webclient = new WebClient();
+            var client = new WebClient();
+
+            if(!webclient.DownloadString("https://drive.google.com/file/d/1wtX-oiXGZh8R8PK904VbWLn9HqiieGVw/view?usp=sharing").Contains("1.0.0"))
+            {
+                if (MessageBox.Show("New update available ! Do you want to install it", "Transportation Management System", MessageBoxButtons.OK, MessageBoxIcon.Question) == DialogResult.OK)
+
+                
+                {
+                        try
+                        {
+                            if(File.Exists(@".\Transportation Setup.msi"))
+                            {
+                                File.Delete(@".\Transportation Setup.msi");
+                            }
+                            client.DownloadFile("https://drive.google.com/file/d/1QrSFbDRTvflvOoh8yy86arDsTg1WTd4r/view?usp=sharing", @"Transportation Setup.zip");
+                            string zipPath = @".\Transportation Setup.zip";
+                            string extractPath = @".\";
+                        ZipFile.ExtractToDirectory(zipPath, extractPath);
+
+                        Process process = new Process();
+                        process.StartInfo.FileName = "msiexec";
+                        process.StartInfo.Arguments = string.Format("/i Transportation Setup.msi");
+
+                        this.Close();
+                        process.Start();
+                        }
+                        catch
+                        {
+
+                        }
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
