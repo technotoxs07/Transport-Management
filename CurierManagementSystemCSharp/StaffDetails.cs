@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Markup;
+using System.Windows.Media;
 
 namespace CurierManagementSystemCSharp
 {
@@ -22,12 +24,16 @@ namespace CurierManagementSystemCSharp
      
         private async void StaffDetails_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'courierDataSet4.staff' table. You can move, or remove it, as needed.
+            this.staffTableAdapter.Fill(this.courierDataSet4.staff);
+            //  string username = GetSecureUsername(); // Implement this method
+            //   string password = GetSecurePassword(); // Implement this method
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
             loadingdataingridview();
             // TODO: This line of code loads data into the 'courierDataSet4.staff' table. You can move, or remove it, as needed.
             this.staffTableAdapter.Fill(this.courierDataSet4.staff);
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
             con.Open();
             string str1 = "select max(id) from staff;";
 
@@ -49,15 +55,14 @@ namespace CurierManagementSystemCSharp
                 }
             }
             con.Close();
-
         }
-
+       
 
 
         private void loadingdataingridview()
         {
             textBox2.Focus();
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\\CURIERMANAGEMENTSYSTEMCSHARP\\CURIERMANAGEMENTSYSTEMCSHARP\\COURIER.MDF;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
             try
             {
                 con.Open();
@@ -76,7 +81,7 @@ namespace CurierManagementSystemCSharp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
 
 
             if (isvalid())
@@ -107,7 +112,7 @@ namespace CurierManagementSystemCSharp
                         textBox8.Text = "";
                         textBox9.Text = "";
 
-                        using (SqlConnection con1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
+                        using (SqlConnection con1 = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
                         {
 
                             string str2 = "SELECT * FROM staff";

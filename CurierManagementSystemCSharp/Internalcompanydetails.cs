@@ -22,15 +22,25 @@ namespace CurierManagementSystemCSharp
         
         private void Internalcompanydetails_Load(object sender, EventArgs e)
         {
+            //getsettings();
+           
+           
             // TODO: This line of code loads data into the 'add_business._add_business' table. You can move, or remove it, as needed.
             this.add_businessTableAdapter.Fill(this.add_business._add_business);
+            // TODO: This line of code loads data into the 'add_business._add_business' table. You can move, or remove it, as needed.
+           
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             getdata();
         }
 
+        private void getsettings()
+        {
+            btnaddbusiness.Visible = Properties.Settings.Default.Button;
+        }
+
         private void getdata()
         {
-            using (SqlConnection con1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
+            using (SqlConnection con1 = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
             {
                 string str2 = "SELECT * FROM add_business";
                 SqlCommand cmd3 = new SqlCommand(str2, con1);
@@ -52,12 +62,22 @@ namespace CurierManagementSystemCSharp
         {
             if (isempty())
             {
+                
 
-
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
                 con.Open();
                 try
                 {
+                    string checkQuery = "SELECT COUNT(*) FROM add_business";
+                    SqlCommand checkCmd = new SqlCommand(checkQuery, con);
+                    int existingRecordCount = (int)checkCmd.ExecuteScalar();
+
+                    if (existingRecordCount > 0)
+                    {
+                        MessageBox.Show("The Business Details Already Exsited");
+                        return; // Exit the method if a record already exists
+                    }
+
                     string query = "INSERT INTO add_business(Business_Name, Business_Address, telephone, email, authorized_dealer, pan) VALUES ('" + businessnametxt.Text + "','" + businessaddrtxt.Text + "','" + teltxt.Text + "','" + emailtxt.Text + "','" + authorizedtxt.Text + "','" + pantxt.Text + "');";
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.ExecuteNonQuery();
@@ -74,6 +94,7 @@ namespace CurierManagementSystemCSharp
                         authorizedtxt.Text = "";
                         pantxt.Text = "";
                         btnaddbusiness.Visible = false;
+                        savesettings();
                         // cmd.CommandType = CommandType.Text;
 
                     }
@@ -85,8 +106,17 @@ namespace CurierManagementSystemCSharp
                     MessageBox.Show(ex.Message);
                 }
                 con.Close();
-               
+              
+
+                
             }
+        }
+
+        private void savesettings()
+        {
+            Properties.Settings.Default.Button = btnaddbusiness.Visible;
+            Properties.Settings.Default.Save();
+
         }
 
         private bool isempty()
@@ -131,7 +161,7 @@ namespace CurierManagementSystemCSharp
 
         private void button3_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
 
             if (Id > 0)
             {
@@ -143,6 +173,7 @@ namespace CurierManagementSystemCSharp
                 conn.Close();
                 MessageBox.Show("Business Details are Successfully Deleted", "DELETED", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnaddbusiness.Visible = true;
+                //savesetiingsbtn();
             }
            
             else
@@ -152,23 +183,46 @@ namespace CurierManagementSystemCSharp
             getdata();
         }
 
+        private void savesetiingsbtn()
+        {
+            Properties.Settings.Default.Button = button3.Visible;
+            Properties.Settings.Default.Save();
+        }
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
 
-                if (selectedRow.Cells[0].Value != null)
+                if (selectedRow.Cells[0].Value != null && selectedRow.Cells[0].Value != DBNull.Value)
                 {
                     Id = Convert.ToInt32(selectedRow.Cells[0].Value);
                 }
-
-                businessnametxt.Text = selectedRow.Cells[1].Value?.ToString() ?? string.Empty;
-                businessaddrtxt.Text = selectedRow.Cells[2].Value?.ToString() ?? string.Empty;
-                teltxt.Text = selectedRow.Cells[3].Value?.ToString() ?? string.Empty;
-                emailtxt.Text = selectedRow.Cells[4].Value?.ToString() ?? string.Empty;
-                authorizedtxt.Text = selectedRow.Cells[5].Value?.ToString() ?? string.Empty;
-                pantxt.Text = selectedRow.Cells[6].Value?.ToString() ?? string.Empty;
+                if (selectedRow.Cells[1].Value != null && selectedRow.Cells[1].Value != DBNull.Value)
+                {
+                    businessnametxt.Text = selectedRow.Cells[1].Value.ToString();
+                }
+                if (selectedRow.Cells[2].Value != null && selectedRow.Cells[2].Value != DBNull.Value)
+                {
+                    businessaddrtxt.Text = selectedRow.Cells[2].Value.ToString();
+                }
+                if (selectedRow.Cells[3].Value != null && selectedRow.Cells[3].Value != DBNull.Value)
+                {
+                    teltxt.Text = selectedRow.Cells[3].Value.ToString();
+                }
+                if (selectedRow.Cells[4].Value != null && selectedRow.Cells[4].Value != DBNull.Value)
+                {
+                    emailtxt.Text = selectedRow.Cells[4].Value.ToString();
+                }
+                if (selectedRow.Cells[5].Value != null && selectedRow.Cells[5].Value != DBNull.Value)
+                {
+                    authorizedtxt.Text = selectedRow.Cells[5].Value.ToString();
+                }
+                if (selectedRow.Cells[6].Value != null && selectedRow.Cells[6].Value != DBNull.Value)
+                {
+                    pantxt.Text = selectedRow.Cells[6].Value.ToString();
+                }
             }
 
 

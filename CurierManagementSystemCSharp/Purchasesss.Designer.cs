@@ -65,28 +65,23 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.customernametxt = new System.Windows.Forms.TextBox();
+            this.updtxt = new System.Windows.Forms.Button();
+            this.itemcalculation = new CurierManagementSystemCSharp.itemcalculation();
+            this.itmcalculationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.itmcalculationTableAdapter = new CurierManagementSystemCSharp.itemcalculationTableAdapters.ItmcalculationTableAdapter();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Item_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itmcalculationBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.itemcalculation = new CurierManagementSystemCSharp.itemcalculation();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.itmcalculationTableAdapter = new CurierManagementSystemCSharp.itemcalculationTableAdapters.ItmcalculationTableAdapter();
-            this.customernametxt = new System.Windows.Forms.TextBox();
-            this.updtxt = new System.Windows.Forms.Button();
-            this.dataSet1 = new CurierManagementSystemCSharp.DataSet1();
-            this.purchaserealBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.purchase_real_TableAdapter = new CurierManagementSystemCSharp.DataSet1TableAdapters.Purchase_real_TableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itmcalculationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemcalculation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.purchaserealBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itmcalculationBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnclear
@@ -487,7 +482,7 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
+            this.Column1,
             this.Item_Name,
             this.Quantity,
             this.Unit,
@@ -519,12 +514,76 @@
             this.dataGridView1.TabIndex = 105;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // idDataGridViewTextBoxColumn
+            // button1
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.button1.BackColor = System.Drawing.Color.LimeGreen;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(971, 255);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(111, 41);
+            this.button1.TabIndex = 104;
+            this.button1.Text = "Add";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.LightCoral;
+            this.label3.Location = new System.Drawing.Point(25, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(136, 26);
+            this.label3.TabIndex = 103;
+            this.label3.Text = "Dealer Details";
+            // 
+            // customernametxt
+            // 
+            this.customernametxt.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customernametxt.Location = new System.Drawing.Point(140, 50);
+            this.customernametxt.Name = "customernametxt";
+            this.customernametxt.Size = new System.Drawing.Size(237, 30);
+            this.customernametxt.TabIndex = 139;
+            this.customernametxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // updtxt
+            // 
+            this.updtxt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.updtxt.BackColor = System.Drawing.Color.LimeGreen;
+            this.updtxt.FlatAppearance.BorderSize = 0;
+            this.updtxt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updtxt.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updtxt.Location = new System.Drawing.Point(790, 570);
+            this.updtxt.Name = "updtxt";
+            this.updtxt.Size = new System.Drawing.Size(103, 44);
+            this.updtxt.TabIndex = 140;
+            this.updtxt.Text = "Update";
+            this.updtxt.UseVisualStyleBackColor = false;
+            this.updtxt.Click += new System.EventHandler(this.updtxt_Click);
+            // 
+            // itemcalculation
+            // 
+            this.itemcalculation.DataSetName = "itemcalculation";
+            this.itemcalculation.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // itmcalculationBindingSource
+            // 
+            this.itmcalculationBindingSource.DataMember = "Itmcalculation";
+            this.itmcalculationBindingSource.DataSource = this.itemcalculation;
+            // 
+            // itmcalculationTableAdapter
+            // 
+            this.itmcalculationTableAdapter.ClearBeforeFill = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Id";
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
             // 
             // Item_Name
             // 
@@ -567,83 +626,6 @@
             this.Total_Amount.HeaderText = "Total_Amount";
             this.Total_Amount.Name = "Total_Amount";
             this.Total_Amount.ReadOnly = true;
-            // 
-            // itmcalculationBindingSource
-            // 
-            this.itmcalculationBindingSource.DataMember = "Itmcalculation";
-            this.itmcalculationBindingSource.DataSource = this.itemcalculation;
-            // 
-            // itemcalculation
-            // 
-            this.itemcalculation.DataSetName = "itemcalculation";
-            this.itemcalculation.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.LimeGreen;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(971, 255);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 41);
-            this.button1.TabIndex = 104;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.LightCoral;
-            this.label3.Location = new System.Drawing.Point(25, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 26);
-            this.label3.TabIndex = 103;
-            this.label3.Text = "Dealer Details";
-            // 
-            // itmcalculationTableAdapter
-            // 
-            this.itmcalculationTableAdapter.ClearBeforeFill = true;
-            // 
-            // customernametxt
-            // 
-            this.customernametxt.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customernametxt.Location = new System.Drawing.Point(140, 50);
-            this.customernametxt.Name = "customernametxt";
-            this.customernametxt.Size = new System.Drawing.Size(237, 30);
-            this.customernametxt.TabIndex = 139;
-            this.customernametxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // updtxt
-            // 
-            this.updtxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.updtxt.BackColor = System.Drawing.Color.LimeGreen;
-            this.updtxt.FlatAppearance.BorderSize = 0;
-            this.updtxt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.updtxt.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updtxt.Location = new System.Drawing.Point(790, 570);
-            this.updtxt.Name = "updtxt";
-            this.updtxt.Size = new System.Drawing.Size(103, 44);
-            this.updtxt.TabIndex = 140;
-            this.updtxt.Text = "Update";
-            this.updtxt.UseVisualStyleBackColor = false;
-            this.updtxt.Click += new System.EventHandler(this.updtxt_Click);
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // purchaserealBindingSource
-            // 
-            this.purchaserealBindingSource.DataMember = "Purchase(real)";
-            this.purchaserealBindingSource.DataSource = this.dataSet1;
-            // 
-            // purchase_real_TableAdapter
-            // 
-            this.purchase_real_TableAdapter.ClearBeforeFill = true;
             // 
             // Purchasesss
             // 
@@ -691,10 +673,8 @@
             this.Text = "Purchasesss";
             this.Load += new System.EventHandler(this.Purchasesss_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itmcalculationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemcalculation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.purchaserealBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itmcalculationBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -737,15 +717,19 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
-        private DataSet1 dataSet1;
-        private System.Windows.Forms.BindingSource purchaserealBindingSource;
-        private DataSet1TableAdapters.Purchase_real_TableAdapter purchase_real_TableAdapter;
-        private itemcalculation itemcalculation;
-        private System.Windows.Forms.BindingSource itmcalculationBindingSource;
-        private itemcalculationTableAdapters.ItmcalculationTableAdapter itmcalculationTableAdapter;
         private System.Windows.Forms.TextBox customernametxt;
         private System.Windows.Forms.Button updtxt;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itemNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn discountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalAmountDataGridViewTextBoxColumn;
+        private itemcalculation itemcalculation;
+        private System.Windows.Forms.BindingSource itmcalculationBindingSource;
+        private itemcalculationTableAdapters.ItmcalculationTableAdapter itmcalculationTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Item_Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Unit;

@@ -22,8 +22,12 @@ namespace CurierManagementSystemCSharp.Reports
 
         private void custmerdetails_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'add_business._add_business' table. You can move, or remove it, as needed.
+            this.add_businessTableAdapter.Fill(this.add_business._add_business);
             // TODO: This line of code loads data into the 'addcustomer.addcustomers' table. You can move, or remove it, as needed.
-            
+            this.addcustomersTableAdapter.Fill(this.addcustomer.addcustomers);
+            // TODO: This line of code loads data into the 'addcustomer.addcustomers' table. You can move, or remove it, as needed.
+
             // TODO: This line of code loads data into the 'addcustomer.addcustomers' table. You can move, or remove it, as needed.
             // TODO: This line of code loads data into the 'add_business._add_business' table. You can move, or remove it, as needed.
             this.add_businessTableAdapter.Fill(this.add_business._add_business);
@@ -35,7 +39,7 @@ namespace CurierManagementSystemCSharp.Reports
 
         private void getname()
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
             con.Open();
             SqlCommand cmd = new SqlCommand("SELECT Customer_Name from addcustomers", con);
             SqlDataReader sdr = cmd.ExecuteReader();
@@ -55,7 +59,7 @@ namespace CurierManagementSystemCSharp.Reports
 
                 try
                 {
-                    using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
+                    using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
                     {
                         con.Open();
 
@@ -88,7 +92,7 @@ namespace CurierManagementSystemCSharp.Reports
                                         reportViewer1.LocalReport.DataSources.Add(source1);
 
                                         // Set the report path
-                                        string reportPath = Path.Combine(Application.StartupPath, "customerreportsdetails.rdlc");
+                                        string reportPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "customerreportsdetails.rdlc");
                                         reportViewer1.LocalReport.ReportPath = reportPath;
 
                                         // Refresh the report

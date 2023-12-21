@@ -13,7 +13,7 @@ namespace CurierManagementSystemCSharp
         public Login()
         {
             InitializeComponent();
-            WebClient webclient = new WebClient();
+            /*WebClient webclient = new WebClient();
             var client = new WebClient();
 
             if(!webclient.DownloadString("https://drive.google.com/file/d/1wtX-oiXGZh8R8PK904VbWLn9HqiieGVw/view?usp=sharing").Contains("1.0.0"))
@@ -45,14 +45,14 @@ namespace CurierManagementSystemCSharp
 
                         }
                 }
-            }
+            }*/
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
         }
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -83,7 +83,7 @@ namespace CurierManagementSystemCSharp
             if (txtusername.Text != "" && txtpassword.Text != "")
             {
                 string query = "select count(*) from registration_login where email_Username = '" + txtusername.Text + "' AND  password ='" + txtpassword.Text + "'";
-                using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
+                using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
                 {
                     con.Open();
 
@@ -151,6 +151,11 @@ namespace CurierManagementSystemCSharp
         private void label11_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

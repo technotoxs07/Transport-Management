@@ -43,6 +43,8 @@ namespace CurierManagementSystemCSharp
 
         private async void Consignment_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'courierDataSet.consign' table. You can move, or remove it, as needed.
+            this.consignTableAdapter.Fill(this.courierDataSet.consign);
             Showdataofcustomerpayement();
             // TODO: This line of code loads data into the 'courierDataSet.consign' table. You can move, or remove it, as needed.
             this.consignTableAdapter.Fill(this.courierDataSet.consign);
@@ -68,7 +70,7 @@ namespace CurierManagementSystemCSharp
             this.consignTableAdapter.Fill(this.courierDataSet.consign);
             // TODO: This line of code loads data into the 'courierDataSet.consign' table. You can move, or remove it, as needed.
             this.consignTableAdapter.Fill(this.courierDataSet.consign);
-            con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
+            con = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
             con.Open();
             
             string str1 = "select max(consignId) from consign;";
@@ -101,7 +103,7 @@ namespace CurierManagementSystemCSharp
         {
             if(isvalid())
             {
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
                 con.Open();
 
                 try
@@ -139,7 +141,7 @@ namespace CurierManagementSystemCSharp
                         servicetaxtxt.Text = "";
                         amountchargedtxt.Text = "";
 
-                        using (SqlConnection con1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
+                        using (SqlConnection con1 = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
                         {
 
                             string str2 = "SELECT * FROM consign";
@@ -325,7 +327,7 @@ namespace CurierManagementSystemCSharp
 
         private void Showdataofcustomerpayement()
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
             try
             {
                 con.Open();
@@ -344,7 +346,7 @@ namespace CurierManagementSystemCSharp
 
         private void Btnupdate_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
             if (consignId > 0)
             {
                 SqlCommand cmd = new SqlCommand("UPDATE consign SET Date = @Date, Customer_Name = @Customer_Name, Customer_Phone_Number = @Customer_Phone_Number, Customer_Address = @Customer_Address,Consignee_Name = @Consignee_Name,Consignee_address = @Consignee_address,Consignee_number = @Consignee_number ,Item_Name = @Item_Name, CN_Number = @CN_Number, Pin_Code = @Pin_Code, Consignment_Type = @Consignment_Type, Weight = @Weight, Shipment = @Shipment, Quantity = @Quantity, Unit = @Unit, Price_Unit = @Price_Unit, Tax = @Tax, Amount_Charged = @Amount_Charged WHERE consignId = @consignId", con);

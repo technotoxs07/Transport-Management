@@ -31,42 +31,20 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.addbusinessBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.add_business = new CurierManagementSystemCSharp.add_business();
-            this.consignBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.courierDataSet = new CurierManagementSystemCSharp.courierDataSet();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.add_business = new CurierManagementSystemCSharp.add_business();
+            this.addbusinessBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.add_businessTableAdapter = new CurierManagementSystemCSharp.add_businessTableAdapters.add_businessTableAdapter();
+            this.courierDataSet = new CurierManagementSystemCSharp.courierDataSet();
+            this.consignBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.consignTableAdapter = new CurierManagementSystemCSharp.courierDataSetTableAdapters.consignTableAdapter();
-            this.add_businessBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.addbusinessBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.add_business)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.consignBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addbusinessBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courierDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.add_businessBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consignBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // addbusinessBindingSource
-            // 
-            this.addbusinessBindingSource.DataMember = "add_business";
-            this.addbusinessBindingSource.DataSource = this.add_business;
-            // 
-            // add_business
-            // 
-            this.add_business.DataSetName = "add_business";
-            this.add_business.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // consignBindingSource
-            // 
-            this.consignBindingSource.DataMember = "consign";
-            this.consignBindingSource.DataSource = this.courierDataSet;
-            // 
-            // courierDataSet
-            // 
-            this.courierDataSet.DataSetName = "courierDataSet";
-            this.courierDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button1
             // 
@@ -97,30 +75,45 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             reportDataSource1.Name = "add_business";
-            reportDataSource1.Value = this.add_businessBindingSource;
+            reportDataSource1.Value = this.addbusinessBindingSource;
             reportDataSource2.Name = "consigns";
             reportDataSource2.Value = this.consignBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CurierManagementSystemCSharp.consignments.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CurierManagementSystemCSharp.bin.Release.consignments.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(1, 71);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(1178, 554);
             this.reportViewer1.TabIndex = 10;
             // 
+            // add_business
+            // 
+            this.add_business.DataSetName = "add_business";
+            this.add_business.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // addbusinessBindingSource
+            // 
+            this.addbusinessBindingSource.DataMember = "add_business";
+            this.addbusinessBindingSource.DataSource = this.add_business;
+            // 
             // add_businessTableAdapter
             // 
             this.add_businessTableAdapter.ClearBeforeFill = true;
             // 
+            // courierDataSet
+            // 
+            this.courierDataSet.DataSetName = "courierDataSet";
+            this.courierDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // consignBindingSource
+            // 
+            this.consignBindingSource.DataMember = "consign";
+            this.consignBindingSource.DataSource = this.courierDataSet;
+            // 
             // consignTableAdapter
             // 
             this.consignTableAdapter.ClearBeforeFill = true;
-            // 
-            // add_businessBindingSource
-            // 
-            this.add_businessBindingSource.DataMember = "add_business";
-            this.add_businessBindingSource.DataSource = this.add_business;
             // 
             // consignreport
             // 
@@ -133,11 +126,10 @@
             this.Name = "consignreport";
             this.Text = "consignreport";
             this.Load += new System.EventHandler(this.consignreport_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.addbusinessBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.add_business)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.consignBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addbusinessBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courierDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.add_businessBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consignBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -153,6 +145,5 @@
         private courierDataSet courierDataSet;
         private System.Windows.Forms.BindingSource consignBindingSource;
         private courierDataSetTableAdapters.consignTableAdapter consignTableAdapter;
-        private System.Windows.Forms.BindingSource add_businessBindingSource;
     }
 }

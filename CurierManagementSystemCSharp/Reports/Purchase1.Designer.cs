@@ -30,25 +30,44 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.addbusinessBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.add_business = new CurierManagementSystemCSharp.add_business();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.add_business = new CurierManagementSystemCSharp.add_business();
-            this.addbusinessBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.add_businessTableAdapter = new CurierManagementSystemCSharp.add_businessTableAdapters.add_businessTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.add_business)).BeginInit();
+            this._Purchases_Real_ = new CurierManagementSystemCSharp._Purchases_Real_();
+            this.purchaserealBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.purchase_real_TableAdapter = new CurierManagementSystemCSharp._Purchases_Real_TableAdapters.Purchase_real_TableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.addbusinessBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.add_business)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._Purchases_Real_)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.purchaserealBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // addbusinessBindingSource
+            // 
+            this.addbusinessBindingSource.DataMember = "add_business";
+            this.addbusinessBindingSource.DataSource = this.add_business;
+            // 
+            // add_business
+            // 
+            this.add_business.DataSetName = "add_business";
+            this.add_business.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
             this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource1.Name = "add_business";
-            reportDataSource1.Value = this.addbusinessBindingSource;
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.purchaserealBindingSource;
+            reportDataSource2.Name = "add_business";
+            reportDataSource2.Value = this.addbusinessBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CurierManagementSystemCSharp.purchase.rdlc";
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CurierManagementSystemCSharp.bin.Release.purchase.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 54);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
@@ -78,19 +97,23 @@
             this.comboBox1.Size = new System.Drawing.Size(271, 28);
             this.comboBox1.TabIndex = 3;
             // 
-            // add_business
-            // 
-            this.add_business.DataSetName = "add_business";
-            this.add_business.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // addbusinessBindingSource
-            // 
-            this.addbusinessBindingSource.DataMember = "add_business";
-            this.addbusinessBindingSource.DataSource = this.add_business;
-            // 
             // add_businessTableAdapter
             // 
             this.add_businessTableAdapter.ClearBeforeFill = true;
+            // 
+            // _Purchases_Real_
+            // 
+            this._Purchases_Real_.DataSetName = "Purchases(Real)";
+            this._Purchases_Real_.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // purchaserealBindingSource
+            // 
+            this.purchaserealBindingSource.DataMember = "Purchase(real)";
+            this.purchaserealBindingSource.DataSource = this._Purchases_Real_;
+            // 
+            // purchase_real_TableAdapter
+            // 
+            this.purchase_real_TableAdapter.ClearBeforeFill = true;
             // 
             // Purchase1
             // 
@@ -103,8 +126,10 @@
             this.Name = "Purchase1";
             this.Text = "Purchase1";
             this.Load += new System.EventHandler(this.Purchase1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.add_business)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addbusinessBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.add_business)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._Purchases_Real_)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.purchaserealBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -117,5 +142,8 @@
         private add_business add_business;
         private System.Windows.Forms.BindingSource addbusinessBindingSource;
         private add_businessTableAdapters.add_businessTableAdapter add_businessTableAdapter;
+        private _Purchases_Real_ _Purchases_Real_;
+        private System.Windows.Forms.BindingSource purchaserealBindingSource;
+        private _Purchases_Real_TableAdapters.Purchase_real_TableAdapter purchase_real_TableAdapter;
     }
 }

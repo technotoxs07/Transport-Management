@@ -117,7 +117,7 @@ SELECT Id, Date, Customer_Name, Custome_Number, Amount_Charged, Amount_Paid, Acc
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="customer_payement" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="customer_payement" msprop:Generator_DataSetName="customer_payement">
+  <xs:element name="customer_payement" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="customer_payement" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="customer_payement">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="Customer_payment" msprop:Generator_RowEvHandlerName="Customer_paymentRowChangeEventHandler" msprop:Generator_RowDeletedName="Customer_paymentRowDeleted" msprop:Generator_RowDeletingName="Customer_paymentRowDeleting" msprop:Generator_RowEvArgName="Customer_paymentRowChangeEvent" msprop:Generator_TablePropName="Customer_payment" msprop:Generator_RowChangedName="Customer_paymentRowChanged" msprop:Generator_RowChangingName="Customer_paymentRowChanging" msprop:Generator_TableClassName="Customer_paymentDataTable" msprop:Generator_RowClassName="Customer_paymentRow" msprop:Generator_TableVarName="tableCustomer_payment" msprop:Generator_UserTableName="Customer_payment">

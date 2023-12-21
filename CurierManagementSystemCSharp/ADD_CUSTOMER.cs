@@ -28,6 +28,9 @@ namespace CurierManagementSystemCSharp
 
         private void ADD_CUSTOMER_Load(object sender, EventArgs e)
         {
+            
+            // TODO: This line of code loads data into the 'addcustomer.addcustomers' table. You can move, or remove it, as needed.
+            this.addcustomersTableAdapter.Fill(this.addcustomer.addcustomers);
             // TODO: This line of code loads data into the 'addcustomer.addcustomers' table. You can move, or remove it, as needed.
             //this.addcustomersTableAdapter.Fill(this.addcustomer.addcustomers);
             // TODO: This line of code loads data into the 'addcustomer.addcustomers' table. You can move, or remove it, as needed.
@@ -36,7 +39,6 @@ namespace CurierManagementSystemCSharp
             // this.addcustomerTableAdapter.Fill(this.addcustomer._addcustomer);
             // TODO: This line of code loads data into the 'courierDataSet1.delivery' table. You can move, or remove it, as needed.
             //this.deliveryTableAdapter.Fill(this.courierDataSet1.delivery);
-            this.deliveryTableAdapter.Fill(this.courierDataSet1.delivery);
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView1.AutoResizeColumnHeadersHeight();
 
@@ -49,7 +51,7 @@ namespace CurierManagementSystemCSharp
         private void gettingcustomerdata()
         {
            
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
             con.Open();
             try
             {
@@ -87,7 +89,7 @@ namespace CurierManagementSystemCSharp
         {
             if (isempty())
             {
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
+                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
 
                 con.Open();
                 try
@@ -111,7 +113,7 @@ namespace CurierManagementSystemCSharp
                         customerstatustxt.Text = "";
                         customerbalancetxt.Text = "";
                     }
-                    using (SqlConnection con1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
+                    using (SqlConnection con1 = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
                     {
                         string str2 = "SELECT * FROM addcustomers";
                         SqlCommand cmd3 = new SqlCommand(str2, con1);
@@ -172,7 +174,7 @@ namespace CurierManagementSystemCSharp
 
         private void btnupdate_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
             if (Id>0)
             {
                 SqlCommand cmd = new SqlCommand("UPDATE addcustomers SET Date = @Date, Customer_Name = @Customer_Name, Customer_Address = @Customer_Address, Customer_Phone_Number = @Customer_Phone_Number, Customer_Mail= @Customer_Mail, Customer_Receipt_Number = @Customer_Receipt_Number, Status = @Status, Balance = @Balance WHERE Id = @Id", con);
@@ -202,7 +204,7 @@ namespace CurierManagementSystemCSharp
 
         private void shownewcustomerdata()
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
             try
             {
                 con.Open();
@@ -237,7 +239,7 @@ namespace CurierManagementSystemCSharp
 
         private void btndelete_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
 
             if (Id>0)
             {

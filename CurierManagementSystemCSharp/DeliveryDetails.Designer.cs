@@ -47,8 +47,6 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.btndelete = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.deliveryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.courierDataSet1 = new CurierManagementSystemCSharp.courierDataSet1();
             this.label11 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -68,12 +66,14 @@
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.deliveryTableAdapter = new CurierManagementSystemCSharp.courierDataSet1TableAdapters.deliveryTableAdapter();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.btnupdate = new System.Windows.Forms.Button();
             this.refreshbtn = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.courierDataSet1 = new CurierManagementSystemCSharp.courierDataSet1();
+            this.deliveryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.deliveryTableAdapter = new CurierManagementSystemCSharp.courierDataSet1TableAdapters.deliveryTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.senderNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,11 +91,9 @@
             this.rateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deliveryManDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deliveryPhoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deliveryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.deliveryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.courierDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deliveryBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courierDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deliveryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -268,16 +266,6 @@
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // deliveryBindingSource
-            // 
-            this.deliveryBindingSource.DataMember = "delivery";
-            this.deliveryBindingSource.DataSource = this.courierDataSet1;
-            // 
-            // courierDataSet1
-            // 
-            this.courierDataSet1.DataSetName = "courierDataSet1";
-            this.courierDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label11
             // 
@@ -481,10 +469,6 @@
             this.textBox3.TabIndex = 22;
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // deliveryTableAdapter
-            // 
-            this.deliveryTableAdapter.ClearBeforeFill = true;
-            // 
             // textBox6
             // 
             this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -568,7 +552,7 @@
             this.rateDataGridViewTextBoxColumn,
             this.deliveryManDataGridViewTextBoxColumn,
             this.deliveryPhoneNumberDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.deliveryBindingSource1;
+            this.dataGridView1.DataSource = this.deliveryBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -593,6 +577,20 @@
             this.dataGridView1.TabIndex = 73;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // courierDataSet1
+            // 
+            this.courierDataSet1.DataSetName = "courierDataSet1";
+            this.courierDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // deliveryBindingSource
+            // 
+            this.deliveryBindingSource.DataMember = "delivery";
+            this.deliveryBindingSource.DataSource = this.courierDataSet1;
+            // 
+            // deliveryTableAdapter
+            // 
+            this.deliveryTableAdapter.ClearBeforeFill = true;
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -610,21 +608,21 @@
             // senderNameDataGridViewTextBoxColumn
             // 
             this.senderNameDataGridViewTextBoxColumn.DataPropertyName = "Sender_Name";
-            this.senderNameDataGridViewTextBoxColumn.HeaderText = "Sender Name";
+            this.senderNameDataGridViewTextBoxColumn.HeaderText = "Sender_Name";
             this.senderNameDataGridViewTextBoxColumn.Name = "senderNameDataGridViewTextBoxColumn";
             this.senderNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // senderAddressDataGridViewTextBoxColumn
             // 
             this.senderAddressDataGridViewTextBoxColumn.DataPropertyName = "Sender_Address";
-            this.senderAddressDataGridViewTextBoxColumn.HeaderText = "Sender Address";
+            this.senderAddressDataGridViewTextBoxColumn.HeaderText = "Sender_Address";
             this.senderAddressDataGridViewTextBoxColumn.Name = "senderAddressDataGridViewTextBoxColumn";
             this.senderAddressDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // senderPhoneNumberDataGridViewTextBoxColumn
             // 
             this.senderPhoneNumberDataGridViewTextBoxColumn.DataPropertyName = "Sender_Phone_Number";
-            this.senderPhoneNumberDataGridViewTextBoxColumn.HeaderText = "Sender Phone Number";
+            this.senderPhoneNumberDataGridViewTextBoxColumn.HeaderText = "Sender_Phone_Number";
             this.senderPhoneNumberDataGridViewTextBoxColumn.Name = "senderPhoneNumberDataGridViewTextBoxColumn";
             this.senderPhoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -638,42 +636,42 @@
             // senderReceiptDataGridViewTextBoxColumn
             // 
             this.senderReceiptDataGridViewTextBoxColumn.DataPropertyName = "Sender_Receipt";
-            this.senderReceiptDataGridViewTextBoxColumn.HeaderText = "Sender Receipt";
+            this.senderReceiptDataGridViewTextBoxColumn.HeaderText = "Sender_Receipt";
             this.senderReceiptDataGridViewTextBoxColumn.Name = "senderReceiptDataGridViewTextBoxColumn";
             this.senderReceiptDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // customerNameDataGridViewTextBoxColumn
             // 
             this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "Customer_Name";
-            this.customerNameDataGridViewTextBoxColumn.HeaderText = "Customer Name";
+            this.customerNameDataGridViewTextBoxColumn.HeaderText = "Customer_Name";
             this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
             this.customerNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // customerAddressDataGridViewTextBoxColumn
             // 
             this.customerAddressDataGridViewTextBoxColumn.DataPropertyName = "Customer_Address";
-            this.customerAddressDataGridViewTextBoxColumn.HeaderText = "Customer Address";
+            this.customerAddressDataGridViewTextBoxColumn.HeaderText = "Customer_Address";
             this.customerAddressDataGridViewTextBoxColumn.Name = "customerAddressDataGridViewTextBoxColumn";
             this.customerAddressDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // customerPhoneNumberDataGridViewTextBoxColumn
             // 
             this.customerPhoneNumberDataGridViewTextBoxColumn.DataPropertyName = "Customer_Phone_Number";
-            this.customerPhoneNumberDataGridViewTextBoxColumn.HeaderText = "Customer Phone Number";
+            this.customerPhoneNumberDataGridViewTextBoxColumn.HeaderText = "Customer_Phone_Number";
             this.customerPhoneNumberDataGridViewTextBoxColumn.Name = "customerPhoneNumberDataGridViewTextBoxColumn";
             this.customerPhoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // customerMailDataGridViewTextBoxColumn
             // 
             this.customerMailDataGridViewTextBoxColumn.DataPropertyName = "Customer_Mail";
-            this.customerMailDataGridViewTextBoxColumn.HeaderText = "Customer Mail";
+            this.customerMailDataGridViewTextBoxColumn.HeaderText = "Customer_Mail";
             this.customerMailDataGridViewTextBoxColumn.Name = "customerMailDataGridViewTextBoxColumn";
             this.customerMailDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // customerReceiptNumberDataGridViewTextBoxColumn
             // 
             this.customerReceiptNumberDataGridViewTextBoxColumn.DataPropertyName = "Customer_Receipt_Number";
-            this.customerReceiptNumberDataGridViewTextBoxColumn.HeaderText = "Customer Receipt Number";
+            this.customerReceiptNumberDataGridViewTextBoxColumn.HeaderText = "Customer_Receipt_Number";
             this.customerReceiptNumberDataGridViewTextBoxColumn.Name = "customerReceiptNumberDataGridViewTextBoxColumn";
             this.customerReceiptNumberDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -687,7 +685,7 @@
             // courierTypeDataGridViewTextBoxColumn
             // 
             this.courierTypeDataGridViewTextBoxColumn.DataPropertyName = "Courier_Type";
-            this.courierTypeDataGridViewTextBoxColumn.HeaderText = "Courier Type";
+            this.courierTypeDataGridViewTextBoxColumn.HeaderText = "Courier_Type";
             this.courierTypeDataGridViewTextBoxColumn.Name = "courierTypeDataGridViewTextBoxColumn";
             this.courierTypeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -701,21 +699,16 @@
             // deliveryManDataGridViewTextBoxColumn
             // 
             this.deliveryManDataGridViewTextBoxColumn.DataPropertyName = "Delivery_Man";
-            this.deliveryManDataGridViewTextBoxColumn.HeaderText = "Delivery Man";
+            this.deliveryManDataGridViewTextBoxColumn.HeaderText = "Delivery_Man";
             this.deliveryManDataGridViewTextBoxColumn.Name = "deliveryManDataGridViewTextBoxColumn";
             this.deliveryManDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // deliveryPhoneNumberDataGridViewTextBoxColumn
             // 
             this.deliveryPhoneNumberDataGridViewTextBoxColumn.DataPropertyName = "Delivery_Phone_Number";
-            this.deliveryPhoneNumberDataGridViewTextBoxColumn.HeaderText = "Delivery Phone Number";
+            this.deliveryPhoneNumberDataGridViewTextBoxColumn.HeaderText = "Delivery_Phone_Number";
             this.deliveryPhoneNumberDataGridViewTextBoxColumn.Name = "deliveryPhoneNumberDataGridViewTextBoxColumn";
             this.deliveryPhoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // deliveryBindingSource1
-            // 
-            this.deliveryBindingSource1.DataMember = "delivery";
-            this.deliveryBindingSource1.DataSource = this.courierDataSet1;
             // 
             // DeliveryDetails
             // 
@@ -764,10 +757,9 @@
             this.Name = "DeliveryDetails";
             this.Text = "DeliveryDetails";
             this.Load += new System.EventHandler(this.DeliveryDetails_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.deliveryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.courierDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deliveryBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courierDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deliveryBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -789,9 +781,6 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Button btndelete;
         private System.Windows.Forms.Button button1;
-        private courierDataSet1 courierDataSet1;
-        private System.Windows.Forms.BindingSource deliveryBindingSource;
-        private courierDataSet1TableAdapters.deliveryTableAdapter deliveryTableAdapter;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.TextBox textBox9;
@@ -816,7 +805,9 @@
         private System.Windows.Forms.Button refreshbtn;
         private System.Windows.Forms.DateTimePicker textBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource deliveryBindingSource1;
+        private courierDataSet1 courierDataSet1;
+        private System.Windows.Forms.BindingSource deliveryBindingSource;
+        private courierDataSet1TableAdapters.deliveryTableAdapter deliveryTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn senderNameDataGridViewTextBoxColumn;

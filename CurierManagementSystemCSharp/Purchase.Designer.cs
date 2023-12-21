@@ -1376,7 +1376,7 @@ namespace CurierManagementSystemCSharp.PurchaseTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Purchase] WHERE (([Id] = @Original_Id) AND ((@IsNull_Date = 1 AND [Date] IS NULL) OR ([Date] = @Original_Date)) AND ((@IsNull_Customer_Name = 1 AND [Customer_Name] IS NULL) OR ([Customer_Name] = @Original_Customer_Name)) AND ((@IsNull_Customer_Phone_Number = 1 AND [Customer_Phone_Number] IS NULL) OR ([Customer_Phone_Number] = @Original_Customer_Phone_Number)) AND ((@IsNull_Address = 1 AND [Address] IS NULL) OR ([Address] = @Original_Address)) AND ((@IsNull_Email = 1 AND [Email] IS NULL) OR ([Email] = @Original_Email)) AND ((@IsNull_Item_Name = 1 AND [Item_Name] IS NULL) OR ([Item_Name] = @Original_Item_Name)) AND ((@IsNull_Quantity = 1 AND [Quantity] IS NULL) OR ([Quantity] = @Original_Quantity)) AND ((@IsNull_Unit = 1 AND [Unit] IS NULL) OR ([Unit] = @Original_Unit)) AND ((@IsNull_Price = 1 AND [Price] IS NULL) OR ([Price] = @Original_Price)) AND ((@IsNull_Discount = 1 AND [Discount] IS NULL) OR ([Discount] = @Original_Discount)) AND ((@IsNull_Total_Amount = 1 AND [Total_Amount] IS NULL) OR ([Total_Amount] = @Original_Total_Amount)) AND ((@IsNull_Sub_Total = 1 AND [Sub_Total] IS NULL) OR ([Sub_Total] = @Original_Sub_Total)) AND ((@IsNull_VAT = 1 AND [VAT] IS NULL) OR ([VAT] = @Original_VAT)) AND ((@IsNull_Amout_VAT = 1 AND [Amout_VAT] IS NULL) OR ([Amout_VAT] = @Original_Amout_VAT)) AND ((@IsNull_Grand_Total = 1 AND [Grand_Total] IS NULL) OR ([Grand_Total] = @Original_Grand_Total)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Purchase] WHERE (([Id] = @Original_Id) AND ((@IsNull_Date = 1 AND [Date] IS NULL) OR ([Date] = @Original_Date)) AND ((@IsNull_Customer_Name = 1 AND [Customer_Name] IS NULL) OR ([Customer_Name] = @Original_Customer_Name)) AND ((@IsNull_Customer_Phone_Number = 1 AND [Customer_Phone_Number] IS NULL) OR ([Customer_Phone_Number] = @Original_Customer_Phone_Number)) AND ((@IsNull_Address = 1 AND [Address] IS NULL) OR ([Address] = @Original_Address)) AND ((@IsNull_Email = 1 AND [Email] IS NULL) OR ([Email] = @Original_Email)) AND ((@IsNull_Item_Name = 1 AND [Item_Name] IS NULL) OR ([Item_Name] = @Original_Item_Name)) AND ((@IsNull_Quantity = 1 AND [Quantity] IS NULL) OR ([Quantity] = @Original_Quantity)) AND ((@IsNull_Unit = 1 AND [Unit] IS NULL) OR ([Unit] = @Original_Unit)) AND ((@IsNull_Price = 1 AND [Price] IS NULL) OR ([Price] = @Original_Price)) AND ((@IsNull_Discount = 1 AND [Discount] IS NULL) OR ([Discount] = @Original_Discount)) AND ((@IsNull_Total_Amount = 1 AND [Total_Amount] IS NULL) OR ([Total_Amount] = @Original_Total_Amount)) AND ((@IsNull_Sub_Total = 1 AND [Sub_Total] IS NULL) OR ([Sub_Total] = @Original_Sub_Total)) AND ((@IsNull_VAT = 1 AND [VAT] IS NULL) OR ([VAT] = @Original_VAT)) AND ((@IsNull_Amout_VAT = 1 AND [Amout_VAT] IS NULL) OR ([Amout_VAT] = @Original_Amout_VAT)) AND ((@IsNull_Grand_Total = 1 AND [Grand_Total] IS NULL) OR ([Grand_Total] = @Original_Grand_Total)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1411,7 +1411,7 @@ namespace CurierManagementSystemCSharp.PurchaseTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Grand_Total", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Grand_Total", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Purchase] ([Date], [Customer_Name], [Customer_Phone_Number], [Address], [Email], [Item_Name], [Quantity], [Unit], [Price], [Discount], [Total_Amount], [Sub_Total], [VAT], [Amout_VAT], [Grand_Total]) VALUES (@Date, @Customer_Name, @Customer_Phone_Number, @Address, @Email, @Item_Name, @Quantity, @Unit, @Price, @Discount, @Total_Amount, @Sub_Total, @VAT, @Amout_VAT, @Grand_Total);
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Purchase] ([Date], [Customer_Name], [Customer_Phone_Number], [Address], [Email], [Item_Name], [Quantity], [Unit], [Price], [Discount], [Total_Amount], [Sub_Total], [VAT], [Amout_VAT], [Grand_Total]) VALUES (@Date, @Customer_Name, @Customer_Phone_Number, @Address, @Email, @Item_Name, @Quantity, @Unit, @Price, @Discount, @Total_Amount, @Sub_Total, @VAT, @Amout_VAT, @Grand_Total);
 SELECT Id, Date, Customer_Name, Customer_Phone_Number, Address, Email, Item_Name, Quantity, Unit, Price, Discount, Total_Amount, Sub_Total, VAT, Amout_VAT, Grand_Total FROM Purchase WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1431,31 +1431,31 @@ SELECT Id, Date, Customer_Name, Customer_Phone_Number, Address, Email, Item_Name
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Grand_Total", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Grand_Total", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [Purchase] SET [Date] = @Date, [Customer_Name] = @Customer_Name, [Customer" +
-                "_Phone_Number] = @Customer_Phone_Number, [Address] = @Address, [Email] = @Email," +
-                " [Item_Name] = @Item_Name, [Quantity] = @Quantity, [Unit] = @Unit, [Price] = @Pr" +
-                "ice, [Discount] = @Discount, [Total_Amount] = @Total_Amount, [Sub_Total] = @Sub_" +
-                "Total, [VAT] = @VAT, [Amout_VAT] = @Amout_VAT, [Grand_Total] = @Grand_Total WHER" +
-                "E (([Id] = @Original_Id) AND ((@IsNull_Date = 1 AND [Date] IS NULL) OR ([Date] =" +
-                " @Original_Date)) AND ((@IsNull_Customer_Name = 1 AND [Customer_Name] IS NULL) O" +
-                "R ([Customer_Name] = @Original_Customer_Name)) AND ((@IsNull_Customer_Phone_Numb" +
-                "er = 1 AND [Customer_Phone_Number] IS NULL) OR ([Customer_Phone_Number] = @Origi" +
-                "nal_Customer_Phone_Number)) AND ((@IsNull_Address = 1 AND [Address] IS NULL) OR " +
-                "([Address] = @Original_Address)) AND ((@IsNull_Email = 1 AND [Email] IS NULL) OR" +
-                " ([Email] = @Original_Email)) AND ((@IsNull_Item_Name = 1 AND [Item_Name] IS NUL" +
-                "L) OR ([Item_Name] = @Original_Item_Name)) AND ((@IsNull_Quantity = 1 AND [Quant" +
-                "ity] IS NULL) OR ([Quantity] = @Original_Quantity)) AND ((@IsNull_Unit = 1 AND [" +
-                "Unit] IS NULL) OR ([Unit] = @Original_Unit)) AND ((@IsNull_Price = 1 AND [Price]" +
-                " IS NULL) OR ([Price] = @Original_Price)) AND ((@IsNull_Discount = 1 AND [Discou" +
-                "nt] IS NULL) OR ([Discount] = @Original_Discount)) AND ((@IsNull_Total_Amount = " +
-                "1 AND [Total_Amount] IS NULL) OR ([Total_Amount] = @Original_Total_Amount)) AND " +
-                "((@IsNull_Sub_Total = 1 AND [Sub_Total] IS NULL) OR ([Sub_Total] = @Original_Sub" +
-                "_Total)) AND ((@IsNull_VAT = 1 AND [VAT] IS NULL) OR ([VAT] = @Original_VAT)) AN" +
-                "D ((@IsNull_Amout_VAT = 1 AND [Amout_VAT] IS NULL) OR ([Amout_VAT] = @Original_A" +
-                "mout_VAT)) AND ((@IsNull_Grand_Total = 1 AND [Grand_Total] IS NULL) OR ([Grand_T" +
-                "otal] = @Original_Grand_Total)));\r\nSELECT Id, Date, Customer_Name, Customer_Phon" +
-                "e_Number, Address, Email, Item_Name, Quantity, Unit, Price, Discount, Total_Amou" +
-                "nt, Sub_Total, VAT, Amout_VAT, Grand_Total FROM Purchase WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Purchase] SET [Date] = @Date, [Customer_Name] = @Customer_Name, [Cu" +
+                "stomer_Phone_Number] = @Customer_Phone_Number, [Address] = @Address, [Email] = @" +
+                "Email, [Item_Name] = @Item_Name, [Quantity] = @Quantity, [Unit] = @Unit, [Price]" +
+                " = @Price, [Discount] = @Discount, [Total_Amount] = @Total_Amount, [Sub_Total] =" +
+                " @Sub_Total, [VAT] = @VAT, [Amout_VAT] = @Amout_VAT, [Grand_Total] = @Grand_Tota" +
+                "l WHERE (([Id] = @Original_Id) AND ((@IsNull_Date = 1 AND [Date] IS NULL) OR ([D" +
+                "ate] = @Original_Date)) AND ((@IsNull_Customer_Name = 1 AND [Customer_Name] IS N" +
+                "ULL) OR ([Customer_Name] = @Original_Customer_Name)) AND ((@IsNull_Customer_Phon" +
+                "e_Number = 1 AND [Customer_Phone_Number] IS NULL) OR ([Customer_Phone_Number] = " +
+                "@Original_Customer_Phone_Number)) AND ((@IsNull_Address = 1 AND [Address] IS NUL" +
+                "L) OR ([Address] = @Original_Address)) AND ((@IsNull_Email = 1 AND [Email] IS NU" +
+                "LL) OR ([Email] = @Original_Email)) AND ((@IsNull_Item_Name = 1 AND [Item_Name] " +
+                "IS NULL) OR ([Item_Name] = @Original_Item_Name)) AND ((@IsNull_Quantity = 1 AND " +
+                "[Quantity] IS NULL) OR ([Quantity] = @Original_Quantity)) AND ((@IsNull_Unit = 1" +
+                " AND [Unit] IS NULL) OR ([Unit] = @Original_Unit)) AND ((@IsNull_Price = 1 AND [" +
+                "Price] IS NULL) OR ([Price] = @Original_Price)) AND ((@IsNull_Discount = 1 AND [" +
+                "Discount] IS NULL) OR ([Discount] = @Original_Discount)) AND ((@IsNull_Total_Amo" +
+                "unt = 1 AND [Total_Amount] IS NULL) OR ([Total_Amount] = @Original_Total_Amount)" +
+                ") AND ((@IsNull_Sub_Total = 1 AND [Sub_Total] IS NULL) OR ([Sub_Total] = @Origin" +
+                "al_Sub_Total)) AND ((@IsNull_VAT = 1 AND [VAT] IS NULL) OR ([VAT] = @Original_VA" +
+                "T)) AND ((@IsNull_Amout_VAT = 1 AND [Amout_VAT] IS NULL) OR ([Amout_VAT] = @Orig" +
+                "inal_Amout_VAT)) AND ((@IsNull_Grand_Total = 1 AND [Grand_Total] IS NULL) OR ([G" +
+                "rand_Total] = @Original_Grand_Total)));\r\nSELECT Id, Date, Customer_Name, Custome" +
+                "r_Phone_Number, Address, Email, Item_Name, Quantity, Unit, Price, Discount, Tota" +
+                "l_Amount, Sub_Total, VAT, Amout_VAT, Grand_Total FROM Purchase WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Customer_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Customer_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1521,7 +1521,7 @@ SELECT Id, Date, Customer_Name, Customer_Phone_Number, Address, Email, Item_Name
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Date, Customer_Name, Customer_Phone_Number, Address, Email, Item_Name," +
                 " Quantity, Unit, Price, Discount, Total_Amount, Sub_Total, VAT, Amout_VAT, Grand" +
-                "_Total FROM Purchase";
+                "_Total FROM dbo.Purchase";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

@@ -46,27 +46,6 @@
             this.btnupdate = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.consignIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerPhoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.consigneeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.consigneeaddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.consigneenumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pinCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.consignmentTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.weightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shipmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceUnitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.taxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountChargedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.consignBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.courierDataSet = new CurierManagementSystemCSharp.courierDataSet();
             this.label10 = new System.Windows.Forms.Label();
             this.amountchargedtxt = new System.Windows.Forms.TextBox();
             this.cnnumbertxt = new System.Windows.Forms.TextBox();
@@ -121,11 +100,32 @@
             this.label6 = new System.Windows.Forms.Label();
             this.customernametxt = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.consignTableAdapter = new CurierManagementSystemCSharp.courierDataSetTableAdapters.consignTableAdapter();
             this.txtphonenumber = new System.Windows.Forms.TextBox();
+            this.courierDataSet = new CurierManagementSystemCSharp.courierDataSet();
+            this.consignBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.consignTableAdapter = new CurierManagementSystemCSharp.courierDataSetTableAdapters.consignTableAdapter();
+            this.consignIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerPhoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.consigneeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.consigneeaddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.consigneenumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cNNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pinCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.consignmentTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.weightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shipmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceUnitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountChargedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.consignBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courierDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consignBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -339,149 +339,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1182, 237);
             this.dataGridView1.TabIndex = 33;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // consignIdDataGridViewTextBoxColumn
-            // 
-            this.consignIdDataGridViewTextBoxColumn.DataPropertyName = "consignId";
-            this.consignIdDataGridViewTextBoxColumn.HeaderText = "consignId";
-            this.consignIdDataGridViewTextBoxColumn.Name = "consignIdDataGridViewTextBoxColumn";
-            this.consignIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // customerNameDataGridViewTextBoxColumn
-            // 
-            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "Customer_Name";
-            this.customerNameDataGridViewTextBoxColumn.HeaderText = "Customer Name";
-            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
-            this.customerNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // customerPhoneNumberDataGridViewTextBoxColumn
-            // 
-            this.customerPhoneNumberDataGridViewTextBoxColumn.DataPropertyName = "Customer_Phone_Number";
-            this.customerPhoneNumberDataGridViewTextBoxColumn.HeaderText = "Customer Phone Number";
-            this.customerPhoneNumberDataGridViewTextBoxColumn.Name = "customerPhoneNumberDataGridViewTextBoxColumn";
-            this.customerPhoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // customerAddressDataGridViewTextBoxColumn
-            // 
-            this.customerAddressDataGridViewTextBoxColumn.DataPropertyName = "Customer_Address";
-            this.customerAddressDataGridViewTextBoxColumn.HeaderText = "Customer Address";
-            this.customerAddressDataGridViewTextBoxColumn.Name = "customerAddressDataGridViewTextBoxColumn";
-            this.customerAddressDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // consigneeNameDataGridViewTextBoxColumn
-            // 
-            this.consigneeNameDataGridViewTextBoxColumn.DataPropertyName = "Consignee_Name";
-            this.consigneeNameDataGridViewTextBoxColumn.HeaderText = "Consignee Name";
-            this.consigneeNameDataGridViewTextBoxColumn.Name = "consigneeNameDataGridViewTextBoxColumn";
-            this.consigneeNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // consigneeaddressDataGridViewTextBoxColumn
-            // 
-            this.consigneeaddressDataGridViewTextBoxColumn.DataPropertyName = "Consignee_address";
-            this.consigneeaddressDataGridViewTextBoxColumn.HeaderText = "Consignee address";
-            this.consigneeaddressDataGridViewTextBoxColumn.Name = "consigneeaddressDataGridViewTextBoxColumn";
-            this.consigneeaddressDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // consigneenumberDataGridViewTextBoxColumn
-            // 
-            this.consigneenumberDataGridViewTextBoxColumn.DataPropertyName = "Consignee_number";
-            this.consigneenumberDataGridViewTextBoxColumn.HeaderText = "Consignee number";
-            this.consigneenumberDataGridViewTextBoxColumn.Name = "consigneenumberDataGridViewTextBoxColumn";
-            this.consigneenumberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // itemNameDataGridViewTextBoxColumn
-            // 
-            this.itemNameDataGridViewTextBoxColumn.DataPropertyName = "Item_Name";
-            this.itemNameDataGridViewTextBoxColumn.HeaderText = "Item Name";
-            this.itemNameDataGridViewTextBoxColumn.Name = "itemNameDataGridViewTextBoxColumn";
-            this.itemNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cNNumberDataGridViewTextBoxColumn
-            // 
-            this.cNNumberDataGridViewTextBoxColumn.DataPropertyName = "CN_Number";
-            this.cNNumberDataGridViewTextBoxColumn.HeaderText = "CN Number";
-            this.cNNumberDataGridViewTextBoxColumn.Name = "cNNumberDataGridViewTextBoxColumn";
-            this.cNNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pinCodeDataGridViewTextBoxColumn
-            // 
-            this.pinCodeDataGridViewTextBoxColumn.DataPropertyName = "Pin_Code";
-            this.pinCodeDataGridViewTextBoxColumn.HeaderText = "Pin Code";
-            this.pinCodeDataGridViewTextBoxColumn.Name = "pinCodeDataGridViewTextBoxColumn";
-            this.pinCodeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // consignmentTypeDataGridViewTextBoxColumn
-            // 
-            this.consignmentTypeDataGridViewTextBoxColumn.DataPropertyName = "Consignment_Type";
-            this.consignmentTypeDataGridViewTextBoxColumn.HeaderText = "Consignment Type";
-            this.consignmentTypeDataGridViewTextBoxColumn.Name = "consignmentTypeDataGridViewTextBoxColumn";
-            this.consignmentTypeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // weightDataGridViewTextBoxColumn
-            // 
-            this.weightDataGridViewTextBoxColumn.DataPropertyName = "Weight";
-            this.weightDataGridViewTextBoxColumn.HeaderText = "Weight";
-            this.weightDataGridViewTextBoxColumn.Name = "weightDataGridViewTextBoxColumn";
-            this.weightDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // shipmentDataGridViewTextBoxColumn
-            // 
-            this.shipmentDataGridViewTextBoxColumn.DataPropertyName = "Shipment";
-            this.shipmentDataGridViewTextBoxColumn.HeaderText = "Shipment";
-            this.shipmentDataGridViewTextBoxColumn.Name = "shipmentDataGridViewTextBoxColumn";
-            this.shipmentDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // unitDataGridViewTextBoxColumn
-            // 
-            this.unitDataGridViewTextBoxColumn.DataPropertyName = "Unit";
-            this.unitDataGridViewTextBoxColumn.HeaderText = "Unit";
-            this.unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
-            this.unitDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceUnitDataGridViewTextBoxColumn
-            // 
-            this.priceUnitDataGridViewTextBoxColumn.DataPropertyName = "Price_Unit";
-            this.priceUnitDataGridViewTextBoxColumn.HeaderText = "Price Unit";
-            this.priceUnitDataGridViewTextBoxColumn.Name = "priceUnitDataGridViewTextBoxColumn";
-            this.priceUnitDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // taxDataGridViewTextBoxColumn
-            // 
-            this.taxDataGridViewTextBoxColumn.DataPropertyName = "Tax";
-            this.taxDataGridViewTextBoxColumn.HeaderText = "Tax";
-            this.taxDataGridViewTextBoxColumn.Name = "taxDataGridViewTextBoxColumn";
-            this.taxDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // amountChargedDataGridViewTextBoxColumn
-            // 
-            this.amountChargedDataGridViewTextBoxColumn.DataPropertyName = "Amount_Charged";
-            this.amountChargedDataGridViewTextBoxColumn.HeaderText = "Amount Charged";
-            this.amountChargedDataGridViewTextBoxColumn.Name = "amountChargedDataGridViewTextBoxColumn";
-            this.amountChargedDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // consignBindingSource
-            // 
-            this.consignBindingSource.DataMember = "consign";
-            this.consignBindingSource.DataSource = this.courierDataSet;
-            // 
-            // courierDataSet
-            // 
-            this.courierDataSet.DataSetName = "courierDataSet";
-            this.courierDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label10
             // 
@@ -1013,10 +870,6 @@
             this.label21.TabIndex = 86;
             this.label21.Text = "CONSIGNOR : ";
             // 
-            // consignTableAdapter
-            // 
-            this.consignTableAdapter.ClearBeforeFill = true;
-            // 
             // txtphonenumber
             // 
             this.txtphonenumber.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -1026,6 +879,153 @@
             this.txtphonenumber.Name = "txtphonenumber";
             this.txtphonenumber.Size = new System.Drawing.Size(222, 32);
             this.txtphonenumber.TabIndex = 87;
+            // 
+            // courierDataSet
+            // 
+            this.courierDataSet.DataSetName = "courierDataSet";
+            this.courierDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // consignBindingSource
+            // 
+            this.consignBindingSource.DataMember = "consign";
+            this.consignBindingSource.DataSource = this.courierDataSet;
+            // 
+            // consignTableAdapter
+            // 
+            this.consignTableAdapter.ClearBeforeFill = true;
+            // 
+            // consignIdDataGridViewTextBoxColumn
+            // 
+            this.consignIdDataGridViewTextBoxColumn.DataPropertyName = "consignId";
+            this.consignIdDataGridViewTextBoxColumn.HeaderText = "consignId";
+            this.consignIdDataGridViewTextBoxColumn.Name = "consignIdDataGridViewTextBoxColumn";
+            this.consignIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // customerNameDataGridViewTextBoxColumn
+            // 
+            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "Customer_Name";
+            this.customerNameDataGridViewTextBoxColumn.HeaderText = "Customer_Name";
+            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
+            this.customerNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // customerPhoneNumberDataGridViewTextBoxColumn
+            // 
+            this.customerPhoneNumberDataGridViewTextBoxColumn.DataPropertyName = "Customer_Phone_Number";
+            this.customerPhoneNumberDataGridViewTextBoxColumn.HeaderText = "Customer_Phone_Number";
+            this.customerPhoneNumberDataGridViewTextBoxColumn.Name = "customerPhoneNumberDataGridViewTextBoxColumn";
+            this.customerPhoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // customerAddressDataGridViewTextBoxColumn
+            // 
+            this.customerAddressDataGridViewTextBoxColumn.DataPropertyName = "Customer_Address";
+            this.customerAddressDataGridViewTextBoxColumn.HeaderText = "Customer_Address";
+            this.customerAddressDataGridViewTextBoxColumn.Name = "customerAddressDataGridViewTextBoxColumn";
+            this.customerAddressDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // consigneeNameDataGridViewTextBoxColumn
+            // 
+            this.consigneeNameDataGridViewTextBoxColumn.DataPropertyName = "Consignee_Name";
+            this.consigneeNameDataGridViewTextBoxColumn.HeaderText = "Consignee_Name";
+            this.consigneeNameDataGridViewTextBoxColumn.Name = "consigneeNameDataGridViewTextBoxColumn";
+            this.consigneeNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // consigneeaddressDataGridViewTextBoxColumn
+            // 
+            this.consigneeaddressDataGridViewTextBoxColumn.DataPropertyName = "Consignee_address";
+            this.consigneeaddressDataGridViewTextBoxColumn.HeaderText = "Consignee_address";
+            this.consigneeaddressDataGridViewTextBoxColumn.Name = "consigneeaddressDataGridViewTextBoxColumn";
+            this.consigneeaddressDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // consigneenumberDataGridViewTextBoxColumn
+            // 
+            this.consigneenumberDataGridViewTextBoxColumn.DataPropertyName = "Consignee_number";
+            this.consigneenumberDataGridViewTextBoxColumn.HeaderText = "Consignee_number";
+            this.consigneenumberDataGridViewTextBoxColumn.Name = "consigneenumberDataGridViewTextBoxColumn";
+            this.consigneenumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // itemNameDataGridViewTextBoxColumn
+            // 
+            this.itemNameDataGridViewTextBoxColumn.DataPropertyName = "Item_Name";
+            this.itemNameDataGridViewTextBoxColumn.HeaderText = "Item_Name";
+            this.itemNameDataGridViewTextBoxColumn.Name = "itemNameDataGridViewTextBoxColumn";
+            this.itemNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cNNumberDataGridViewTextBoxColumn
+            // 
+            this.cNNumberDataGridViewTextBoxColumn.DataPropertyName = "CN_Number";
+            this.cNNumberDataGridViewTextBoxColumn.HeaderText = "CN_Number";
+            this.cNNumberDataGridViewTextBoxColumn.Name = "cNNumberDataGridViewTextBoxColumn";
+            this.cNNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pinCodeDataGridViewTextBoxColumn
+            // 
+            this.pinCodeDataGridViewTextBoxColumn.DataPropertyName = "Pin_Code";
+            this.pinCodeDataGridViewTextBoxColumn.HeaderText = "Pin_Code";
+            this.pinCodeDataGridViewTextBoxColumn.Name = "pinCodeDataGridViewTextBoxColumn";
+            this.pinCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // consignmentTypeDataGridViewTextBoxColumn
+            // 
+            this.consignmentTypeDataGridViewTextBoxColumn.DataPropertyName = "Consignment_Type";
+            this.consignmentTypeDataGridViewTextBoxColumn.HeaderText = "Consignment_Type";
+            this.consignmentTypeDataGridViewTextBoxColumn.Name = "consignmentTypeDataGridViewTextBoxColumn";
+            this.consignmentTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // weightDataGridViewTextBoxColumn
+            // 
+            this.weightDataGridViewTextBoxColumn.DataPropertyName = "Weight";
+            this.weightDataGridViewTextBoxColumn.HeaderText = "Weight";
+            this.weightDataGridViewTextBoxColumn.Name = "weightDataGridViewTextBoxColumn";
+            this.weightDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // shipmentDataGridViewTextBoxColumn
+            // 
+            this.shipmentDataGridViewTextBoxColumn.DataPropertyName = "Shipment";
+            this.shipmentDataGridViewTextBoxColumn.HeaderText = "Shipment";
+            this.shipmentDataGridViewTextBoxColumn.Name = "shipmentDataGridViewTextBoxColumn";
+            this.shipmentDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // unitDataGridViewTextBoxColumn
+            // 
+            this.unitDataGridViewTextBoxColumn.DataPropertyName = "Unit";
+            this.unitDataGridViewTextBoxColumn.HeaderText = "Unit";
+            this.unitDataGridViewTextBoxColumn.Name = "unitDataGridViewTextBoxColumn";
+            this.unitDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceUnitDataGridViewTextBoxColumn
+            // 
+            this.priceUnitDataGridViewTextBoxColumn.DataPropertyName = "Price_Unit";
+            this.priceUnitDataGridViewTextBoxColumn.HeaderText = "Price_Unit";
+            this.priceUnitDataGridViewTextBoxColumn.Name = "priceUnitDataGridViewTextBoxColumn";
+            this.priceUnitDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // taxDataGridViewTextBoxColumn
+            // 
+            this.taxDataGridViewTextBoxColumn.DataPropertyName = "Tax";
+            this.taxDataGridViewTextBoxColumn.HeaderText = "Tax";
+            this.taxDataGridViewTextBoxColumn.Name = "taxDataGridViewTextBoxColumn";
+            this.taxDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // amountChargedDataGridViewTextBoxColumn
+            // 
+            this.amountChargedDataGridViewTextBoxColumn.DataPropertyName = "Amount_Charged";
+            this.amountChargedDataGridViewTextBoxColumn.HeaderText = "Amount_Charged";
+            this.amountChargedDataGridViewTextBoxColumn.Name = "amountChargedDataGridViewTextBoxColumn";
+            this.amountChargedDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Consignment
             // 
@@ -1082,8 +1082,8 @@
             this.Load += new System.EventHandler(this.Consignment_Load);
             this.Resize += new System.EventHandler(this.Consignment_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.consignBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courierDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consignBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1159,6 +1159,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox customernametxt;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtphonenumber;
         private courierDataSet courierDataSet;
         private System.Windows.Forms.BindingSource consignBindingSource;
         private courierDataSetTableAdapters.consignTableAdapter consignTableAdapter;
@@ -1181,6 +1182,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn priceUnitDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn taxDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountChargedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox txtphonenumber;
     }
 }
