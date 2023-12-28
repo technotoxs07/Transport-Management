@@ -44,6 +44,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.customerpaymentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customer_payement = new CurierManagementSystemCSharp.customer_payement();
             this.panel1 = new System.Windows.Forms.Panel();
             this.branchnametxt = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -56,23 +58,21 @@
             this.btnadd = new System.Windows.Forms.Button();
             this.customernumbertxt = new System.Windows.Forms.ComboBox();
             this.btnupdate = new System.Windows.Forms.Button();
-            this.customer_payement = new CurierManagementSystemCSharp.customer_payement();
-            this.customerpaymentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customer_paymentTableAdapter = new CurierManagementSystemCSharp.customer_payementTableAdapters.Customer_paymentTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customeNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountChargedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountPaidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accountHolderNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accountNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bankNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.branchDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Customer_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Custome_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount_Charged = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount_Paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Account_Holder_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Account_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bank_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.branch = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customer_payement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerpaymentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customer_payement)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // radioButton1
@@ -216,14 +216,14 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn,
-            this.customerNameDataGridViewTextBoxColumn,
-            this.customeNumberDataGridViewTextBoxColumn,
-            this.amountChargedDataGridViewTextBoxColumn,
-            this.amountPaidDataGridViewTextBoxColumn,
-            this.accountHolderNameDataGridViewTextBoxColumn,
-            this.accountNumberDataGridViewTextBoxColumn,
-            this.bankNameDataGridViewTextBoxColumn,
-            this.branchDataGridViewTextBoxColumn});
+            this.Customer_Name,
+            this.Custome_Number,
+            this.Amount_Charged,
+            this.Amount_Paid,
+            this.Account_Holder_Name,
+            this.Account_Number,
+            this.Bank_Name,
+            this.branch});
             this.dataGridView1.DataSource = this.customerpaymentBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -248,6 +248,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(1182, 230);
             this.dataGridView1.TabIndex = 70;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // customerpaymentBindingSource
+            // 
+            this.customerpaymentBindingSource.DataMember = "Customer_payment";
+            this.customerpaymentBindingSource.DataSource = this.customer_payement;
+            // 
+            // customer_payement
+            // 
+            this.customer_payement.DataSetName = "customer_payement";
+            this.customer_payement.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel1
             // 
@@ -431,16 +441,6 @@
             this.btnupdate.UseVisualStyleBackColor = false;
             this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
-            // customer_payement
-            // 
-            this.customer_payement.DataSetName = "customer_payement";
-            this.customer_payement.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // customerpaymentBindingSource
-            // 
-            this.customerpaymentBindingSource.DataMember = "Customer_payment";
-            this.customerpaymentBindingSource.DataSource = this.customer_payement;
-            // 
             // customer_paymentTableAdapter
             // 
             this.customer_paymentTableAdapter.ClearBeforeFill = true;
@@ -459,61 +459,61 @@
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
             this.dateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // customerNameDataGridViewTextBoxColumn
+            // Customer_Name
             // 
-            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "Customer_Name";
-            this.customerNameDataGridViewTextBoxColumn.HeaderText = "Customer_Name";
-            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
-            this.customerNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Customer_Name.DataPropertyName = "Customer_Name";
+            this.Customer_Name.HeaderText = "Customer Name";
+            this.Customer_Name.Name = "Customer_Name";
+            this.Customer_Name.ReadOnly = true;
             // 
-            // customeNumberDataGridViewTextBoxColumn
+            // Custome_Number
             // 
-            this.customeNumberDataGridViewTextBoxColumn.DataPropertyName = "Custome_Number";
-            this.customeNumberDataGridViewTextBoxColumn.HeaderText = "Custome_Number";
-            this.customeNumberDataGridViewTextBoxColumn.Name = "customeNumberDataGridViewTextBoxColumn";
-            this.customeNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Custome_Number.DataPropertyName = "Custome_Number";
+            this.Custome_Number.HeaderText = "Custome Number";
+            this.Custome_Number.Name = "Custome_Number";
+            this.Custome_Number.ReadOnly = true;
             // 
-            // amountChargedDataGridViewTextBoxColumn
+            // Amount_Charged
             // 
-            this.amountChargedDataGridViewTextBoxColumn.DataPropertyName = "Amount_Charged";
-            this.amountChargedDataGridViewTextBoxColumn.HeaderText = "Amount_Charged";
-            this.amountChargedDataGridViewTextBoxColumn.Name = "amountChargedDataGridViewTextBoxColumn";
-            this.amountChargedDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Amount_Charged.DataPropertyName = "Amount_Charged";
+            this.Amount_Charged.HeaderText = "Amount Charged";
+            this.Amount_Charged.Name = "Amount_Charged";
+            this.Amount_Charged.ReadOnly = true;
             // 
-            // amountPaidDataGridViewTextBoxColumn
+            // Amount_Paid
             // 
-            this.amountPaidDataGridViewTextBoxColumn.DataPropertyName = "Amount_Paid";
-            this.amountPaidDataGridViewTextBoxColumn.HeaderText = "Amount_Paid";
-            this.amountPaidDataGridViewTextBoxColumn.Name = "amountPaidDataGridViewTextBoxColumn";
-            this.amountPaidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Amount_Paid.DataPropertyName = "Amount_Paid";
+            this.Amount_Paid.HeaderText = "Amount Paid";
+            this.Amount_Paid.Name = "Amount_Paid";
+            this.Amount_Paid.ReadOnly = true;
             // 
-            // accountHolderNameDataGridViewTextBoxColumn
+            // Account_Holder_Name
             // 
-            this.accountHolderNameDataGridViewTextBoxColumn.DataPropertyName = "Account_Holder_Name";
-            this.accountHolderNameDataGridViewTextBoxColumn.HeaderText = "Account_Holder_Name";
-            this.accountHolderNameDataGridViewTextBoxColumn.Name = "accountHolderNameDataGridViewTextBoxColumn";
-            this.accountHolderNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Account_Holder_Name.DataPropertyName = "Account_Holder_Name";
+            this.Account_Holder_Name.HeaderText = "Account Holder Name";
+            this.Account_Holder_Name.Name = "Account_Holder_Name";
+            this.Account_Holder_Name.ReadOnly = true;
             // 
-            // accountNumberDataGridViewTextBoxColumn
+            // Account_Number
             // 
-            this.accountNumberDataGridViewTextBoxColumn.DataPropertyName = "Account_Number";
-            this.accountNumberDataGridViewTextBoxColumn.HeaderText = "Account_Number";
-            this.accountNumberDataGridViewTextBoxColumn.Name = "accountNumberDataGridViewTextBoxColumn";
-            this.accountNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Account_Number.DataPropertyName = "Account_Number";
+            this.Account_Number.HeaderText = "Account Number";
+            this.Account_Number.Name = "Account_Number";
+            this.Account_Number.ReadOnly = true;
             // 
-            // bankNameDataGridViewTextBoxColumn
+            // Bank_Name
             // 
-            this.bankNameDataGridViewTextBoxColumn.DataPropertyName = "Bank_Name";
-            this.bankNameDataGridViewTextBoxColumn.HeaderText = "Bank_Name";
-            this.bankNameDataGridViewTextBoxColumn.Name = "bankNameDataGridViewTextBoxColumn";
-            this.bankNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Bank_Name.DataPropertyName = "Bank_Name";
+            this.Bank_Name.HeaderText = "Bank Name";
+            this.Bank_Name.Name = "Bank_Name";
+            this.Bank_Name.ReadOnly = true;
             // 
-            // branchDataGridViewTextBoxColumn
+            // branch
             // 
-            this.branchDataGridViewTextBoxColumn.DataPropertyName = "branch";
-            this.branchDataGridViewTextBoxColumn.HeaderText = "branch";
-            this.branchDataGridViewTextBoxColumn.Name = "branchDataGridViewTextBoxColumn";
-            this.branchDataGridViewTextBoxColumn.ReadOnly = true;
+            this.branch.DataPropertyName = "branch";
+            this.branch.HeaderText = "Branch";
+            this.branch.Name = "branch";
+            this.branch.ReadOnly = true;
             // 
             // customerpayement
             // 
@@ -539,10 +539,10 @@
             this.Text = "customerpayement";
             this.Load += new System.EventHandler(this.customerpayement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerpaymentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customer_payement)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customer_payement)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerpaymentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -579,13 +579,13 @@
         private customer_payementTableAdapters.Customer_paymentTableAdapter customer_paymentTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customeNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amountChargedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amountPaidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn accountHolderNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn accountNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bankNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn branchDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Customer_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Custome_Number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amount_Charged;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amount_Paid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Account_Holder_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Account_Number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Bank_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn branch;
     }
 }

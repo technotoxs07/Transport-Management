@@ -65,12 +65,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.itmcalculationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.itemcalculation = new CurierManagementSystemCSharp.itemcalculation();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.customernametxt = new System.Windows.Forms.TextBox();
             this.updtxt = new System.Windows.Forms.Button();
-            this.itemcalculation = new CurierManagementSystemCSharp.itemcalculation();
-            this.itmcalculationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.itmcalculationTableAdapter = new CurierManagementSystemCSharp.itemcalculationTableAdapters.ItmcalculationTableAdapter();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Item_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,8 +80,8 @@
             this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemcalculation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itmcalculationBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemcalculation)).BeginInit();
             this.SuspendLayout();
             // 
             // btnclear
@@ -467,9 +467,11 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -513,6 +515,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(661, 373);
             this.dataGridView1.TabIndex = 105;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // itmcalculationBindingSource
+            // 
+            this.itmcalculationBindingSource.DataMember = "Itmcalculation";
+            this.itmcalculationBindingSource.DataSource = this.itemcalculation;
+            // 
+            // itemcalculation
+            // 
+            this.itemcalculation.DataSetName = "itemcalculation";
+            this.itemcalculation.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button1
             // 
@@ -563,16 +575,6 @@
             this.updtxt.UseVisualStyleBackColor = false;
             this.updtxt.Click += new System.EventHandler(this.updtxt_Click);
             // 
-            // itemcalculation
-            // 
-            this.itemcalculation.DataSetName = "itemcalculation";
-            this.itemcalculation.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // itmcalculationBindingSource
-            // 
-            this.itmcalculationBindingSource.DataMember = "Itmcalculation";
-            this.itmcalculationBindingSource.DataSource = this.itemcalculation;
-            // 
             // itmcalculationTableAdapter
             // 
             this.itmcalculationTableAdapter.ClearBeforeFill = true;
@@ -580,7 +582,7 @@
             // Column1
             // 
             this.Column1.DataPropertyName = "Id";
-            this.Column1.HeaderText = "Column1";
+            this.Column1.HeaderText = "ID";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Visible = false;
@@ -588,7 +590,7 @@
             // Item_Name
             // 
             this.Item_Name.DataPropertyName = "Item_Name";
-            this.Item_Name.HeaderText = "Item_Name";
+            this.Item_Name.HeaderText = "Item Name";
             this.Item_Name.Name = "Item_Name";
             this.Item_Name.ReadOnly = true;
             // 
@@ -623,7 +625,7 @@
             // Total_Amount
             // 
             this.Total_Amount.DataPropertyName = "Total_Amount";
-            this.Total_Amount.HeaderText = "Total_Amount";
+            this.Total_Amount.HeaderText = "Total Amount";
             this.Total_Amount.Name = "Total_Amount";
             this.Total_Amount.ReadOnly = true;
             // 
@@ -673,8 +675,8 @@
             this.Text = "Purchasesss";
             this.Load += new System.EventHandler(this.Purchasesss_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemcalculation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itmcalculationBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemcalculation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -719,13 +721,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox customernametxt;
         private System.Windows.Forms.Button updtxt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itemNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unitDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn discountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalAmountDataGridViewTextBoxColumn;
         private itemcalculation itemcalculation;
         private System.Windows.Forms.BindingSource itmcalculationBindingSource;
         private itemcalculationTableAdapters.ItmcalculationTableAdapter itmcalculationTableAdapter;

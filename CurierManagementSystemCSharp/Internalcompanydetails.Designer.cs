@@ -48,20 +48,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnaddbusiness = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.add_business = new CurierManagementSystemCSharp.add_business();
             this.addbusinessBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.add_business = new CurierManagementSystemCSharp.add_business();
+            this.button3 = new System.Windows.Forms.Button();
             this.add_businessTableAdapter = new CurierManagementSystemCSharp.add_businessTableAdapters.add_businessTableAdapter();
-            this.businessidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.businessNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.businessAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telephoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.authorizeddealerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Business_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Business_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Business_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.authorized_dealer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.add_business)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addbusinessBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.add_business)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -225,7 +225,8 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
@@ -239,13 +240,13 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.businessidDataGridViewTextBoxColumn,
-            this.businessNameDataGridViewTextBoxColumn,
-            this.businessAddressDataGridViewTextBoxColumn,
-            this.telephoneDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.authorizeddealerDataGridViewTextBoxColumn,
-            this.panDataGridViewTextBoxColumn});
+            this.Business_id,
+            this.Business_Name,
+            this.Business_Address,
+            this.telephone,
+            this.email,
+            this.authorized_dealer,
+            this.pan});
             this.dataGridView1.DataSource = this.addbusinessBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -271,6 +272,16 @@
             this.dataGridView1.TabIndex = 82;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // addbusinessBindingSource
+            // 
+            this.addbusinessBindingSource.DataMember = "add_business";
+            this.addbusinessBindingSource.DataSource = this.add_business;
+            // 
+            // add_business
+            // 
+            this.add_business.DataSetName = "add_business";
+            this.add_business.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -286,68 +297,58 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // add_business
-            // 
-            this.add_business.DataSetName = "add_business";
-            this.add_business.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // addbusinessBindingSource
-            // 
-            this.addbusinessBindingSource.DataMember = "add_business";
-            this.addbusinessBindingSource.DataSource = this.add_business;
-            // 
             // add_businessTableAdapter
             // 
             this.add_businessTableAdapter.ClearBeforeFill = true;
             // 
-            // businessidDataGridViewTextBoxColumn
+            // Business_id
             // 
-            this.businessidDataGridViewTextBoxColumn.DataPropertyName = "Business_id";
-            this.businessidDataGridViewTextBoxColumn.HeaderText = "Business_id";
-            this.businessidDataGridViewTextBoxColumn.Name = "businessidDataGridViewTextBoxColumn";
-            this.businessidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Business_id.DataPropertyName = "Business_id";
+            this.Business_id.HeaderText = "Business Id";
+            this.Business_id.Name = "Business_id";
+            this.Business_id.ReadOnly = true;
             // 
-            // businessNameDataGridViewTextBoxColumn
+            // Business_Name
             // 
-            this.businessNameDataGridViewTextBoxColumn.DataPropertyName = "Business_Name";
-            this.businessNameDataGridViewTextBoxColumn.HeaderText = "Business_Name";
-            this.businessNameDataGridViewTextBoxColumn.Name = "businessNameDataGridViewTextBoxColumn";
-            this.businessNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Business_Name.DataPropertyName = "Business_Name";
+            this.Business_Name.HeaderText = "Business Name";
+            this.Business_Name.Name = "Business_Name";
+            this.Business_Name.ReadOnly = true;
             // 
-            // businessAddressDataGridViewTextBoxColumn
+            // Business_Address
             // 
-            this.businessAddressDataGridViewTextBoxColumn.DataPropertyName = "Business_Address";
-            this.businessAddressDataGridViewTextBoxColumn.HeaderText = "Business_Address";
-            this.businessAddressDataGridViewTextBoxColumn.Name = "businessAddressDataGridViewTextBoxColumn";
-            this.businessAddressDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Business_Address.DataPropertyName = "Business_Address";
+            this.Business_Address.HeaderText = "Business Address";
+            this.Business_Address.Name = "Business_Address";
+            this.Business_Address.ReadOnly = true;
             // 
-            // telephoneDataGridViewTextBoxColumn
+            // telephone
             // 
-            this.telephoneDataGridViewTextBoxColumn.DataPropertyName = "telephone";
-            this.telephoneDataGridViewTextBoxColumn.HeaderText = "telephone";
-            this.telephoneDataGridViewTextBoxColumn.Name = "telephoneDataGridViewTextBoxColumn";
-            this.telephoneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.telephone.DataPropertyName = "telephone";
+            this.telephone.HeaderText = "Telephone";
+            this.telephone.Name = "telephone";
+            this.telephone.ReadOnly = true;
             // 
-            // emailDataGridViewTextBoxColumn
+            // email
             // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.email.DataPropertyName = "email";
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
             // 
-            // authorizeddealerDataGridViewTextBoxColumn
+            // authorized_dealer
             // 
-            this.authorizeddealerDataGridViewTextBoxColumn.DataPropertyName = "authorized_dealer";
-            this.authorizeddealerDataGridViewTextBoxColumn.HeaderText = "authorized_dealer";
-            this.authorizeddealerDataGridViewTextBoxColumn.Name = "authorizeddealerDataGridViewTextBoxColumn";
-            this.authorizeddealerDataGridViewTextBoxColumn.ReadOnly = true;
+            this.authorized_dealer.DataPropertyName = "authorized_dealer";
+            this.authorized_dealer.HeaderText = "Authorized Dealer";
+            this.authorized_dealer.Name = "authorized_dealer";
+            this.authorized_dealer.ReadOnly = true;
             // 
-            // panDataGridViewTextBoxColumn
+            // pan
             // 
-            this.panDataGridViewTextBoxColumn.DataPropertyName = "pan";
-            this.panDataGridViewTextBoxColumn.HeaderText = "pan";
-            this.panDataGridViewTextBoxColumn.Name = "panDataGridViewTextBoxColumn";
-            this.panDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pan.DataPropertyName = "pan";
+            this.pan.HeaderText = "Pan";
+            this.pan.Name = "pan";
+            this.pan.ReadOnly = true;
             // 
             // Internalcompanydetails
             // 
@@ -375,8 +376,8 @@
             this.Text = "Internalcompanydetails";
             this.Load += new System.EventHandler(this.Internalcompanydetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.add_business)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addbusinessBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.add_business)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -404,12 +405,12 @@
         private add_business add_business;
         private System.Windows.Forms.BindingSource addbusinessBindingSource;
         private add_businessTableAdapters.add_businessTableAdapter add_businessTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn businessidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn businessNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn businessAddressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telephoneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn authorizeddealerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn panDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Business_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Business_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Business_Address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telephone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn authorized_dealer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pan;
     }
 }

@@ -71,29 +71,29 @@
             this.refreshbtn = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.courierDataSet1 = new CurierManagementSystemCSharp.courierDataSet1();
             this.deliveryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.courierDataSet1 = new CurierManagementSystemCSharp.courierDataSet1();
             this.deliveryTableAdapter = new CurierManagementSystemCSharp.courierDataSet1TableAdapters.deliveryTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.senderNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.senderAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.senderPhoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.senderReceiptDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerPhoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerMailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerReceiptNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.courierTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deliveryManDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deliveryPhoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sender_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sender_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sender_Phone_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sender_Receipt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Customer_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Customer_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Customer_Phone_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Customer_Mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Customer_Receipt_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Courier_Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delivery_Man = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delivery_Phone_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.courierDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deliveryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courierDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -537,21 +537,21 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn,
-            this.senderNameDataGridViewTextBoxColumn,
-            this.senderAddressDataGridViewTextBoxColumn,
-            this.senderPhoneNumberDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.senderReceiptDataGridViewTextBoxColumn,
-            this.customerNameDataGridViewTextBoxColumn,
-            this.customerAddressDataGridViewTextBoxColumn,
-            this.customerPhoneNumberDataGridViewTextBoxColumn,
-            this.customerMailDataGridViewTextBoxColumn,
-            this.customerReceiptNumberDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn,
-            this.courierTypeDataGridViewTextBoxColumn,
-            this.rateDataGridViewTextBoxColumn,
-            this.deliveryManDataGridViewTextBoxColumn,
-            this.deliveryPhoneNumberDataGridViewTextBoxColumn});
+            this.Sender_Name,
+            this.Sender_Address,
+            this.Sender_Phone_Number,
+            this.Email,
+            this.Sender_Receipt,
+            this.Customer_Name,
+            this.Customer_Address,
+            this.Customer_Phone_Number,
+            this.Customer_Mail,
+            this.Customer_Receipt_Number,
+            this.Status,
+            this.Courier_Type,
+            this.Rate,
+            this.Delivery_Man,
+            this.Delivery_Phone_Number});
             this.dataGridView1.DataSource = this.deliveryBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -577,15 +577,15 @@
             this.dataGridView1.TabIndex = 73;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // courierDataSet1
-            // 
-            this.courierDataSet1.DataSetName = "courierDataSet1";
-            this.courierDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // deliveryBindingSource
             // 
             this.deliveryBindingSource.DataMember = "delivery";
             this.deliveryBindingSource.DataSource = this.courierDataSet1;
+            // 
+            // courierDataSet1
+            // 
+            this.courierDataSet1.DataSetName = "courierDataSet1";
+            this.courierDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // deliveryTableAdapter
             // 
@@ -594,9 +594,10 @@
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Delivery Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 67;
             // 
             // dateDataGridViewTextBoxColumn
             // 
@@ -604,111 +605,127 @@
             this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
             this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateDataGridViewTextBoxColumn.Width = 67;
             // 
-            // senderNameDataGridViewTextBoxColumn
+            // Sender_Name
             // 
-            this.senderNameDataGridViewTextBoxColumn.DataPropertyName = "Sender_Name";
-            this.senderNameDataGridViewTextBoxColumn.HeaderText = "Sender_Name";
-            this.senderNameDataGridViewTextBoxColumn.Name = "senderNameDataGridViewTextBoxColumn";
-            this.senderNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Sender_Name.DataPropertyName = "Sender_Name";
+            this.Sender_Name.HeaderText = "Sender Name";
+            this.Sender_Name.Name = "Sender_Name";
+            this.Sender_Name.ReadOnly = true;
+            this.Sender_Name.Width = 66;
             // 
-            // senderAddressDataGridViewTextBoxColumn
+            // Sender_Address
             // 
-            this.senderAddressDataGridViewTextBoxColumn.DataPropertyName = "Sender_Address";
-            this.senderAddressDataGridViewTextBoxColumn.HeaderText = "Sender_Address";
-            this.senderAddressDataGridViewTextBoxColumn.Name = "senderAddressDataGridViewTextBoxColumn";
-            this.senderAddressDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Sender_Address.DataPropertyName = "Sender_Address";
+            this.Sender_Address.HeaderText = "Sender Address";
+            this.Sender_Address.Name = "Sender_Address";
+            this.Sender_Address.ReadOnly = true;
+            this.Sender_Address.Width = 67;
             // 
-            // senderPhoneNumberDataGridViewTextBoxColumn
+            // Sender_Phone_Number
             // 
-            this.senderPhoneNumberDataGridViewTextBoxColumn.DataPropertyName = "Sender_Phone_Number";
-            this.senderPhoneNumberDataGridViewTextBoxColumn.HeaderText = "Sender_Phone_Number";
-            this.senderPhoneNumberDataGridViewTextBoxColumn.Name = "senderPhoneNumberDataGridViewTextBoxColumn";
-            this.senderPhoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Sender_Phone_Number.DataPropertyName = "Sender_Phone_Number";
+            this.Sender_Phone_Number.HeaderText = "Sender Phone Number";
+            this.Sender_Phone_Number.Name = "Sender_Phone_Number";
+            this.Sender_Phone_Number.ReadOnly = true;
+            this.Sender_Phone_Number.Width = 67;
             // 
-            // emailDataGridViewTextBoxColumn
+            // Email
             // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 67;
             // 
-            // senderReceiptDataGridViewTextBoxColumn
+            // Sender_Receipt
             // 
-            this.senderReceiptDataGridViewTextBoxColumn.DataPropertyName = "Sender_Receipt";
-            this.senderReceiptDataGridViewTextBoxColumn.HeaderText = "Sender_Receipt";
-            this.senderReceiptDataGridViewTextBoxColumn.Name = "senderReceiptDataGridViewTextBoxColumn";
-            this.senderReceiptDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Sender_Receipt.DataPropertyName = "Sender_Receipt";
+            this.Sender_Receipt.HeaderText = "Sender Receipt";
+            this.Sender_Receipt.Name = "Sender_Receipt";
+            this.Sender_Receipt.ReadOnly = true;
+            this.Sender_Receipt.Width = 66;
             // 
-            // customerNameDataGridViewTextBoxColumn
+            // Customer_Name
             // 
-            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "Customer_Name";
-            this.customerNameDataGridViewTextBoxColumn.HeaderText = "Customer_Name";
-            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
-            this.customerNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Customer_Name.DataPropertyName = "Customer_Name";
+            this.Customer_Name.HeaderText = "Customer Name";
+            this.Customer_Name.Name = "Customer_Name";
+            this.Customer_Name.ReadOnly = true;
+            this.Customer_Name.Width = 67;
             // 
-            // customerAddressDataGridViewTextBoxColumn
+            // Customer_Address
             // 
-            this.customerAddressDataGridViewTextBoxColumn.DataPropertyName = "Customer_Address";
-            this.customerAddressDataGridViewTextBoxColumn.HeaderText = "Customer_Address";
-            this.customerAddressDataGridViewTextBoxColumn.Name = "customerAddressDataGridViewTextBoxColumn";
-            this.customerAddressDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Customer_Address.DataPropertyName = "Customer_Address";
+            this.Customer_Address.HeaderText = "Customer Address";
+            this.Customer_Address.Name = "Customer_Address";
+            this.Customer_Address.ReadOnly = true;
+            this.Customer_Address.Width = 67;
             // 
-            // customerPhoneNumberDataGridViewTextBoxColumn
+            // Customer_Phone_Number
             // 
-            this.customerPhoneNumberDataGridViewTextBoxColumn.DataPropertyName = "Customer_Phone_Number";
-            this.customerPhoneNumberDataGridViewTextBoxColumn.HeaderText = "Customer_Phone_Number";
-            this.customerPhoneNumberDataGridViewTextBoxColumn.Name = "customerPhoneNumberDataGridViewTextBoxColumn";
-            this.customerPhoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Customer_Phone_Number.DataPropertyName = "Customer_Phone_Number";
+            this.Customer_Phone_Number.HeaderText = "Customer Phon Number";
+            this.Customer_Phone_Number.Name = "Customer_Phone_Number";
+            this.Customer_Phone_Number.ReadOnly = true;
+            this.Customer_Phone_Number.Width = 67;
             // 
-            // customerMailDataGridViewTextBoxColumn
+            // Customer_Mail
             // 
-            this.customerMailDataGridViewTextBoxColumn.DataPropertyName = "Customer_Mail";
-            this.customerMailDataGridViewTextBoxColumn.HeaderText = "Customer_Mail";
-            this.customerMailDataGridViewTextBoxColumn.Name = "customerMailDataGridViewTextBoxColumn";
-            this.customerMailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Customer_Mail.DataPropertyName = "Customer_Mail";
+            this.Customer_Mail.HeaderText = "Customer Mail";
+            this.Customer_Mail.Name = "Customer_Mail";
+            this.Customer_Mail.ReadOnly = true;
+            this.Customer_Mail.Width = 66;
             // 
-            // customerReceiptNumberDataGridViewTextBoxColumn
+            // Customer_Receipt_Number
             // 
-            this.customerReceiptNumberDataGridViewTextBoxColumn.DataPropertyName = "Customer_Receipt_Number";
-            this.customerReceiptNumberDataGridViewTextBoxColumn.HeaderText = "Customer_Receipt_Number";
-            this.customerReceiptNumberDataGridViewTextBoxColumn.Name = "customerReceiptNumberDataGridViewTextBoxColumn";
-            this.customerReceiptNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Customer_Receipt_Number.DataPropertyName = "Customer_Receipt_Number";
+            this.Customer_Receipt_Number.HeaderText = "Customer Receipt Number";
+            this.Customer_Receipt_Number.Name = "Customer_Receipt_Number";
+            this.Customer_Receipt_Number.ReadOnly = true;
+            this.Customer_Receipt_Number.Width = 67;
             // 
-            // statusDataGridViewTextBoxColumn
+            // Status
             // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            this.Status.Width = 67;
             // 
-            // courierTypeDataGridViewTextBoxColumn
+            // Courier_Type
             // 
-            this.courierTypeDataGridViewTextBoxColumn.DataPropertyName = "Courier_Type";
-            this.courierTypeDataGridViewTextBoxColumn.HeaderText = "Courier_Type";
-            this.courierTypeDataGridViewTextBoxColumn.Name = "courierTypeDataGridViewTextBoxColumn";
-            this.courierTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Courier_Type.DataPropertyName = "Courier_Type";
+            this.Courier_Type.HeaderText = "Courier Type";
+            this.Courier_Type.Name = "Courier_Type";
+            this.Courier_Type.ReadOnly = true;
+            this.Courier_Type.Width = 67;
             // 
-            // rateDataGridViewTextBoxColumn
+            // Rate
             // 
-            this.rateDataGridViewTextBoxColumn.DataPropertyName = "Rate";
-            this.rateDataGridViewTextBoxColumn.HeaderText = "Rate";
-            this.rateDataGridViewTextBoxColumn.Name = "rateDataGridViewTextBoxColumn";
-            this.rateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Rate.DataPropertyName = "Rate";
+            this.Rate.HeaderText = "Rate";
+            this.Rate.Name = "Rate";
+            this.Rate.ReadOnly = true;
+            this.Rate.Width = 66;
             // 
-            // deliveryManDataGridViewTextBoxColumn
+            // Delivery_Man
             // 
-            this.deliveryManDataGridViewTextBoxColumn.DataPropertyName = "Delivery_Man";
-            this.deliveryManDataGridViewTextBoxColumn.HeaderText = "Delivery_Man";
-            this.deliveryManDataGridViewTextBoxColumn.Name = "deliveryManDataGridViewTextBoxColumn";
-            this.deliveryManDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Delivery_Man.DataPropertyName = "Delivery_Man";
+            this.Delivery_Man.HeaderText = "Delivery Man";
+            this.Delivery_Man.Name = "Delivery_Man";
+            this.Delivery_Man.ReadOnly = true;
+            this.Delivery_Man.Width = 67;
             // 
-            // deliveryPhoneNumberDataGridViewTextBoxColumn
+            // Delivery_Phone_Number
             // 
-            this.deliveryPhoneNumberDataGridViewTextBoxColumn.DataPropertyName = "Delivery_Phone_Number";
-            this.deliveryPhoneNumberDataGridViewTextBoxColumn.HeaderText = "Delivery_Phone_Number";
-            this.deliveryPhoneNumberDataGridViewTextBoxColumn.Name = "deliveryPhoneNumberDataGridViewTextBoxColumn";
-            this.deliveryPhoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Delivery_Phone_Number.DataPropertyName = "Delivery_Phone_Number";
+            this.Delivery_Phone_Number.HeaderText = "Delivery Phone Number";
+            this.Delivery_Phone_Number.Name = "Delivery_Phone_Number";
+            this.Delivery_Phone_Number.ReadOnly = true;
+            this.Delivery_Phone_Number.Width = 67;
             // 
             // DeliveryDetails
             // 
@@ -758,8 +775,8 @@
             this.Text = "DeliveryDetails";
             this.Load += new System.EventHandler(this.DeliveryDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.courierDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deliveryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courierDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -810,20 +827,20 @@
         private courierDataSet1TableAdapters.deliveryTableAdapter deliveryTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn senderNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn senderAddressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn senderPhoneNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn senderReceiptDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerAddressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerPhoneNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerMailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerReceiptNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn courierTypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn deliveryManDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn deliveryPhoneNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sender_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sender_Address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sender_Phone_Number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sender_Receipt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Customer_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Customer_Address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Customer_Phone_Number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Customer_Mail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Customer_Receipt_Number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Courier_Type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_Man;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_Phone_Number;
     }
 }

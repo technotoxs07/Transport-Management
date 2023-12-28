@@ -142,6 +142,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DeepSkyBlue;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -159,11 +160,10 @@
             // txtpassword
             // 
             this.txtpassword.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpassword.Location = new System.Drawing.Point(144, 239);
-            this.txtpassword.Multiline = true;
+            this.txtpassword.Location = new System.Drawing.Point(144, 247);
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.PasswordChar = '*';
-            this.txtpassword.Size = new System.Drawing.Size(276, 36);
+            this.txtpassword.Size = new System.Drawing.Size(276, 28);
             this.txtpassword.TabIndex = 11;
             this.txtpassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtpassword.UseSystemPasswordChar = true;
@@ -171,10 +171,9 @@
             // txtusername
             // 
             this.txtusername.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtusername.Location = new System.Drawing.Point(144, 186);
-            this.txtusername.Multiline = true;
+            this.txtusername.Location = new System.Drawing.Point(144, 192);
             this.txtusername.Name = "txtusername";
-            this.txtusername.Size = new System.Drawing.Size(276, 32);
+            this.txtusername.Size = new System.Drawing.Size(276, 28);
             this.txtusername.TabIndex = 10;
             this.txtusername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 

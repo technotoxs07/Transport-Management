@@ -48,6 +48,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.addcustomersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.addcustomer = new CurierManagementSystemCSharp.addcustomer();
             this.btnaddcustomer = new System.Windows.Forms.Button();
             this.btnupdate = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,21 +57,19 @@
             this.refreshbtn = new System.Windows.Forms.Button();
             this.btndelete = new System.Windows.Forms.Button();
             this.txtdate = new System.Windows.Forms.DateTimePicker();
-            this.addcustomer = new CurierManagementSystemCSharp.addcustomer();
-            this.addcustomersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.addcustomersTableAdapter = new CurierManagementSystemCSharp.addcustomerTableAdapters.addcustomersTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerPhoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerMailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerReceiptNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.balanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Customer_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Customer_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Customer_Phone_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Customer_Mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Customer_Receipt_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addcustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addcustomersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addcustomer)).BeginInit();
             this.SuspendLayout();
             // 
             // customervattxt
@@ -243,9 +243,11 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -258,14 +260,14 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
-            this.dateDataGridViewTextBoxColumn,
-            this.customerNameDataGridViewTextBoxColumn,
-            this.customerAddressDataGridViewTextBoxColumn,
-            this.customerPhoneNumberDataGridViewTextBoxColumn,
-            this.customerMailDataGridViewTextBoxColumn,
-            this.customerReceiptNumberDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn,
-            this.balanceDataGridViewTextBoxColumn});
+            this.Date,
+            this.Customer_Name,
+            this.Customer_Address,
+            this.Customer_Phone_Number,
+            this.Customer_Mail,
+            this.Customer_Receipt_Number,
+            this.Status,
+            this.Balance});
             this.dataGridView1.DataSource = this.addcustomersBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -275,7 +277,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 309);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 289);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -288,10 +290,20 @@
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1182, 317);
+            this.dataGridView1.Size = new System.Drawing.Size(1182, 337);
             this.dataGridView1.TabIndex = 65;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
+            // 
+            // addcustomersBindingSource
+            // 
+            this.addcustomersBindingSource.DataMember = "addcustomers";
+            this.addcustomersBindingSource.DataSource = this.addcustomer;
+            // 
+            // addcustomer
+            // 
+            this.addcustomer.DataSetName = "addcustomer";
+            this.addcustomer.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnaddcustomer
             // 
@@ -300,7 +312,7 @@
             this.btnaddcustomer.FlatAppearance.BorderSize = 0;
             this.btnaddcustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnaddcustomer.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnaddcustomer.Location = new System.Drawing.Point(724, 267);
+            this.btnaddcustomer.Location = new System.Drawing.Point(724, 247);
             this.btnaddcustomer.Name = "btnaddcustomer";
             this.btnaddcustomer.Size = new System.Drawing.Size(140, 36);
             this.btnaddcustomer.TabIndex = 66;
@@ -315,7 +327,7 @@
             this.btnupdate.FlatAppearance.BorderSize = 0;
             this.btnupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnupdate.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnupdate.Location = new System.Drawing.Point(878, 267);
+            this.btnupdate.Location = new System.Drawing.Point(878, 247);
             this.btnupdate.Name = "btnupdate";
             this.btnupdate.Size = new System.Drawing.Size(96, 36);
             this.btnupdate.TabIndex = 67;
@@ -352,7 +364,7 @@
             this.refreshbtn.FlatAppearance.BorderSize = 0;
             this.refreshbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.refreshbtn.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refreshbtn.Location = new System.Drawing.Point(980, 267);
+            this.refreshbtn.Location = new System.Drawing.Point(980, 247);
             this.refreshbtn.Name = "refreshbtn";
             this.refreshbtn.Size = new System.Drawing.Size(96, 36);
             this.refreshbtn.TabIndex = 70;
@@ -369,7 +381,7 @@
             this.btndelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btndelete.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndelete.ForeColor = System.Drawing.Color.White;
-            this.btndelete.Location = new System.Drawing.Point(1091, 267);
+            this.btndelete.Location = new System.Drawing.Point(1091, 247);
             this.btndelete.Name = "btndelete";
             this.btndelete.Size = new System.Drawing.Size(80, 33);
             this.btndelete.TabIndex = 71;
@@ -386,16 +398,6 @@
             this.txtdate.Size = new System.Drawing.Size(255, 26);
             this.txtdate.TabIndex = 72;
             // 
-            // addcustomer
-            // 
-            this.addcustomer.DataSetName = "addcustomer";
-            this.addcustomer.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // addcustomersBindingSource
-            // 
-            this.addcustomersBindingSource.DataMember = "addcustomers";
-            this.addcustomersBindingSource.DataSource = this.addcustomer;
-            // 
             // addcustomersTableAdapter
             // 
             this.addcustomersTableAdapter.ClearBeforeFill = true;
@@ -403,65 +405,65 @@
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Customer Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // dateDataGridViewTextBoxColumn
+            // Date
             // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Date.DataPropertyName = "Date";
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
             // 
-            // customerNameDataGridViewTextBoxColumn
+            // Customer_Name
             // 
-            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "Customer_Name";
-            this.customerNameDataGridViewTextBoxColumn.HeaderText = "Customer_Name";
-            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
-            this.customerNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Customer_Name.DataPropertyName = "Customer_Name";
+            this.Customer_Name.HeaderText = "Customer Name";
+            this.Customer_Name.Name = "Customer_Name";
+            this.Customer_Name.ReadOnly = true;
             // 
-            // customerAddressDataGridViewTextBoxColumn
+            // Customer_Address
             // 
-            this.customerAddressDataGridViewTextBoxColumn.DataPropertyName = "Customer_Address";
-            this.customerAddressDataGridViewTextBoxColumn.HeaderText = "Customer_Address";
-            this.customerAddressDataGridViewTextBoxColumn.Name = "customerAddressDataGridViewTextBoxColumn";
-            this.customerAddressDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Customer_Address.DataPropertyName = "Customer_Address";
+            this.Customer_Address.HeaderText = "Customer Address";
+            this.Customer_Address.Name = "Customer_Address";
+            this.Customer_Address.ReadOnly = true;
             // 
-            // customerPhoneNumberDataGridViewTextBoxColumn
+            // Customer_Phone_Number
             // 
-            this.customerPhoneNumberDataGridViewTextBoxColumn.DataPropertyName = "Customer_Phone_Number";
-            this.customerPhoneNumberDataGridViewTextBoxColumn.HeaderText = "Customer_Phone_Number";
-            this.customerPhoneNumberDataGridViewTextBoxColumn.Name = "customerPhoneNumberDataGridViewTextBoxColumn";
-            this.customerPhoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Customer_Phone_Number.DataPropertyName = "Customer_Phone_Number";
+            this.Customer_Phone_Number.HeaderText = "Customer Phone Number";
+            this.Customer_Phone_Number.Name = "Customer_Phone_Number";
+            this.Customer_Phone_Number.ReadOnly = true;
             // 
-            // customerMailDataGridViewTextBoxColumn
+            // Customer_Mail
             // 
-            this.customerMailDataGridViewTextBoxColumn.DataPropertyName = "Customer_Mail";
-            this.customerMailDataGridViewTextBoxColumn.HeaderText = "Customer_Mail";
-            this.customerMailDataGridViewTextBoxColumn.Name = "customerMailDataGridViewTextBoxColumn";
-            this.customerMailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Customer_Mail.DataPropertyName = "Customer_Mail";
+            this.Customer_Mail.HeaderText = "Customer Mail";
+            this.Customer_Mail.Name = "Customer_Mail";
+            this.Customer_Mail.ReadOnly = true;
             // 
-            // customerReceiptNumberDataGridViewTextBoxColumn
+            // Customer_Receipt_Number
             // 
-            this.customerReceiptNumberDataGridViewTextBoxColumn.DataPropertyName = "Customer_Receipt_Number";
-            this.customerReceiptNumberDataGridViewTextBoxColumn.HeaderText = "Customer_Receipt_Number";
-            this.customerReceiptNumberDataGridViewTextBoxColumn.Name = "customerReceiptNumberDataGridViewTextBoxColumn";
-            this.customerReceiptNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Customer_Receipt_Number.DataPropertyName = "Customer_Receipt_Number";
+            this.Customer_Receipt_Number.HeaderText = "Customer Receipt Number";
+            this.Customer_Receipt_Number.Name = "Customer_Receipt_Number";
+            this.Customer_Receipt_Number.ReadOnly = true;
             // 
-            // statusDataGridViewTextBoxColumn
+            // Status
             // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
             // 
-            // balanceDataGridViewTextBoxColumn
+            // Balance
             // 
-            this.balanceDataGridViewTextBoxColumn.DataPropertyName = "Balance";
-            this.balanceDataGridViewTextBoxColumn.HeaderText = "Balance";
-            this.balanceDataGridViewTextBoxColumn.Name = "balanceDataGridViewTextBoxColumn";
-            this.balanceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Balance.DataPropertyName = "Balance";
+            this.Balance.HeaderText = "Balance";
+            this.Balance.Name = "Balance";
+            this.Balance.ReadOnly = true;
             // 
             // ADD_CUSTOMER
             // 
@@ -495,8 +497,8 @@
             this.Text = "ADD_CUSTOMER";
             this.Load += new System.EventHandler(this.ADD_CUSTOMER_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addcustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addcustomersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addcustomer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -531,13 +533,13 @@
         private System.Windows.Forms.BindingSource addcustomersBindingSource;
         private addcustomerTableAdapters.addcustomersTableAdapter addcustomersTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerAddressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerPhoneNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerMailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerReceiptNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn balanceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Customer_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Customer_Address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Customer_Phone_Number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Customer_Mail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Customer_Receipt_Number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Balance;
     }
 }

@@ -34,7 +34,7 @@ namespace CurierManagementSystemCSharp.Reports
 
         private void getname()
         {
-            string connectionString = @"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True";
+            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;";
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
@@ -63,7 +63,7 @@ namespace CurierManagementSystemCSharp.Reports
 
                 try
                 {
-                    using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
+                    using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;"))
                     {
                         con.Open();
 

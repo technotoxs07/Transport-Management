@@ -19,7 +19,12 @@ namespace CurierManagementSystemCSharp
         }
 
         public int Id;
-
+        public void LoadDataIntoDataGridView(SqlDataReader reader)
+        {
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            dataGridView1.DataSource = dataTable;
+        }
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             if(radioButton2.Checked == true)
@@ -47,7 +52,7 @@ namespace CurierManagementSystemCSharp
        
         private void BindData()
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;");
             con.Open();
             SqlCommand cmd = new SqlCommand("select Customer_Name from consign", con);
             SqlDataReader sdr = cmd.ExecuteReader();
@@ -67,7 +72,7 @@ namespace CurierManagementSystemCSharp
 
             getnumberandamount();
 
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;");
             con.Open();
             SqlDataAdapter sda = new SqlDataAdapter("SELECT * from consign where Customer_Name like '" + customernametxt.Text + "%' AND Customer_Phone_Number like '" + customernumbertxt.Text+ "%' AND Amount_Charged like '" + amountchargedtxt.Text+"%' ", con);
             DataTable dt = new DataTable();
@@ -81,7 +86,7 @@ namespace CurierManagementSystemCSharp
 
         private void getnumberandamount()
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;");
             if(customernametxt.SelectedIndex != -1)
             {
                 string selecteditem = customernametxt.SelectedItem.ToString();
@@ -103,7 +108,7 @@ namespace CurierManagementSystemCSharp
 
         private void btnadd_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;");
             con.Open();
             try
             {
@@ -127,7 +132,7 @@ namespace CurierManagementSystemCSharp
                     banknametxt.Text = "";
                     branchnametxt.Text = "";
                 }
-                using (SqlConnection con1 = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
+                using (SqlConnection con1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;"))
                 {
 
                     string str2 = "SELECT * FROM Customer_payment";
@@ -193,7 +198,7 @@ namespace CurierManagementSystemCSharp
 
         private void btnupdate_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;");
             if(Id>0)
             {
                 SqlCommand cmd = new SqlCommand("UPDATE Customer_payment SET Date = @Date, Customer_Name = @Customer_Name, Custome_Number = @Custome_Number, Amount_Charged = @Amount_Charged, Amount_Paid = @Amount_Paid, Account_Holder_Name = @Account_Holder_Name, Account_Number = @Account_Number, Bank_Name = @Bank_Name, branch = @branch WHERE Id = @Id", con);
@@ -223,7 +228,7 @@ namespace CurierManagementSystemCSharp
 
         private void getcusttomerpayment()
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;");
             try
             {
                 con.Open();

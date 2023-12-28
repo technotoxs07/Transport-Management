@@ -19,7 +19,12 @@ namespace CurierManagementSystemCSharp
         {
             InitializeComponent();
         }
-        
+        public void LoadDataIntoDataGridView(SqlDataReader reader)
+        {
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            dataGridView1.DataSource = dataTable;
+        }
         private void Internalcompanydetails_Load(object sender, EventArgs e)
         {
             //getsettings();
@@ -40,7 +45,7 @@ namespace CurierManagementSystemCSharp
 
         private void getdata()
         {
-            using (SqlConnection con1 = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
+            using (SqlConnection con1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;"))
             {
                 string str2 = "SELECT * FROM add_business";
                 SqlCommand cmd3 = new SqlCommand(str2, con1);
@@ -64,7 +69,7 @@ namespace CurierManagementSystemCSharp
             {
                 
 
-                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;");
                 con.Open();
                 try
                 {
@@ -94,7 +99,7 @@ namespace CurierManagementSystemCSharp
                         authorizedtxt.Text = "";
                         pantxt.Text = "";
                         btnaddbusiness.Visible = false;
-                        savesettings();
+                       // savesettings();
                         // cmd.CommandType = CommandType.Text;
 
                     }
@@ -112,12 +117,7 @@ namespace CurierManagementSystemCSharp
             }
         }
 
-        private void savesettings()
-        {
-            Properties.Settings.Default.Button = btnaddbusiness.Visible;
-            Properties.Settings.Default.Save();
-
-        }
+      
 
         private bool isempty()
         {
@@ -161,26 +161,45 @@ namespace CurierManagementSystemCSharp
 
         private void button3_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
-
-            if (Id > 0)
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;");
+            try
             {
-                SqlCommand cmd = new SqlCommand("DELETE FROM add_business WHERE Business_id = @Business_id", conn);
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@Business_id", this.Id);
                 conn.Open();
-                cmd.ExecuteNonQuery();
-                conn.Close();
-                MessageBox.Show("Business Details are Successfully Deleted", "DELETED", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btnaddbusiness.Visible = true;
-                //savesetiingsbtn();
+
+                // Check if the record with the specified Business_id exists
+                string checkExistenceQuery = "SELECT COUNT(*) FROM add_business WHERE Business_id = @Business_id";
+                SqlCommand checkExistenceCmd = new SqlCommand(checkExistenceQuery, conn);
+                checkExistenceCmd.Parameters.AddWithValue("@Business_id", this.Id);
+
+                int recordCount = (int)checkExistenceCmd.ExecuteScalar();
+
+                if (recordCount > 0)
+                {
+                    // Delete the record
+                    SqlCommand deleteCmd = new SqlCommand("DELETE FROM add_business WHERE Business_id = @Business_id", conn);
+                    deleteCmd.CommandType = CommandType.Text;
+                    deleteCmd.Parameters.AddWithValue("@Business_id", this.Id);
+
+                    deleteCmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Business Details are Successfully Deleted", "DELETED", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnaddbusiness.Visible = true;
+                    //savesetiingsbtn();
+                    getdata();
+                }
+                else
+                {
+                    MessageBox.Show("The selected Business Details do not exist", "NOT FOUND", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-           
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Please Select An Business Details to Delete", "SELECT", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            getdata();
+            finally
+            {
+                conn.Close();
+            }
         }
 
         private void savesetiingsbtn()

@@ -1195,7 +1195,7 @@ SELECT Id, Date, Customer_Name, Custome_Number, Amount_Charged, Amount_Paid, Acc
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CurierManagementSystemCSharp.Properties.Settings.Default._3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA_CURIERMANAGEMENTSYSTEMCSHARP_CURIERMANAGEMENTSYSTEMCSHARP_COURIER_MDFConnectionString;
+            this._connection.ConnectionString = global::CurierManagementSystemCSharp.Properties.Settings.Default.courierConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -53,21 +53,21 @@
             this.textBox5 = new System.Windows.Forms.ComboBox();
             this.textBox6 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.courierDataSet4 = new CurierManagementSystemCSharp.courierDataSet4();
             this.staffBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.courierDataSet4 = new CurierManagementSystemCSharp.courierDataSet4();
             this.staffTableAdapter = new CurierManagementSystemCSharp.courierDataSet4TableAdapters.staffTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mobileNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bloodGroupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateofBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qualificationsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.designationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mobile_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Blood_Group = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date_of_Birth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qualifications = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Designation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.courierDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courierDataSet4)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -234,7 +234,7 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(1059, 329);
+            this.button2.Location = new System.Drawing.Point(1056, 295);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(80, 40);
             this.button2.TabIndex = 10;
@@ -248,7 +248,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(955, 329);
+            this.button1.Location = new System.Drawing.Point(952, 295);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 40);
             this.button1.TabIndex = 9;
@@ -315,14 +315,14 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
-            this.dataGridViewTextBoxColumn1,
-            this.genderDataGridViewTextBoxColumn,
-            this.mobileNumberDataGridViewTextBoxColumn,
-            this.bloodGroupDataGridViewTextBoxColumn,
-            this.dateofBirthDataGridViewTextBoxColumn,
-            this.qualificationsDataGridViewTextBoxColumn,
-            this.designationDataGridViewTextBoxColumn,
-            this.addressDataGridViewTextBoxColumn});
+            this.Name,
+            this.Gender,
+            this.Mobile_Number,
+            this.Blood_Group,
+            this.Date_of_Birth,
+            this.Qualifications,
+            this.Designation,
+            this.Address});
             this.dataGridView1.DataSource = this.staffBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -332,7 +332,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 375);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 341);
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -343,18 +343,18 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.dataGridView1.Size = new System.Drawing.Size(1182, 251);
+            this.dataGridView1.Size = new System.Drawing.Size(1182, 285);
             this.dataGridView1.TabIndex = 30;
-            // 
-            // courierDataSet4
-            // 
-            this.courierDataSet4.DataSetName = "courierDataSet4";
-            this.courierDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // staffBindingSource
             // 
             this.staffBindingSource.DataMember = "staff";
             this.staffBindingSource.DataSource = this.courierDataSet4;
+            // 
+            // courierDataSet4
+            // 
+            this.courierDataSet4.DataSetName = "courierDataSet4";
+            this.courierDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // staffTableAdapter
             // 
@@ -367,53 +367,53 @@
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn1
+            // Name
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.Name.DataPropertyName = "Name";
+            this.Name.HeaderText = "Name";
+            this.Name.Name = "Name";
             // 
-            // genderDataGridViewTextBoxColumn
+            // Gender
             // 
-            this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
-            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
-            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+            this.Gender.DataPropertyName = "Gender";
+            this.Gender.HeaderText = "Gender";
+            this.Gender.Name = "Gender";
             // 
-            // mobileNumberDataGridViewTextBoxColumn
+            // Mobile_Number
             // 
-            this.mobileNumberDataGridViewTextBoxColumn.DataPropertyName = "Mobile_Number";
-            this.mobileNumberDataGridViewTextBoxColumn.HeaderText = "Mobile_Number";
-            this.mobileNumberDataGridViewTextBoxColumn.Name = "mobileNumberDataGridViewTextBoxColumn";
+            this.Mobile_Number.DataPropertyName = "Mobile_Number";
+            this.Mobile_Number.HeaderText = "Mobile Number";
+            this.Mobile_Number.Name = "Mobile_Number";
             // 
-            // bloodGroupDataGridViewTextBoxColumn
+            // Blood_Group
             // 
-            this.bloodGroupDataGridViewTextBoxColumn.DataPropertyName = "Blood_Group";
-            this.bloodGroupDataGridViewTextBoxColumn.HeaderText = "Blood_Group";
-            this.bloodGroupDataGridViewTextBoxColumn.Name = "bloodGroupDataGridViewTextBoxColumn";
+            this.Blood_Group.DataPropertyName = "Blood_Group";
+            this.Blood_Group.HeaderText = "Blood Group";
+            this.Blood_Group.Name = "Blood_Group";
             // 
-            // dateofBirthDataGridViewTextBoxColumn
+            // Date_of_Birth
             // 
-            this.dateofBirthDataGridViewTextBoxColumn.DataPropertyName = "Date_of_Birth";
-            this.dateofBirthDataGridViewTextBoxColumn.HeaderText = "Date_of_Birth";
-            this.dateofBirthDataGridViewTextBoxColumn.Name = "dateofBirthDataGridViewTextBoxColumn";
+            this.Date_of_Birth.DataPropertyName = "Date_of_Birth";
+            this.Date_of_Birth.HeaderText = "Date of Birth";
+            this.Date_of_Birth.Name = "Date_of_Birth";
             // 
-            // qualificationsDataGridViewTextBoxColumn
+            // Qualifications
             // 
-            this.qualificationsDataGridViewTextBoxColumn.DataPropertyName = "Qualifications";
-            this.qualificationsDataGridViewTextBoxColumn.HeaderText = "Qualifications";
-            this.qualificationsDataGridViewTextBoxColumn.Name = "qualificationsDataGridViewTextBoxColumn";
+            this.Qualifications.DataPropertyName = "Qualifications";
+            this.Qualifications.HeaderText = "Qualifications";
+            this.Qualifications.Name = "Qualifications";
             // 
-            // designationDataGridViewTextBoxColumn
+            // Designation
             // 
-            this.designationDataGridViewTextBoxColumn.DataPropertyName = "Designation";
-            this.designationDataGridViewTextBoxColumn.HeaderText = "Designation";
-            this.designationDataGridViewTextBoxColumn.Name = "designationDataGridViewTextBoxColumn";
+            this.Designation.DataPropertyName = "Designation";
+            this.Designation.HeaderText = "Designation";
+            this.Designation.Name = "Designation";
             // 
-            // addressDataGridViewTextBoxColumn
+            // Address
             // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.Address.DataPropertyName = "Address";
+            this.Address.HeaderText = "Address";
+            this.Address.Name = "Address";
             // 
             // StaffDetails
             // 
@@ -447,8 +447,8 @@
             this.Text = "StaffDetails";
             this.Load += new System.EventHandler(this.StaffDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.courierDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courierDataSet4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -488,13 +488,13 @@
         private System.Windows.Forms.BindingSource staffBindingSource;
         private courierDataSet4TableAdapters.staffTableAdapter staffTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mobileNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bloodGroupDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateofBirthDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qualificationsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn designationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mobile_Number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Blood_Group;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date_of_Birth;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Qualifications;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Designation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
     }
 }
