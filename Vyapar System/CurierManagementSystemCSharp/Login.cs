@@ -376,6 +376,8 @@ namespace CurierManagementSystemCSharp
         private void label11_Click(object sender, EventArgs e)
         {
             this.Close();
+            register rg = new register();
+            rg.Close();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
