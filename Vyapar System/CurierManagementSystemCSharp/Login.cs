@@ -170,7 +170,7 @@ namespace CurierManagementSystemCSharp
                 }
                 else
                 {
-                    MessageBox.Show("You are using the latest version.");
+                    DownloadAndInstallUpdate();
                 }
             }
             catch (Exception ex)
