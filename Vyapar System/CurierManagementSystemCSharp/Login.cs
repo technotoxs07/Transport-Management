@@ -13,9 +13,9 @@ namespace CurierManagementSystemCSharp
     public partial class Login : Form
     {
 
-        
-        private readonly string updateUrl = "https://drive.google.com/uc?id=1tC_ps4njqqQQ5khYX9vJqEwSTsmfvBdv";
-        private readonly string versionUrl = "https://drive.google.com/uc?id=1B-SEEpArsFRnKrj6OyYppSOAz_Krrecj";
+
+        private const string UpdateUrl = "https://raw.githubusercontent.com/technotoxs07/Transport-Management/main/published/version.txt";
+        private const string AppUrl = "https://raw.githubusercontent.com/technotoxs07/Transport-Management/main/published/setup.exe";
 
         private readonly string tempFolderPath = Path.Combine(Path.GetTempPath(), "Vyapar System");
 
@@ -62,7 +62,7 @@ namespace CurierManagementSystemCSharp
             if (txtusername.Text != "" && txtpassword.Text != "")
             {
                 string query = "select count(*) from registration_login where email_Username = '" + txtusername.Text + "' AND  password ='" + txtpassword.Text + "'";
-                using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-Q7QFH6B\SQLEXPRESS;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True;"))
+                using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;"))
                 {
                     con.Open();
 
@@ -103,11 +103,7 @@ namespace CurierManagementSystemCSharp
 
         }
 
-        private void FetchUserData(string text)
-        {
-         
-        }
-
+     
 
 
         private void cleartext()
@@ -154,21 +150,18 @@ namespace CurierManagementSystemCSharp
 
         private void CheckForUpdates()
         {
-            BackgroundWorker worker = new BackgroundWorker();
-            worker.DoWork += (sender, e) =>
+            try
             {
-                // Perform update check in the background
-                bool updateAvailable = IsUpdateAvailable();
-                e.Result = updateAvailable;
-            };
+                WebClient webClient = new WebClient();
+                string latestVersionStr = webClient.DownloadString(UpdateUrl);
 
-            worker.RunWorkerCompleted += (sender, e) =>
-            {
-                // Handle the result on the UI thread
-                bool updateAvailable = (bool)e.Result;
-                if (updateAvailable)
+                // Assuming version.txt contains only the version number
+                Version latestVersion = new Version(latestVersionStr);
+                Version currentVersion = new Version(Application.ProductVersion);
+
+                if (latestVersion > currentVersion)
                 {
-                    DialogResult result = MessageBox.Show("An update is available. Do you want to install it now?", "Update Available", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult result = MessageBox.Show("An update is available. Do you want to update now?", "Update Available", MessageBoxButtons.YesNo);
 
                     if (result == DialogResult.Yes)
                     {
@@ -177,103 +170,34 @@ namespace CurierManagementSystemCSharp
                 }
                 else
                 {
-                    MessageBox.Show("You are using the latest version.", "No Updates Available", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            };
-
-            worker.RunWorkerAsync();
-        }
-        private bool IsUpdateAvailable()
-        {
-            Version currentVersion = new Version(Application.ProductVersion);
-
-            // Fetch the latest version available on the server
-            Version latestVersion = GetLatestVersionFromServer();
-
-            // Compare versions
-            return latestVersion > currentVersion;
-        }
-
-        private Version GetLatestVersionFromServer()
-        {
-            try
-            {
-                // Download the version file from the server (assuming it's a simple text file with the version number)
-                using (WebClient webClient = new WebClient())
-                {
-                    string versionString = webClient.DownloadString(versionUrl);
-
-                    // Parse the version string
-                    if (Version.TryParse(versionString, out Version latestVersion))
-                    {
-                        return latestVersion;
-                    }
-                    else
-                    {
-                        // Handle invalid version string
-                        return new Version(3,0,0,0);
-                    }
+                    MessageBox.Show("You are using the latest version.");
                 }
             }
-            catch (WebException)
+            catch (Exception ex)
             {
-                // Handle exceptions (e.g., file not found, network error)
-                return new Version(3,0,0,0);
+                MessageBox.Show($"Error checking for updates: {ex.Message}");
             }
         }
+       
+
+      
 
         private void DownloadAndInstallUpdate()
         {
             try
             {
-                // Inform the user about the update process
-                MessageBox.Show("Updating the application. Please wait...", "Update in Progress", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                WebClient webClient = new WebClient();
+                webClient.DownloadFile(AppUrl, "NewVersion.exe");
 
-                // Create a temporary folder for downloading and extracting the update
-                if (!Directory.Exists(tempFolderPath))
-                {
-                    Directory.CreateDirectory(tempFolderPath);
-                }
+                // Close the current application
+                Application.Exit();
 
-                // Download the update file
-                string updateFilePath = Path.Combine(tempFolderPath, "Transportation Setup.zip");
-                using (WebClient webClient = new WebClient())
-                {
-                    webClient.DownloadFile(updateUrl, updateFilePath);
-                }
-
-                // Extract the update
-                ZipFile.ExtractToDirectory(updateFilePath, tempFolderPath);
-
-                // Close the current application with user confirmation
-                if (MessageBox.Show("Update downloaded successfully. The application will now restart.", "Update Complete", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
-                {
-                    // Close the current application
-                    Application.Exit();
-
-                    // Replace the old files with the updated files
-                    string appFolderPath = AppDomain.CurrentDomain.BaseDirectory;
-                    foreach (string file in Directory.GetFiles(tempFolderPath))
-                    {
-                        string fileName = Path.GetFileName(file);
-                        string destinationPath = Path.Combine(appFolderPath, fileName);
-                        File.Copy(file, destinationPath, true);
-                    }
-
-                    // Clean up temporary files
-                    Directory.Delete(tempFolderPath, true);
-
-                    // Start the updated application
-                    Process.Start(Path.Combine(appFolderPath, Process.GetCurrentProcess().ProcessName + ".exe"));
-                }
+                // Start the new version
+                Process.Start("NewVersion.exe");
             }
             catch (Exception ex)
             {
-                // Log the error
-                Console.WriteLine($"Error during update: {ex.Message}");
-
-                // Show an error message to the user
-                MessageBox.Show($"Error during update: {ex.Message}", "Update Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error updating the application: {ex.Message}");
             }
         }
 
