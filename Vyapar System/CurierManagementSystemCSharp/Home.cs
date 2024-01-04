@@ -3,8 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
+using System.IO.Compression;
 using System.Linq;
+using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +19,8 @@ namespace CurierManagementSystemCSharp
 {
     public partial class Home : Form
     {
-
+        //https://www.dropbox.com/scl/fi/fl33219u2f0pq4wfwr6hh/Transportation-Setup.zip?rlkey=n5n44nvk05xm906lg1k3kgj3a&dl=0
+        
         [DllImport("wininet.dll")]
         private extern static bool InternetGetConnectedState(out int conn, int val);
 
@@ -391,8 +396,10 @@ namespace CurierManagementSystemCSharp
         private void Home_Load(object sender, EventArgs e)
         {
             gotohomeway(new Homeway());
+            
+          
         }
-
+     
         private void purchaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             gotopurchase(new Purchasesss());

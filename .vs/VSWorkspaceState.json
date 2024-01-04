@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Vyapar System"
+    "\\Vyapar System",
+    "\\Vyapar System\\CurierManagementSystemCSharp"
   ],
-  "SelectedNode": "\\Vyapar System\\CurierManagementSystemCSharp.sln",
+  "SelectedNode": "\\Vyapar System\\CurierManagementSystemCSharp\\Login.cs",
   "PreviewInSolutionExplorer": false
 }
