@@ -195,6 +195,14 @@ namespace CurierManagementSystemCSharp
                 // Start the new version
                 Process.Start("NewVersion.exe");
             }
+            catch (WebException webEx)
+            {
+                MessageBox.Show($"WebException: {webEx.Message}\nCheck your internet connection and try again.");
+            }
+            catch (UnauthorizedAccessException authEx)
+            {
+                MessageBox.Show($"UnauthorizedAccessException: {authEx.Message}\nMake sure you have the necessary permissions to update the application.");
+            }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error updating the application: {ex.Message}");
