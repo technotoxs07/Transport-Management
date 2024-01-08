@@ -7,6 +7,7 @@ using System.Net;
 using System.Diagnostics;
 using System.Linq;
 using System.ComponentModel;
+using System.Net.Http;
 
 namespace CurierManagementSystemCSharp
 {
@@ -14,10 +15,9 @@ namespace CurierManagementSystemCSharp
     {
 
 
-        private const string UpdateUrl = "https://raw.githubusercontent.com/technotoxs07/Transport-Management/main/published/version.txt";
-        private const string AppUrl = "https://raw.githubusercontent.com/technotoxs07/Transport-Management/main/published/setup.exe";
+        private const string MsiUrl = "https://www.dropbox.com/scl/fi/zyfqclfoywsflyqe9j9e9/CurierManagementSystemCSharp.exe?rlkey=tx9nsnaxmw686u8yjzsvlb3ie&dl=1";
 
-        private readonly string tempFolderPath = Path.Combine(Path.GetTempPath(), "Vyapar System");
+     //   private readonly string tempFolderPath = Path.Combine(Path.GetTempPath(), "Vyapar System");
 
         public Login()
         {
@@ -121,6 +121,7 @@ namespace CurierManagementSystemCSharp
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
+           
             if (checkBox1.Checked)
             {
                 txtpassword.UseSystemPasswordChar = false;
@@ -145,32 +146,44 @@ namespace CurierManagementSystemCSharp
 
         private void Login_Load(object sender, EventArgs e)
         {
-            CheckForUpdates();
+            
         }
 
-        private void CheckForUpdates()
+        private async void CheckForUpdates()
         {
             try
             {
-                WebClient webClient = new WebClient();
-                string latestVersionStr = webClient.DownloadString(UpdateUrl);
-
-                // Assuming version.txt contains only the version number
-                Version latestVersion = new Version(latestVersionStr);
-                Version currentVersion = new Version(Application.ProductVersion);
-
-                if (latestVersion > currentVersion)
+                using (HttpClient client = new HttpClient())
                 {
-                    DialogResult result = MessageBox.Show("An update is available. Do you want to update now?", "Update Available", MessageBoxButtons.YesNo);
+                    // Replace ExeUrl with your Google Drive or appropriate URL
+                    string exeUrl = "https://www.dropbox.com/scl/fi/zyfqclfoywsflyqe9j9e9/CurierManagementSystemCSharp.exe?rlkey=tx9nsnaxmw686u8yjzsvlb3ie&dl=1";
 
-                    if (result == DialogResult.Yes)
+                    // Download the executable file asynchronously
+                    HttpResponseMessage response = await client.GetAsync(exeUrl);
+
+                    // Check if the download was successful
+                    if (response.IsSuccessStatusCode)
                     {
-                        DownloadAndInstallUpdate();
+                        // Replace "Update.exe" with the appropriate file name or path
+                        string exeFileName = "CurierManagementSystemCSharp.exe";
+                        string exePath = Path.Combine(Application.StartupPath, exeFileName);
+
+                        // Save the downloaded content to the executable file
+                        byte[] exeData = await response.Content.ReadAsByteArrayAsync();
+                        File.WriteAllBytes(exePath, exeData);
+
+                        // Notify the user and ask if they want to run the update executable
+                        DialogResult result = MessageBox.Show($"Download completed successfully. Do you want to run {exeFileName} now?", "Update Available", MessageBoxButtons.YesNo);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            RunUpdate(exePath);
+                        }
                     }
-                }
-                else
-                {
-                    DownloadAndInstallUpdate();
+                    else
+                    {
+                        MessageBox.Show($"Error downloading the file: {response.ReasonPhrase}");
+                    }
                 }
             }
             catch (Exception ex)
@@ -178,36 +191,26 @@ namespace CurierManagementSystemCSharp
                 MessageBox.Show($"Error checking for updates: {ex.Message}");
             }
         }
-       
 
-      
-
-        private void DownloadAndInstallUpdate()
+        private void RunUpdate(string exePath)
         {
             try
             {
-                WebClient webClient = new WebClient();
-                webClient.DownloadFile(AppUrl, "NewVersion.exe");
+                // Run the update executable
+                Process.Start(exePath);
 
                 // Close the current application
                 Application.Exit();
-
-                // Start the new version
-                Process.Start("NewVersion.exe");
-            }
-            catch (WebException webEx)
-            {
-                MessageBox.Show($"WebException: {webEx.Message}\nCheck your internet connection and try again.");
-            }
-            catch (UnauthorizedAccessException authEx)
-            {
-                MessageBox.Show($"UnauthorizedAccessException: {authEx.Message}\nMake sure you have the necessary permissions to update the application.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error updating the application: {ex.Message}");
+                MessageBox.Show($"Error running the update: {ex.Message}");
             }
         }
+
+      
+
+       
 
 
     }

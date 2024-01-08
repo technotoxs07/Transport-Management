@@ -16,13 +16,13 @@
         "Entry"
         {
         "MsmKey" = "8:_07DFC6DEBE6C94E798C70DA4D209EF1A"
-        "OwnerKey" = "8:_79695A3961D4419C8AA0EE7CF3736348"
+        "OwnerKey" = "8:_B32D7A2947F3487B9EAF877D3F2D7960"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_26B9DBBBB32CD3E2060F2CB76E78D8E7"
-        "OwnerKey" = "8:_79695A3961D4419C8AA0EE7CF3736348"
+        "OwnerKey" = "8:_B32D7A2947F3487B9EAF877D3F2D7960"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -40,7 +40,7 @@
         "Entry"
         {
         "MsmKey" = "8:_430417E997F73B80DA0C46A6E06E78EA"
-        "OwnerKey" = "8:_79695A3961D4419C8AA0EE7CF3736348"
+        "OwnerKey" = "8:_B32D7A2947F3487B9EAF877D3F2D7960"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -64,7 +64,7 @@
         "Entry"
         {
         "MsmKey" = "8:_56FFC0AB40FB8CCA8A6EA97E538C6565"
-        "OwnerKey" = "8:_79695A3961D4419C8AA0EE7CF3736348"
+        "OwnerKey" = "8:_B32D7A2947F3487B9EAF877D3F2D7960"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -82,13 +82,13 @@
         "Entry"
         {
         "MsmKey" = "8:_5F62CE19758A04681CC20B8DE6FE378A"
-        "OwnerKey" = "8:_79695A3961D4419C8AA0EE7CF3736348"
+        "OwnerKey" = "8:_26B9DBBBB32CD3E2060F2CB76E78D8E7"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_5F62CE19758A04681CC20B8DE6FE378A"
-        "OwnerKey" = "8:_26B9DBBBB32CD3E2060F2CB76E78D8E7"
+        "OwnerKey" = "8:_B32D7A2947F3487B9EAF877D3F2D7960"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -118,13 +118,13 @@
         "Entry"
         {
         "MsmKey" = "8:_6E3A37116EB437772BC65F61D28E202E"
-        "OwnerKey" = "8:_79695A3961D4419C8AA0EE7CF3736348"
+        "OwnerKey" = "8:_B32D7A2947F3487B9EAF877D3F2D7960"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_71934214BC7E1479C72B1C86AED994B4"
-        "OwnerKey" = "8:_79695A3961D4419C8AA0EE7CF3736348"
+        "OwnerKey" = "8:_B32D7A2947F3487B9EAF877D3F2D7960"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -136,13 +136,19 @@
         "Entry"
         {
         "MsmKey" = "8:_7711DD80DD4AD7279A90BE6556B705AA"
-        "OwnerKey" = "8:_79695A3961D4419C8AA0EE7CF3736348"
+        "OwnerKey" = "8:_6E3A37116EB437772BC65F61D28E202E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_79695A3961D4419C8AA0EE7CF3736348"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_7711DD80DD4AD7279A90BE6556B705AA"
+        "OwnerKey" = "8:_B32D7A2947F3487B9EAF877D3F2D7960"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7711DD80DD4AD7279A90BE6556B705AA"
+        "OwnerKey" = "8:_D88075C9BA65F3D3D58E5E226CA1F762"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -154,7 +160,7 @@
         "Entry"
         {
         "MsmKey" = "8:_854E6CFBE52BE24A6105BCFEF823297F"
-        "OwnerKey" = "8:_79695A3961D4419C8AA0EE7CF3736348"
+        "OwnerKey" = "8:_B32D7A2947F3487B9EAF877D3F2D7960"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -166,6 +172,12 @@
         "Entry"
         {
         "MsmKey" = "8:_B27B3A804B824E4499AF131FD5082D12"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B32D7A2947F3487B9EAF877D3F2D7960"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -184,7 +196,7 @@
         "Entry"
         {
         "MsmKey" = "8:_D88075C9BA65F3D3D58E5E226CA1F762"
-        "OwnerKey" = "8:_79695A3961D4419C8AA0EE7CF3736348"
+        "OwnerKey" = "8:_B32D7A2947F3487B9EAF877D3F2D7960"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -220,7 +232,7 @@
         "Entry"
         {
         "MsmKey" = "8:_F34C8210E609DEFC299BAF66F9C31BA6"
-        "OwnerKey" = "8:_79695A3961D4419C8AA0EE7CF3736348"
+        "OwnerKey" = "8:_B32D7A2947F3487B9EAF877D3F2D7960"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -232,13 +244,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_79695A3961D4419C8AA0EE7CF3736348"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_7711DD80DD4AD7279A90BE6556B705AA"
+        "OwnerKey" = "8:_B32D7A2947F3487B9EAF877D3F2D7960"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -269,6 +275,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_6E3A37116EB437772BC65F61D28E202E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_7711DD80DD4AD7279A90BE6556B705AA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1144,15 +1156,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Transportation Setup"
-        "ProductCode" = "8:{9CFCF05F-55B1-4380-8CD3-0636E1C89E83}"
-        "PackageCode" = "8:{FB2C90A0-67FC-4096-964C-46E2F3C1A32F}"
-        "UpgradeCode" = "8:{3046FAB0-96DF-46A5-8CF1-4AA9AB7271E9}"
+        "ProductCode" = "8:{A775DD16-AF36-41EC-B2AB-0E2317481F9F}"
+        "PackageCode" = "8:{C1A29DC2-AB3B-42F1-B536-B223D89B5203}"
+        "UpgradeCode" = "8:{1D3FAF44-D519-4163-A143-0CFC3ACE7A2F}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:3.0.0"
+        "ProductVersion" = "8:4.0.3"
         "Manufacturer" = "8:Vyapar System"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -1265,21 +1277,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_DC84C3489A09409593A7C91D01E52C19"
-            {
-            "Name" = "8:Vyapar System Program"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_79695A3961D4419C8AA0EE7CF3736348"
-            "Folder" = "8:_560D5D1ABD2E4C598294230AAA67E4D1"
-            "WorkingFolder" = "8:_7DB1EA21841149A0B44F9F975B045EBE"
-            "Icon" = "8:_D225F1642C4844BA9B4B238341BCEEE8"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_F8CAA1D979214F36A77F27BB62E32994"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_088074AD30154EABBF791755341B52C1"
             {
             "Name" = "8:Vyapar System"
             "Arguments" = "8:"
@@ -1287,10 +1285,24 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_79695A3961D4419C8AA0EE7CF3736348"
+            "Target" = "8:_B32D7A2947F3487B9EAF877D3F2D7960"
             "Folder" = "8:_3738A8676A0746C78E60A2076383B64C"
             "WorkingFolder" = "8:_7DB1EA21841149A0B44F9F975B045EBE"
-            "Icon" = "8:_D225F1642C4844BA9B4B238341BCEEE8"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_9C3AE935A0DE4979ADDE1621ACFE6E2D"
+            {
+            "Name" = "8:Vyapar System Program"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_B32D7A2947F3487B9EAF877D3F2D7960"
+            "Folder" = "8:_560D5D1ABD2E4C598294230AAA67E4D1"
+            "WorkingFolder" = "8:_7DB1EA21841149A0B44F9F975B045EBE"
+            "Icon" = "8:"
             "Feature" = "8:"
             }
         }
@@ -1692,7 +1704,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_79695A3961D4419C8AA0EE7CF3736348"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_B32D7A2947F3487B9EAF877D3F2D7960"
             {
             "SourcePath" = "8:..\\CurierManagementSystemCSharp\\obj\\Release\\CurierManagementSystemCSharp.exe"
             "TargetName" = "8:"
@@ -1712,7 +1724,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:"
+            "OutputConfiguration" = "8:Release|Any CPU"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{E2359673-7F7A-4937-990C-1B364D39EA39}"
             "ShowKeyOutput" = "11:TRUE"
