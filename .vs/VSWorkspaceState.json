@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Vyapar System",
-    "\\Vyapar System\\CurierManagementSystemCSharp"
+    "\\Vyapar System\\CurierManagementSystemCSharp",
+    "\\Vyapar System\\CurierManagementSystemCSharp\\Properties"
   ],
-  "SelectedNode": "\\Vyapar System\\CurierManagementSystemCSharp\\Login.cs",
+  "SelectedNode": "\\Vyapar System\\CurierManagementSystemCSharp\\settings.cs",
   "PreviewInSolutionExplorer": false
 }

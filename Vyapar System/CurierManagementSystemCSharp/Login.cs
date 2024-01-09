@@ -8,23 +8,24 @@ using System.Diagnostics;
 using System.Linq;
 using System.ComponentModel;
 using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace CurierManagementSystemCSharp
 {
     public partial class Login : Form
     {
+        
 
 
-        private const string MsiUrl = "https://www.dropbox.com/scl/fi/zyfqclfoywsflyqe9j9e9/CurierManagementSystemCSharp.exe?rlkey=tx9nsnaxmw686u8yjzsvlb3ie&dl=1";
 
-     //   private readonly string tempFolderPath = Path.Combine(Path.GetTempPath(), "Vyapar System");
+        //   private readonly string tempFolderPath = Path.Combine(Path.GetTempPath(), "Vyapar System");
 
         public Login()
         {
             InitializeComponent();
-         
 
          
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -146,72 +147,114 @@ namespace CurierManagementSystemCSharp
 
         private void Login_Load(object sender, EventArgs e)
         {
-            
+          
         }
 
-        private async void CheckForUpdates()
+       
+
+    
+
+       
+
+        private void btndownloadserver_Click(object sender, EventArgs e)
+        {
+            downloadmdf();
+            downloadldf();
+        }
+
+        private async void downloadldf()
         {
             try
             {
-                using (HttpClient client = new HttpClient())
+                // Replace "courier.mdf" with the appropriate file name
+                string exeFileName = "courier_log.ldf";
+                string exePath = Path.Combine(Application.StartupPath, exeFileName);
+
+                // Check if the file already exists
+                if (File.Exists(exePath))
                 {
-                    // Replace ExeUrl with your Google Drive or appropriate URL
-                    string exeUrl = "https://www.dropbox.com/scl/fi/zyfqclfoywsflyqe9j9e9/CurierManagementSystemCSharp.exe?rlkey=tx9nsnaxmw686u8yjzsvlb3ie&dl=1";
-
-                    // Download the executable file asynchronously
-                    HttpResponseMessage response = await client.GetAsync(exeUrl);
-
-                    // Check if the download was successful
-                    if (response.IsSuccessStatusCode)
+                    // The file exists, hide button3
+                    btndownloadserver.Visible = false;
+                }
+                else
+                {
+                    using (HttpClient client = new HttpClient())
                     {
-                        // Replace "Update.exe" with the appropriate file name or path
-                        string exeFileName = "CurierManagementSystemCSharp.exe";
-                        string exePath = Path.Combine(Application.StartupPath, exeFileName);
+                        // Replace exeUrl with your Google Drive or appropriate URL
+                        string exeUrl = "https://drive.google.com/uc?id=1TQbAVFC0ZZ2v1s5KZ-25xbphxLv2mnHV";
 
-                        // Save the downloaded content to the executable file
-                        byte[] exeData = await response.Content.ReadAsByteArrayAsync();
-                        File.WriteAllBytes(exePath, exeData);
+                        // Download the executable file asynchronously
+                        HttpResponseMessage response = await client.GetAsync(exeUrl);
 
-                        // Notify the user and ask if they want to run the update executable
-                        DialogResult result = MessageBox.Show($"Download completed successfully. Do you want to run {exeFileName} now?", "Update Available", MessageBoxButtons.YesNo);
-
-                        if (result == DialogResult.Yes)
+                        // Check if the download was successful
+                        if (response.IsSuccessStatusCode)
                         {
-                            RunUpdate(exePath);
+                            // Save the downloaded content to the executable file
+                            byte[] exeData = await response.Content.ReadAsByteArrayAsync();
+                            File.WriteAllBytes(exePath, exeData);
+
+                            // Hide button3 after downloading
+                            button3.Visible = false;
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show($"Error downloading the file: {response.ReasonPhrase}");
+                        else
+                        {
+                            MessageBox.Show($"Error downloading the file: {response.ReasonPhrase}");
+                        }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error checking for updates: {ex.Message}");
+                MessageBox.Show($"Please Contact Vendor (9812236482): {ex.Message}");
             }
         }
 
-        private void RunUpdate(string exePath)
+        private async void downloadmdf()
         {
             try
             {
-                // Run the update executable
-                Process.Start(exePath);
+                // Replace "courier.mdf" with the appropriate file name
+                string exeFileName = "courier.mdf";
+                string exePath = Path.Combine(Application.StartupPath, exeFileName);
 
-                // Close the current application
-                Application.Exit();
+                // Check if the file already exists
+                if (File.Exists(exePath))
+                {
+                    // The file exists, hide button3
+                    btndownloadserver.Visible = false;
+                }
+                else
+                {
+                    using (HttpClient client = new HttpClient())
+                    {
+                        // Replace exeUrl with your Google Drive or appropriate URL
+                        string exeUrl = "https://drive.google.com/uc?id=1tsB3vJMeGrO3oKOOEnPY_Z6hH3LF7wTG";
+
+                        // Download the executable file asynchronously
+                        HttpResponseMessage response = await client.GetAsync(exeUrl);
+
+                        // Check if the download was successful
+                        if (response.IsSuccessStatusCode)
+                        {
+                            // Save the downloaded content to the executable file
+                            byte[] exeData = await response.Content.ReadAsByteArrayAsync();
+                            File.WriteAllBytes(exePath, exeData);
+
+                            // Hide button3 after downloading
+                            button3.Visible = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Error downloading the file: {response.ReasonPhrase}");
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error running the update: {ex.Message}");
+                MessageBox.Show($"Please Contact Vendor (9812236482): {ex.Message}");
             }
+
         }
-
-      
-
-       
-
-
     }
 }

@@ -39,7 +39,9 @@ namespace CurierManagementSystemCSharp
 
         private void label10_Click_1(object sender, EventArgs e)
         {
+            
             gotologin(new Login());
+            this.Close();
         }
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;");
 
