@@ -158,69 +158,29 @@ namespace CurierManagementSystemCSharp
 
         private void btndownloadserver_Click(object sender, EventArgs e)
         {
+            btndownloadserver.Enabled = false;
             downloadmdf();
-            downloadldf();
+            btndownloadserver.Text = string.Empty;
+            btndownloadserver.Text += "Please wait ....";
         }
 
-        private async void downloadldf()
-        {
-            try
-            {
-                // Replace "courier.mdf" with the appropriate file name
-                string exeFileName = "courier_log.ldf";
-                string exePath = Path.Combine(Application.StartupPath, exeFileName);
-
-                // Check if the file already exists
-                if (File.Exists(exePath))
-                {
-                    // The file exists, hide button3
-                    btndownloadserver.Visible = false;
-                }
-                else
-                {
-                    using (HttpClient client = new HttpClient())
-                    {
-                        // Replace exeUrl with your Google Drive or appropriate URL
-                        string exeUrl = "https://drive.google.com/uc?id=1TQbAVFC0ZZ2v1s5KZ-25xbphxLv2mnHV";
-
-                        // Download the executable file asynchronously
-                        HttpResponseMessage response = await client.GetAsync(exeUrl);
-
-                        // Check if the download was successful
-                        if (response.IsSuccessStatusCode)
-                        {
-                            // Save the downloaded content to the executable file
-                            byte[] exeData = await response.Content.ReadAsByteArrayAsync();
-                            File.WriteAllBytes(exePath, exeData);
-
-                            // Hide button3 after downloading
-                            button3.Visible = false;
-                        }
-                        else
-                        {
-                            MessageBox.Show($"Error downloading the file: {response.ReasonPhrase}");
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Please Contact Vendor (9812236482): {ex.Message}");
-            }
-        }
+     
 
         private async void downloadmdf()
         {
             try
             {
-                // Replace "courier.mdf" with the appropriate file name
-                string exeFileName = "courier.mdf";
-                string exePath = Path.Combine(Application.StartupPath, exeFileName);
+                // Replace "courier.mdf" and "courier.ldf" with the appropriate file names
+                string mdfFileName = "courier.mdf";
+                string ldfFileName = "courier.ldf";
 
-                // Check if the file already exists
-                if (File.Exists(exePath))
+                string mdfPath = Path.Combine(Application.StartupPath, mdfFileName);
+                string ldfPath = Path.Combine(Application.StartupPath, ldfFileName);
+
+                // Check if both files already exist
+                if (File.Exists(mdfPath) && File.Exists(ldfPath))
                 {
-                    // The file exists, hide button3
+                    // Both files exist, hide btndownloadserver
                     btndownloadserver.Visible = false;
                 }
                 else
@@ -228,24 +188,42 @@ namespace CurierManagementSystemCSharp
                     using (HttpClient client = new HttpClient())
                     {
                         // Replace exeUrl with your Google Drive or appropriate URL
-                        string exeUrl = "https://drive.google.com/uc?id=1tsB3vJMeGrO3oKOOEnPY_Z6hH3LF7wTG";
+                        string mdfUrl = "https://drive.google.com/uc?id=1tsB3vJMeGrO3oKOOEnPY_Z6hH3LF7wTG";
+                        string ldfUrl = "https://drive.google.com/uc?id=1TQbAVFC0ZZ2v1s5KZ-25xbphxLv2mnHV"; // Replace with the actual Google Drive file ID for courier.ldf
 
-                        // Download the executable file asynchronously
-                        HttpResponseMessage response = await client.GetAsync(exeUrl);
+                        // Download the mdf file asynchronously
+                        HttpResponseMessage mdfResponse = await client.GetAsync(mdfUrl);
 
                         // Check if the download was successful
-                        if (response.IsSuccessStatusCode)
+                        if (mdfResponse.IsSuccessStatusCode)
                         {
-                            // Save the downloaded content to the executable file
-                            byte[] exeData = await response.Content.ReadAsByteArrayAsync();
-                            File.WriteAllBytes(exePath, exeData);
+                            // Save the downloaded content to the mdf file
+                            byte[] mdfData = await mdfResponse.Content.ReadAsByteArrayAsync();
+                            File.WriteAllBytes(mdfPath, mdfData);
 
-                            // Hide button3 after downloading
-                            button3.Visible = false;
+                            // Download the ldf file asynchronously
+                            HttpResponseMessage ldfResponse = await client.GetAsync(ldfUrl);
+
+                            // Check if the download was successful
+                            if (ldfResponse.IsSuccessStatusCode)
+                            {
+                                // Save the downloaded content to the ldf file
+                                byte[] ldfData = await ldfResponse.Content.ReadAsByteArrayAsync();
+                                File.WriteAllBytes(ldfPath, ldfData);
+
+                                // Hide btndownloadserver after downloading both files
+                                btndownloadserver.Visible = false;
+                                btndownloadserver.Dispose();
+                                btndownloadserver = null;
+                            }
+                            else
+                            {
+                                MessageBox.Show($"Error downloading the ldf file: {ldfResponse.ReasonPhrase}");
+                            }
                         }
                         else
                         {
-                            MessageBox.Show($"Error downloading the file: {response.ReasonPhrase}");
+                            MessageBox.Show($"Error downloading the mdf file: {mdfResponse.ReasonPhrase}");
                         }
                     }
                 }
@@ -254,6 +232,7 @@ namespace CurierManagementSystemCSharp
             {
                 MessageBox.Show($"Please Contact Vendor (9812236482): {ex.Message}");
             }
+
 
         }
     }
