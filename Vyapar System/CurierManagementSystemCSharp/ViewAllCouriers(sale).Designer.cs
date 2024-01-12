@@ -68,10 +68,6 @@
             this.txtamountwithvat = new System.Windows.Forms.TextBox();
             this.btnclear = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.itmcalculationBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.itemcalculation = new CurierManagementSystemCSharp.itemcalculation();
-            this.updtxt = new System.Windows.Forms.Button();
-            this.itmcalculationTableAdapter = new CurierManagementSystemCSharp.itemcalculationTableAdapters.ItmcalculationTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Item_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,6 +75,10 @@
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itmcalculationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.itemcalculation = new CurierManagementSystemCSharp.itemcalculation();
+            this.updtxt = new System.Windows.Forms.Button();
+            this.itmcalculationTableAdapter = new CurierManagementSystemCSharp.itemcalculationTableAdapters.ItmcalculationTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itmcalculationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemcalculation)).BeginInit();
@@ -447,7 +447,8 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(703, 575);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(816, 575);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(99, 39);
             this.button2.TabIndex = 98;
@@ -498,7 +499,8 @@
             this.btnclear.FlatAppearance.BorderSize = 0;
             this.btnclear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnclear.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnclear.Location = new System.Drawing.Point(808, 575);
+            this.btnclear.ForeColor = System.Drawing.Color.White;
+            this.btnclear.Location = new System.Drawing.Point(921, 575);
             this.btnclear.Name = "btnclear";
             this.btnclear.Size = new System.Drawing.Size(99, 39);
             this.btnclear.TabIndex = 102;
@@ -517,7 +519,7 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -556,35 +558,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(661, 373);
             this.dataGridView1.TabIndex = 28;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // itmcalculationBindingSource
-            // 
-            this.itmcalculationBindingSource.DataMember = "Itmcalculation";
-            this.itmcalculationBindingSource.DataSource = this.itemcalculation;
-            // 
-            // itemcalculation
-            // 
-            this.itemcalculation.DataSetName = "itemcalculation";
-            this.itemcalculation.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // updtxt
-            // 
-            this.updtxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.updtxt.BackColor = System.Drawing.Color.LimeGreen;
-            this.updtxt.FlatAppearance.BorderSize = 0;
-            this.updtxt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.updtxt.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updtxt.Location = new System.Drawing.Point(913, 575);
-            this.updtxt.Name = "updtxt";
-            this.updtxt.Size = new System.Drawing.Size(99, 39);
-            this.updtxt.TabIndex = 141;
-            this.updtxt.Text = "Update";
-            this.updtxt.UseVisualStyleBackColor = false;
-            this.updtxt.Click += new System.EventHandler(this.updtxt_Click);
-            // 
-            // itmcalculationTableAdapter
-            // 
-            this.itmcalculationTableAdapter.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -635,6 +608,36 @@
             this.Total_Amount.HeaderText = "Total Amount";
             this.Total_Amount.Name = "Total_Amount";
             this.Total_Amount.ReadOnly = true;
+            // 
+            // itmcalculationBindingSource
+            // 
+            this.itmcalculationBindingSource.DataMember = "Itmcalculation";
+            this.itmcalculationBindingSource.DataSource = this.itemcalculation;
+            // 
+            // itemcalculation
+            // 
+            this.itemcalculation.DataSetName = "itemcalculation";
+            this.itemcalculation.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // updtxt
+            // 
+            this.updtxt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.updtxt.BackColor = System.Drawing.Color.LimeGreen;
+            this.updtxt.FlatAppearance.BorderSize = 0;
+            this.updtxt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updtxt.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updtxt.ForeColor = System.Drawing.Color.White;
+            this.updtxt.Location = new System.Drawing.Point(1026, 575);
+            this.updtxt.Name = "updtxt";
+            this.updtxt.Size = new System.Drawing.Size(99, 39);
+            this.updtxt.TabIndex = 141;
+            this.updtxt.Text = "Update";
+            this.updtxt.UseVisualStyleBackColor = false;
+            this.updtxt.Click += new System.EventHandler(this.updtxt_Click);
+            // 
+            // itmcalculationTableAdapter
+            // 
+            this.itmcalculationTableAdapter.ClearBeforeFill = true;
             // 
             // ViewAllCouriers
             // 

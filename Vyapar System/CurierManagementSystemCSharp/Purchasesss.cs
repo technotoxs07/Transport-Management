@@ -27,6 +27,9 @@ namespace CurierManagementSystemCSharp
         }
         private void Purchasesss_Load(object sender, EventArgs e)
         {
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            // TODO: This line of code loads data into the 'itemcalculation.Itmcalculation' table. You can move, or remove it, as needed.
+            this.itmcalculationTableAdapter.Fill(this.itemcalculation.Itmcalculation);
             // TODO: This line of code loads data into the 'itemcalculation.Itmcalculation' table. You can move, or remove it, as needed.
             this.itmcalculationTableAdapter.Fill(this.itemcalculation.Itmcalculation);
 

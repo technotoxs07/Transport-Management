@@ -267,15 +267,17 @@ namespace CurierManagementSystemCSharp
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dataGridView1.SelectedRows.Count > 0)
+
+            if (dataGridView1.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedrow = dataGridView1.SelectedRows[0];
 
-                if (selectedrow.Cells[0].Value != null)
+                if (selectedrow.Cells[0].Value != DBNull.Value && selectedrow.Cells[0].Value != null)
                 {
                     Id = Convert.ToInt32(selectedrow.Cells[0].Value);
                 }
-                if (selectedrow.Cells[1].Value != null)
+
+                if (selectedrow.Cells[1].Value != DBNull.Value && selectedrow.Cells[1].Value != null)
                 {
                     string dateStr = selectedrow.Cells[1].Value.ToString();
 
@@ -284,41 +286,47 @@ namespace CurierManagementSystemCSharp
                         txtdate.Value = dateValue;
                     }
                 }
-                if (selectedrow.Cells[2].Value != null)
+
+                // Check for DBNull before converting to string
+                if (selectedrow.Cells[2].Value != DBNull.Value && selectedrow.Cells[2].Value != null)
                 {
                     customernametxt.Text = selectedrow.Cells[2].Value.ToString();
                 }
-                if (selectedrow.Cells[3].Value !=null)
+
+                if (selectedrow.Cells[3].Value != DBNull.Value && selectedrow.Cells[3].Value != null)
                 {
                     customeraddrtxt.Text = selectedrow.Cells[3].Value.ToString();
                 }
-                if (selectedrow.Cells[4].Value !=null)
+
+                if (selectedrow.Cells[4].Value != DBNull.Value && selectedrow.Cells[4].Value != null)
                 {
                     customernumbertxt.Text = selectedrow.Cells[4].Value.ToString();
                 }
-                if (selectedrow.Cells[5].Value != null)
+
+                if (selectedrow.Cells[5].Value != DBNull.Value && selectedrow.Cells[5].Value != null)
                 {
                     customermailtxt.Text = selectedrow.Cells[5].Value.ToString();
-
                 }
-                if (selectedrow.Cells[6].Value != null)
+
+                if (selectedrow.Cells[6].Value != DBNull.Value && selectedrow.Cells[6].Value != null)
                 {
                     customervattxt.Text = selectedrow.Cells[6].Value.ToString();
                 }
-                if (selectedrow.Cells[7].Value != null)
+
+                if (selectedrow.Cells[7].Value != DBNull.Value && selectedrow.Cells[7].Value != null)
                 {
-                    customerstatustxt.Text = selectedrow.Cells[7].ToString();
+                    customerstatustxt.Text = selectedrow.Cells[7].Value.ToString();
                 }
-                if (selectedrow.Cells[8].Value != null)
+
+                if (selectedrow.Cells[8].Value != DBNull.Value && selectedrow.Cells[8].Value != null)
                 {
                     customerbalancetxt.Text = selectedrow.Cells[8].Value.ToString();
                 }
             }
 
 
-           
-           
-          
-            }
+
+
+        }
     }
 }

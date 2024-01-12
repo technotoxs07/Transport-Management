@@ -9,6 +9,8 @@ using System.Linq;
 using System.ComponentModel;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Reflection;
+using System.ComponentModel.Design;
 
 namespace CurierManagementSystemCSharp
 {
@@ -142,98 +144,145 @@ namespace CurierManagementSystemCSharp
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
+            
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
-          
+            CheckForupdates();
+            checkBox1.Checked = Properties.Settings.Default.CheckBox;
+            txtusername.Text = Properties.Settings.Default.usertext;
+            txtpassword.Text = Properties.Settings.Default.passwordtxt;
         }
-
-       
-
-    
-
-       
 
         private void btndownloadserver_Click(object sender, EventArgs e)
         {
-            btndownloadserver.Enabled = false;
-            downloadmdf();
-            btndownloadserver.Text = string.Empty;
-            btndownloadserver.Text += "Please wait ....";
+           
+            RunasAdministrator();
         }
 
-     
-
-        private async void downloadmdf()
+        private async void CheckForupdates()
         {
             try
             {
-                // Replace "courier.mdf" and "courier.ldf" with the appropriate file names
-                string mdfFileName = "courier.mdf";
-                string ldfFileName = "courier.ldf";
-
-                string mdfPath = Path.Combine(Application.StartupPath, mdfFileName);
-                string ldfPath = Path.Combine(Application.StartupPath, ldfFileName);
-
-                // Check if both files already exist
-                if (File.Exists(mdfPath) && File.Exists(ldfPath))
+                using (HttpClient client = new HttpClient())
                 {
-                    // Both files exist, hide btndownloadserver
-                    btndownloadserver.Visible = false;
-                }
-                else
-                {
-                    using (HttpClient client = new HttpClient())
+                    // Replace VersionUrl with the URL of your version.txt file
+                    string versionUrl = "https://www.dropbox.com/scl/fi/gyz7nivfy8fotpu22qt6h/Transportation-Setup.txt?rlkey=s8i1venjs7lnpy72su5332u8l&dl=1";
+
+                    // Download the version information asynchronously
+                    string remoteVersion = await client.GetStringAsync(versionUrl);
+
+                    // Get the local version from your assembly
+                    string localVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+
+                    // Compare versions
+                    if (new Version(remoteVersion) > new Version(localVersion))
                     {
-                        // Replace exeUrl with your Google Drive or appropriate URL
-                        string mdfUrl = "https://drive.google.com/uc?id=1tsB3vJMeGrO3oKOOEnPY_Z6hH3LF7wTG";
-                        string ldfUrl = "https://drive.google.com/uc?id=1TQbAVFC0ZZ2v1s5KZ-25xbphxLv2mnHV"; // Replace with the actual Google Drive file ID for courier.ldf
-
-                        // Download the mdf file asynchronously
-                        HttpResponseMessage mdfResponse = await client.GetAsync(mdfUrl);
-
-                        // Check if the download was successful
-                        if (mdfResponse.IsSuccessStatusCode)
-                        {
-                            // Save the downloaded content to the mdf file
-                            byte[] mdfData = await mdfResponse.Content.ReadAsByteArrayAsync();
-                            File.WriteAllBytes(mdfPath, mdfData);
-
-                            // Download the ldf file asynchronously
-                            HttpResponseMessage ldfResponse = await client.GetAsync(ldfUrl);
-
-                            // Check if the download was successful
-                            if (ldfResponse.IsSuccessStatusCode)
-                            {
-                                // Save the downloaded content to the ldf file
-                                byte[] ldfData = await ldfResponse.Content.ReadAsByteArrayAsync();
-                                File.WriteAllBytes(ldfPath, ldfData);
-
-                                // Hide btndownloadserver after downloading both files
-                                btndownloadserver.Visible = false;
-                                btndownloadserver.Dispose();
-                                btndownloadserver = null;
-                            }
-                            else
-                            {
-                                MessageBox.Show($"Error downloading the ldf file: {ldfResponse.ReasonPhrase}");
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show($"Error downloading the mdf file: {mdfResponse.ReasonPhrase}");
-                        }
+                        // New version is available, proceed with downloading
+                        btndownloadserver.Text = "Updates Available";
+                       
+                        // await DownloadAndInstallUpdate();
+                    }
+                    else
+                    {
+                        btndownloadserver.Text = "No Updates Available";
+                      
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Please Contact Vendor (9812236482): {ex.Message}");
+
+                MessageBox.Show($"Error checking for updates: {ex.Message}");
             }
+        }
 
+        private async void RunasAdministrator()
+        {
+            try
+            {
+                ProcessStartInfo startInfo = new ProcessStartInfo
+                {
+                    FileName = Application.ExecutablePath,
+                    Verb = "runas",
+                    UseShellExecute = true
+                };
+                Process.Start(startInfo);
+                await DownloadAndInstallUpdate();
+                Application.Exit();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
+        private async Task DownloadAndInstallUpdate()
+        {
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    // Replace MsiUrl with your Google Drive or appropriate URL
+                    string msiUrl = "https://www.dropbox.com/scl/fi/b7ogr6rotnk3k638oe5l8/Transportation-Setup.msi?rlkey=t2kxzi2ii0y1hfo9gfligu2oa&dl=1";
+
+                    // Download the MSI file asynchronously
+                    HttpResponseMessage response = await client.GetAsync(msiUrl);
+
+                    // Check if the download was successful
+                    if (response.IsSuccessStatusCode)
+                    {
+                        // Replace "Transportation_Setup.msi" with the appropriate file name or path
+                        string msiFileName = "Transportation Setup.msi";
+                        string msiPath = Path.Combine(Application.StartupPath, msiFileName);
+
+                        // Save the downloaded content to the MSI file
+                        byte[] msiData = await response.Content.ReadAsByteArrayAsync();
+                        File.WriteAllBytes(msiPath, msiData);
+
+                        // Notify the user and ask if they want to install the update
+                        DialogResult result = MessageBox.Show($"Download completed successfully. Do you want to install {msiFileName} now?", "Update Available", MessageBoxButtons.YesNo);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            InstallUpdate(msiPath);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Error downloading the file: {response.ReasonPhrase}");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error checking for updates: {ex.Message}");
+            }
+        }
+
+        private void InstallUpdate(string msiPath)
+        {
+            try
+            {
+                // Run the installer
+                Process.Start(msiPath);
+
+                // Close the current application
+                Application.Exit();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error installing the update: {ex.Message}");
+            }
+        }
+
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.CheckBox = checkBox1.Checked;
+            Properties.Settings.Default.usertext = txtusername.Text;
+            Properties.Settings.Default.passwordtxt = txtpassword.Text; 
         }
     }
-}
+
+ }

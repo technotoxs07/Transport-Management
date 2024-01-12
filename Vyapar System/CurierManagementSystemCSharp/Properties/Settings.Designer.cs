@@ -79,5 +79,41 @@ namespace CurierManagementSystemCSharp.Properties {
                 return ((string)(this["courierConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CheckBox {
+            get {
+                return ((bool)(this["CheckBox"]));
+            }
+            set {
+                this["CheckBox"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string usertext {
+            get {
+                return ((string)(this["usertext"]));
+            }
+            set {
+                this["usertext"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string passwordtxt {
+            get {
+                return ((string)(this["passwordtxt"]));
+            }
+            set {
+                this["passwordtxt"] = value;
+            }
+        }
     }
 }

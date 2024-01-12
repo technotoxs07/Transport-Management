@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btndownloadserver = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -51,7 +51,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.btndownloadserver);
-            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.checkBox1);
@@ -73,30 +72,17 @@
             // 
             // btndownloadserver
             // 
+            this.btndownloadserver.BackColor = System.Drawing.Color.LimeGreen;
+            this.btndownloadserver.FlatAppearance.BorderSize = 0;
+            this.btndownloadserver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btndownloadserver.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndownloadserver.ForeColor = System.Drawing.Color.White;
             this.btndownloadserver.Location = new System.Drawing.Point(12, 402);
             this.btndownloadserver.Name = "btndownloadserver";
-            this.btndownloadserver.Size = new System.Drawing.Size(147, 34);
+            this.btndownloadserver.Size = new System.Drawing.Size(178, 34);
             this.btndownloadserver.TabIndex = 57;
-            this.btndownloadserver.Text = "Download Server";
-            this.btndownloadserver.UseVisualStyleBackColor = true;
+            this.btndownloadserver.UseVisualStyleBackColor = false;
             this.btndownloadserver.Click += new System.EventHandler(this.btndownloadserver_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.BackgroundImage = global::CurierManagementSystemCSharp.Properties.Resources.Settings;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(448, 10);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(26, 26);
-            this.button3.TabIndex = 56;
-            this.button3.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
@@ -246,9 +232,11 @@
             this.ClientSize = new System.Drawing.Size(518, 443);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -272,7 +260,6 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btndownloadserver;
     }
 }
