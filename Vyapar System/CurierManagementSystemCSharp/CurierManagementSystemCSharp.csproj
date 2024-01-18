@@ -157,6 +157,12 @@
     <Compile Include="ADD_CUSTOMER.Designer.cs">
       <DependentUpon>ADD_CUSTOMER.cs</DependentUpon>
     </Compile>
+    <Compile Include="backupandrestore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="backupandrestore.Designer.cs">
+      <DependentUpon>backupandrestore.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consignment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -343,6 +349,9 @@
     </Compile>
     <EmbeddedResource Include="ADD_CUSTOMER.resx">
       <DependentUpon>ADD_CUSTOMER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="backupandrestore.resx">
+      <DependentUpon>backupandrestore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="bin\Release\consignments.rdlc" />
     <EmbeddedResource Include="bin\Release\cstpayments.rdlc" />
@@ -618,6 +627,8 @@
     <Content Include="courier_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Data Backup.png" />
+    <None Include="Resources\Data Backup1.png" />
     <Content Include="V Key.ico" />
     <None Include="Resources\Settings1.png" />
     <None Include="Resources\Settings.png" />

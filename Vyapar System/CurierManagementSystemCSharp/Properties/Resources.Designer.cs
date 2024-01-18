@@ -103,6 +103,26 @@ namespace CurierManagementSystemCSharp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Data_Backup {
+            get {
+                object obj = ResourceManager.GetObject("Data Backup", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Data_Backup1 {
+            get {
+                object obj = ResourceManager.GetObject("Data Backup1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Deliver_Food {
             get {
                 object obj = ResourceManager.GetObject("Deliver Food", resourceCulture);

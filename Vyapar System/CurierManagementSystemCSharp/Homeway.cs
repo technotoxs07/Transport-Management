@@ -74,6 +74,10 @@ namespace CurierManagementSystemCSharp
                     // Handle exceptions
                     MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                finally
+                {
+                    connection.Close();
+                }
             }
         }
 
@@ -110,6 +114,10 @@ namespace CurierManagementSystemCSharp
                 {
                     // Handle exceptions
                     MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    connection.Close();
                 }
             }
         }
@@ -148,6 +156,10 @@ namespace CurierManagementSystemCSharp
                     // Handle exceptions
                     MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                finally
+                {
+                    connection.Close();
+                }
             }
         }
 
@@ -169,10 +181,12 @@ namespace CurierManagementSystemCSharp
                 SqlCommand cmd = new SqlCommand(query, con);
 
                 object result = cmd.ExecuteScalar();
+               
                 if (result != DBNull.Value)
                 {
                     totalGrandTotal = Convert.ToDecimal(result);
                 }
+                con.Close();
             }
 
             return totalGrandTotal;
@@ -200,6 +214,7 @@ namespace CurierManagementSystemCSharp
                 {
                     totalGrandTotal = Convert.ToDecimal(result);
                 }
+                con.Close();
             }
 
             return totalGrandTotal;
@@ -239,6 +254,10 @@ namespace CurierManagementSystemCSharp
                     // Handle exceptions
                     MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                finally
+                {
+                    connection.Close();
+                }
             }
         }
 
@@ -264,6 +283,7 @@ namespace CurierManagementSystemCSharp
                 {
                     totalGrandTotal = Convert.ToDecimal(result);
                 }
+                con.Close();
             }
 
             return totalGrandTotal;
@@ -303,6 +323,10 @@ namespace CurierManagementSystemCSharp
                     // Handle exceptions
                     MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                finally
+                {
+                    connection.Close();
+                }
             }
         }
 
@@ -340,28 +364,32 @@ namespace CurierManagementSystemCSharp
                     // Handle exceptions
                     MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                finally
+                {
+                    connection.Close();
+                }
             }
 
             //showing current date sale
 
-            
-                try
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;"))
                 {
-                    using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;"))
-                    {
-                        con.Open();
+                    con.Open();
 
-                        // Create a parameterized query for today's sales
-                        string queryTodaySales = "SELECT ISNULL(SUM(Grand_Total), 0) FROM Purchase WHERE CONVERT(DATE, Date) = CONVERT(DATE, GETDATE())";
+                    // Create a parameterized query for today's sales
+                    string queryTodaySales = "SELECT ISNULL(SUM(Grand_Total), 0) FROM Purchase WHERE CONVERT(DATE, Date) = CONVERT(DATE, GETDATE())";
 
-                        SqlCommand cmdTodaySales = new SqlCommand(queryTodaySales, con);
+                    SqlCommand cmdTodaySales = new SqlCommand(queryTodaySales, con);
 
-                        decimal grandTotalTodaySales = Convert.ToDecimal(cmdTodaySales.ExecuteScalar());
+                    decimal grandTotalTodaySales = Convert.ToDecimal(cmdTodaySales.ExecuteScalar());
 
-                        con.Close();
+                    con.Close();
 
-                        // Display today's sales
-                        label15.Text = $"{grandTotalTodaySales}"; // Assuming you want to format as currency
+                    // Display today's sales
+                    label15.Text = $"{grandTotalTodaySales}"; // Assuming you want to format as currency
                     if (decimal.TryParse(label15.Text, out decimal valueInLabel))
                     {
                         if (valueInLabel == 0 && valueInLabel <= 4999)
@@ -393,13 +421,13 @@ namespace CurierManagementSystemCSharp
                         }
                     }
                 }
-                }
-                catch (Exception ex)
-                {
-                    // Handle or log the exception
-                    Console.WriteLine($"An error occurred: {ex.Message}");
-                }
-          
+            }
+            catch (Exception ex)
+            {
+                // Handle or log the exception
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+                     
 
         }
 

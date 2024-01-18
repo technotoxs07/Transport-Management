@@ -52,6 +52,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.bacnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crossbtn = new System.Windows.Forms.Button();
             this.minimizebtn = new System.Windows.Forms.Button();
             this.maxmbtn = new System.Windows.Forms.Button();
@@ -74,7 +75,8 @@
             this.DeliveryDetailsToolStripMenuItem,
             this.ConsignmentToolStripMenuItem,
             this.customerPaymentToolStripMenuItem,
-            this.reportToolStripMenuItem});
+            this.reportToolStripMenuItem,
+            this.bacnToolStripMenuItem});
             this.MenuStrip1.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip1.Name = "MenuStrip1";
             this.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -273,6 +275,13 @@
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
             this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
             // 
+            // bacnToolStripMenuItem
+            // 
+            this.bacnToolStripMenuItem.Name = "bacnToolStripMenuItem";
+            this.bacnToolStripMenuItem.Size = new System.Drawing.Size(140, 27);
+            this.bacnToolStripMenuItem.Text = "Backup/Restore";
+            this.bacnToolStripMenuItem.Click += new System.EventHandler(this.bacnToolStripMenuItem_Click);
+            // 
             // crossbtn
             // 
             this.crossbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -373,5 +382,6 @@
         private System.Windows.Forms.ToolStripMenuItem saleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consignmentReportToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem customerReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bacnToolStripMenuItem;
     }
 }

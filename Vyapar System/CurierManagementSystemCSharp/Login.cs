@@ -283,6 +283,25 @@ namespace CurierManagementSystemCSharp
             Properties.Settings.Default.usertext = txtusername.Text;
             Properties.Settings.Default.passwordtxt = txtpassword.Text; 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            gotobackupandrestore(new backupandrestore());
+        }
+
+        private void gotobackupandrestore(backupandrestore ChildForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = ChildForm;
+            ChildForm.TopLevel = false;
+            ChildForm.FormBorderStyle = FormBorderStyle.None;
+            ChildForm.Dock = DockStyle.Fill;
+            panel1.Controls.Add(ChildForm);
+            panel1.Tag = ChildForm;
+            ChildForm.BringToFront();
+            ChildForm.Show();
+        }
     }
 
  }
