@@ -284,8 +284,22 @@ namespace CurierManagementSystemCSharp
             txtsubtotal.Text = totalAmount.ToString();
 
 
-            decimal totalamountwithvat = totalAmount / (1 + vat);
-            txtamountwithvat.Text = totalamountwithvat.ToString();
+            if (decimal.TryParse(txtvat.Text, out decimal vatPercentage))
+            {
+                decimal vatAmount = totalAmount * (vatPercentage / 100);
+
+                decimal totalamountwithvat = totalAmount + vatAmount;
+
+                txtamountwithvat.Text = totalamountwithvat.ToString();
+                //txtvatamount.Text = vatAmount.ToString();
+
+
+
+            }
+            else
+            {
+                txtamountwithvat.Text = "Invalid VAT";
+            }
         }
 
         private void qtytxt_TextChanged(object sender, EventArgs e)
@@ -319,12 +333,6 @@ namespace CurierManagementSystemCSharp
 
              }
             */
-        }
-
-        private void pricetxt_TextChanged(object sender, EventArgs e)
-        {
-          
-
         }
 
         private void Amountchargedtxt_TextChanged(object sender, EventArgs e)

@@ -474,10 +474,29 @@ namespace CurierManagementSystemCSharp
 
         private void bacnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            gotobackuprestore(new backupandrestore());
+            //gotobackuprestore(new backupandrestore());
         }
 
         private void gotobackuprestore(backupandrestore ChildForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = ChildForm;
+            ChildForm.TopLevel = false;
+            ChildForm.FormBorderStyle = FormBorderStyle.None;
+            ChildForm.Dock = DockStyle.Fill;
+            panel1.Controls.Add(ChildForm);
+            panel1.Tag = ChildForm;
+            ChildForm.BringToFront();
+            ChildForm.Show();
+        }
+
+        private void addItemsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gotoitems(new Items());
+        }
+
+        private void gotoitems(Items ChildForm)
         {
             if (activeForm != null)
                 activeForm.Close();

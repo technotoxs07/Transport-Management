@@ -183,16 +183,22 @@ namespace CurierManagementSystemCSharp
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
-            dateTimePicker1.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-            customernametxt.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
-            customernumbertxt.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
-            amountchargedtxt.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
-            amountpaindtxt.Text = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
-            accholdernametxt.Text = dataGridView1.SelectedRows[0].Cells[6].Value.ToString();
-            accnumbertxt.Text = dataGridView1.SelectedRows[0].Cells[7].Value.ToString();
-            banknametxt.Text = dataGridView1.SelectedRows[0].Cells[8].Value.ToString();
-            branchnametxt.Text = dataGridView1.SelectedRows[0].Cells[9].Value.ToString();
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+
+                Id = selectedRow.Cells[0].Value != DBNull.Value ? Convert.ToInt32(selectedRow.Cells[0].Value) : 0;
+                dateTimePicker1.Text = selectedRow.Cells[1].Value != DBNull.Value ? selectedRow.Cells[1].Value.ToString() : "";
+                customernametxt.Text = selectedRow.Cells[2].Value != DBNull.Value ? selectedRow.Cells[2].Value.ToString() : "";
+                customernumbertxt.Text = selectedRow.Cells[3].Value != DBNull.Value ? selectedRow.Cells[3].Value.ToString() : "";
+                amountchargedtxt.Text = selectedRow.Cells[4].Value != DBNull.Value ? selectedRow.Cells[4].Value.ToString() : "";
+                amountpaindtxt.Text = selectedRow.Cells[5].Value != DBNull.Value ? selectedRow.Cells[5].Value.ToString() : "";
+                accholdernametxt.Text = selectedRow.Cells[6].Value != DBNull.Value ? selectedRow.Cells[6].Value.ToString() : "";
+                accnumbertxt.Text = selectedRow.Cells[7].Value != DBNull.Value ? selectedRow.Cells[7].Value.ToString() : "";
+                banknametxt.Text = selectedRow.Cells[8].Value != DBNull.Value ? selectedRow.Cells[8].Value.ToString() : "";
+                branchnametxt.Text = selectedRow.Cells[9].Value != DBNull.Value ? selectedRow.Cells[9].Value.ToString() : "";
+            }
+
         }
 
 

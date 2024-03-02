@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CurierManagementSystemCSharp</RootNamespace>
-    <AssemblyName>CurierManagementSystemCSharp</AssemblyName>
+    <AssemblyName>Vyapar System</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -114,7 +114,9 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
@@ -138,6 +140,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Addcategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Addcategory.Designer.cs">
+      <DependentUpon>Addcategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="addcustomerr.cs">
       <DependentUpon>addcustomerr.xsd</DependentUpon>
     </Compile>
@@ -174,6 +182,17 @@
     </Compile>
     <Compile Include="Homeway.Designer.cs">
       <DependentUpon>Homeway.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Items.Designer.cs">
+      <DependentUpon>Items.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Itemsdata.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Itemsdata.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -329,11 +348,23 @@
     <Compile Include="settings.Designer.cs">
       <DependentUpon>settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Showitemssale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Showitemssale.Designer.cs">
+      <DependentUpon>Showitemssale.cs</DependentUpon>
+    </Compile>
     <Compile Include="StaffDetails.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StaffDetails.Designer.cs">
       <DependentUpon>StaffDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Unitconversion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Unitconversion.Designer.cs">
+      <DependentUpon>Unitconversion.cs</DependentUpon>
     </Compile>
     <Compile Include="UpdateStaff.cs">
       <SubType>Form</SubType>
@@ -347,6 +378,9 @@
     <Compile Include="ViewAllCouriers%28sale%29.Designer.cs">
       <DependentUpon>ViewAllCouriers%28sale%29.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Addcategory.resx">
+      <DependentUpon>Addcategory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ADD_CUSTOMER.resx">
       <DependentUpon>ADD_CUSTOMER.cs</DependentUpon>
     </EmbeddedResource>
@@ -363,6 +397,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Homeway.resx">
       <DependentUpon>Homeway.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items.resx">
+      <DependentUpon>Items.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Purchasesss.resx">
       <DependentUpon>Purchasesss.cs</DependentUpon>
@@ -411,8 +448,14 @@
     <EmbeddedResource Include="settings.resx">
       <DependentUpon>settings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Showitemssale.resx">
+      <DependentUpon>Showitemssale.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StaffDetails.resx">
       <DependentUpon>StaffDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Unitconversion.resx">
+      <DependentUpon>Unitconversion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateStaff.resx">
       <DependentUpon>UpdateStaff.cs</DependentUpon>
@@ -509,6 +552,16 @@
     <None Include="customer_payement.xss">
       <DependentUpon>customer_payement.xsd</DependentUpon>
     </None>
+    <None Include="Itemsdata.xsc">
+      <DependentUpon>Itemsdata.xsd</DependentUpon>
+    </None>
+    <None Include="Itemsdata.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="Itemsdata.xss">
+      <DependentUpon>Itemsdata.xsd</DependentUpon>
+    </None>
     <None Include="Properties\app.manifest" />
     <None Include="itemcalculation.xsc">
       <DependentUpon>itemcalculation.xsd</DependentUpon>
@@ -542,6 +595,7 @@
     <None Include="Purchase.xss">
       <DependentUpon>Purchase.xsd</DependentUpon>
     </None>
+    <None Include="SqlLocalDB.msi" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -5,7 +5,7 @@ VisualStudioVersion = 17.7.34302.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurierManagementSystemCSharp", "CurierManagementSystemCSharp\CurierManagementSystemCSharp.csproj", "{E2359673-7F7A-4937-990C-1B364D39EA39}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Transportation Setup", "Transportation Setup\Transportation Setup.vdproj", "{A4684ED2-34AB-4AED-A499-519A865C4B4E}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Vyapar System", "Vyapar System\Vyapar System.vdproj", "{593671DF-5561-46B4-AF58-0F64AB8BBC55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{E2359673-7F7A-4937-990C-1B364D39EA39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2359673-7F7A-4937-990C-1B364D39EA39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2359673-7F7A-4937-990C-1B364D39EA39}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A4684ED2-34AB-4AED-A499-519A865C4B4E}.Debug|Any CPU.ActiveCfg = Debug
-		{A4684ED2-34AB-4AED-A499-519A865C4B4E}.Release|Any CPU.ActiveCfg = Release
+		{593671DF-5561-46B4-AF58-0F64AB8BBC55}.Debug|Any CPU.ActiveCfg = Debug
+		{593671DF-5561-46B4-AF58-0F64AB8BBC55}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

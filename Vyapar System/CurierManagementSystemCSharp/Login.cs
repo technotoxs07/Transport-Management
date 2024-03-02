@@ -157,7 +157,7 @@ namespace CurierManagementSystemCSharp
 
         private void btndownloadserver_Click(object sender, EventArgs e)
         {
-           
+          
             RunasAdministrator();
         }
 
@@ -187,7 +187,7 @@ namespace CurierManagementSystemCSharp
                     else
                     {
                         btndownloadserver.Text = "No Updates Available";
-                      
+                      btndownloadserver.Enabled = false;
                     }
                 }
             }
@@ -234,7 +234,7 @@ namespace CurierManagementSystemCSharp
                     if (response.IsSuccessStatusCode)
                     {
                         // Replace "Transportation_Setup.msi" with the appropriate file name or path
-                        string msiFileName = "Transportation Setup.msi";
+                        string msiFileName = "Vyapar System.msi";
                         string msiPath = Path.Combine(Application.StartupPath, msiFileName);
 
                         // Save the downloaded content to the MSI file

@@ -94,7 +94,7 @@ namespace CurierManagementSystemCSharp.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Empty")]
         public string usertext {
             get {
                 return ((string)(this["usertext"]));
@@ -106,13 +106,71 @@ namespace CurierManagementSystemCSharp.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Empty")]
         public string passwordtxt {
             get {
                 return ((string)(this["passwordtxt"]));
             }
             set {
                 this["passwordtxt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection categorytxt {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["categorytxt"]));
+            }
+            set {
+                this["categorytxt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection listboxtxt {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["listboxtxt"]));
+            }
+            set {
+                this["listboxtxt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string rrrr {
+            get {
+                return ((string)(this["rrrr"]));
+            }
+            set {
+                this["rrrr"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1" +
+            "F8_URIERMANAGEMENTSYSTEMCSHA\\CURIERMANAGEMENTSYSTEMCSHARP\\CURIERMANAGEMENTSYSTEM" +
+            "CSHARP\\COURIER.MDF;Integrated Security=True")]
+        public string _3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA_CURIERMANAGEMENTSYSTEMCSHARP_CURIERMANAGEMENTSYSTEMCSHARP_COURIER_MDFConnectionString1 {
+            get {
+                return ((string)(this["_3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA_CURIERMANAGEMENTSYSTE" +
+                    "MCSHARP_CURIERMANAGEMENTSYSTEMCSHARP_COURIER_MDFConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection listbox2 {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["listbox2"]));
+            }
+            set {
+                this["listbox2"] = value;
             }
         }
     }

@@ -44,7 +44,6 @@
             this.datetxt = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.itemnametxt = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.unittxt = new System.Windows.Forms.ComboBox();
             this.pricetxt = new System.Windows.Forms.TextBox();
@@ -79,6 +78,9 @@
             this.itemcalculation = new CurierManagementSystemCSharp.itemcalculation();
             this.updtxt = new System.Windows.Forms.Button();
             this.itmcalculationTableAdapter = new CurierManagementSystemCSharp.itemcalculationTableAdapters.ItmcalculationTableAdapter();
+            this.itemnametxt = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.categorytxt = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itmcalculationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemcalculation)).BeginInit();
@@ -89,7 +91,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.LightCoral;
-            this.label3.Location = new System.Drawing.Point(35, 9);
+            this.label3.Location = new System.Drawing.Point(11, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(160, 26);
             this.label3.TabIndex = 12;
@@ -101,7 +103,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1026, 255);
+            this.button1.Location = new System.Drawing.Point(1081, 287);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(80, 41);
             this.button1.TabIndex = 27;
@@ -113,7 +115,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(25, 50);
+            this.label4.Location = new System.Drawing.Point(12, 51);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(122, 23);
             this.label4.TabIndex = 55;
@@ -121,8 +123,11 @@
             // 
             // customermailtxt
             // 
+            this.customermailtxt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.customermailtxt.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customermailtxt.Location = new System.Drawing.Point(157, 111);
+            this.customermailtxt.MaximumSize = new System.Drawing.Size(280, 50);
             this.customermailtxt.Name = "customermailtxt";
             this.customermailtxt.Size = new System.Drawing.Size(229, 30);
             this.customermailtxt.TabIndex = 64;
@@ -132,7 +137,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(45, 115);
+            this.label17.Location = new System.Drawing.Point(12, 113);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(49, 23);
             this.label17.TabIndex = 63;
@@ -142,9 +147,10 @@
             // 
             this.customernumbertxt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.customernumbertxt.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customernumbertxt.Location = new System.Drawing.Point(536, 51);
+            this.customernumbertxt.Location = new System.Drawing.Point(514, 47);
+            this.customernumbertxt.MaximumSize = new System.Drawing.Size(280, 50);
             this.customernumbertxt.Name = "customernumbertxt";
-            this.customernumbertxt.Size = new System.Drawing.Size(219, 30);
+            this.customernumbertxt.Size = new System.Drawing.Size(241, 30);
             this.customernumbertxt.TabIndex = 62;
             this.customernumbertxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -152,10 +158,10 @@
             // 
             this.customeraddrtxt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.customeraddrtxt.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customeraddrtxt.Location = new System.Drawing.Point(974, 54);
+            this.customeraddrtxt.Location = new System.Drawing.Point(945, 51);
             this.customeraddrtxt.Multiline = true;
             this.customeraddrtxt.Name = "customeraddrtxt";
-            this.customeraddrtxt.Size = new System.Drawing.Size(196, 62);
+            this.customeraddrtxt.Size = new System.Drawing.Size(225, 62);
             this.customeraddrtxt.TabIndex = 61;
             this.customeraddrtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -164,7 +170,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(392, 54);
+            this.label6.Location = new System.Drawing.Point(392, 51);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(113, 23);
             this.label6.TabIndex = 60;
@@ -175,7 +181,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(801, 83);
+            this.label5.Location = new System.Drawing.Point(797, 76);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(142, 23);
             this.label5.TabIndex = 59;
@@ -186,7 +192,8 @@
             this.datetxt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.datetxt.CustomFormat = "dd-mm-yyyy";
             this.datetxt.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datetxt.Location = new System.Drawing.Point(520, 109);
+            this.datetxt.Location = new System.Drawing.Point(510, 111);
+            this.datetxt.MaximumSize = new System.Drawing.Size(280, 50);
             this.datetxt.Name = "datetxt";
             this.datetxt.Size = new System.Drawing.Size(245, 26);
             this.datetxt.TabIndex = 74;
@@ -196,7 +203,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(426, 115);
+            this.label2.Location = new System.Drawing.Point(424, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 21);
             this.label2.TabIndex = 73;
@@ -207,32 +214,17 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.LightCoral;
-            this.label1.Location = new System.Drawing.Point(35, 154);
+            this.label1.Location = new System.Drawing.Point(11, 156);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(146, 26);
             this.label1.TabIndex = 75;
             this.label1.Text = "Product Details";
             // 
-            // itemnametxt
-            // 
-            this.itemnametxt.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.itemnametxt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.itemnametxt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
-            this.itemnametxt.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.itemnametxt.ForeColor = System.Drawing.Color.Black;
-            this.itemnametxt.Location = new System.Drawing.Point(124, 201);
-            this.itemnametxt.Multiline = true;
-            this.itemnametxt.Name = "itemnametxt";
-            this.itemnametxt.Size = new System.Drawing.Size(248, 36);
-            this.itemnametxt.TabIndex = 77;
-            this.itemnametxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // label16
             // 
-            this.label16.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(20, 206);
+            this.label16.Location = new System.Drawing.Point(12, 239);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(98, 23);
             this.label16.TabIndex = 76;
@@ -241,7 +233,8 @@
             // unittxt
             // 
             this.unittxt.AllowDrop = true;
-            this.unittxt.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.unittxt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.unittxt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.unittxt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.unittxt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -270,28 +263,27 @@
             "SQUARE FEET (SQF)",
             "SQUARE METERS (SQM)",
             "TABLETS (TBS)"});
-            this.unittxt.Location = new System.Drawing.Point(626, 204);
+            this.unittxt.Location = new System.Drawing.Point(631, 237);
             this.unittxt.Name = "unittxt";
             this.unittxt.Size = new System.Drawing.Size(149, 25);
             this.unittxt.TabIndex = 87;
             // 
             // pricetxt
             // 
-            this.pricetxt.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pricetxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pricetxt.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pricetxt.Location = new System.Drawing.Point(875, 201);
+            this.pricetxt.Location = new System.Drawing.Point(880, 234);
             this.pricetxt.Name = "pricetxt";
             this.pricetxt.Size = new System.Drawing.Size(84, 28);
             this.pricetxt.TabIndex = 86;
             this.pricetxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.pricetxt.TextChanged += new System.EventHandler(this.pricetxt_TextChanged);
             // 
             // label15
             // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(781, 205);
+            this.label15.Location = new System.Drawing.Point(786, 238);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(88, 23);
             this.label15.TabIndex = 85;
@@ -299,10 +291,9 @@
             // 
             // label14
             // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(548, 205);
+            this.label14.Location = new System.Drawing.Point(553, 238);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(55, 23);
             this.label14.TabIndex = 84;
@@ -310,9 +301,8 @@
             // 
             // qtytxt
             // 
-            this.qtytxt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.qtytxt.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.qtytxt.Location = new System.Drawing.Point(448, 201);
+            this.qtytxt.Location = new System.Drawing.Point(453, 239);
             this.qtytxt.Name = "qtytxt";
             this.qtytxt.Size = new System.Drawing.Size(84, 28);
             this.qtytxt.TabIndex = 83;
@@ -321,10 +311,9 @@
             // 
             // label12
             // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(392, 205);
+            this.label12.Location = new System.Drawing.Point(397, 238);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(50, 23);
             this.label12.TabIndex = 82;
@@ -332,11 +321,11 @@
             // 
             // amountchargedtxt
             // 
-            this.amountchargedtxt.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.amountchargedtxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.amountchargedtxt.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.amountchargedtxt.Location = new System.Drawing.Point(1076, 200);
+            this.amountchargedtxt.Location = new System.Drawing.Point(1070, 233);
             this.amountchargedtxt.Name = "amountchargedtxt";
-            this.amountchargedtxt.Size = new System.Drawing.Size(84, 28);
+            this.amountchargedtxt.Size = new System.Drawing.Size(95, 28);
             this.amountchargedtxt.TabIndex = 81;
             this.amountchargedtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.amountchargedtxt.TextChanged += new System.EventHandler(this.Amountchargedtxt_TextChanged);
@@ -346,7 +335,7 @@
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(682, 303);
+            this.label10.Location = new System.Drawing.Point(682, 350);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(83, 23);
             this.label10.TabIndex = 80;
@@ -356,7 +345,7 @@
             // 
             this.txtsubtotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtsubtotal.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtsubtotal.Location = new System.Drawing.Point(828, 302);
+            this.txtsubtotal.Location = new System.Drawing.Point(828, 349);
             this.txtsubtotal.Name = "txtsubtotal";
             this.txtsubtotal.Size = new System.Drawing.Size(278, 28);
             this.txtsubtotal.TabIndex = 79;
@@ -365,10 +354,10 @@
             // 
             // label9
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(976, 188);
+            this.label9.Location = new System.Drawing.Point(981, 221);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 46);
             this.label9.TabIndex = 78;
@@ -379,7 +368,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(682, 348);
+            this.label7.Location = new System.Drawing.Point(682, 391);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(98, 23);
             this.label7.TabIndex = 89;
@@ -389,7 +378,7 @@
             // 
             this.discouttxt.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.discouttxt.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discouttxt.Location = new System.Drawing.Point(828, 347);
+            this.discouttxt.Location = new System.Drawing.Point(828, 390);
             this.discouttxt.Name = "discouttxt";
             this.discouttxt.Size = new System.Drawing.Size(278, 28);
             this.discouttxt.TabIndex = 88;
@@ -401,7 +390,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(682, 402);
+            this.label8.Location = new System.Drawing.Point(682, 437);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(73, 23);
             this.label8.TabIndex = 91;
@@ -411,7 +400,7 @@
             // 
             this.txtvat.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtvat.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtvat.Location = new System.Drawing.Point(828, 397);
+            this.txtvat.Location = new System.Drawing.Point(828, 432);
             this.txtvat.Name = "txtvat";
             this.txtvat.Size = new System.Drawing.Size(278, 28);
             this.txtvat.TabIndex = 90;
@@ -458,6 +447,8 @@
             // 
             // customernametxt
             // 
+            this.customernametxt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.customernametxt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.customernametxt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.customernametxt.DropDownHeight = 150;
@@ -465,6 +456,7 @@
             this.customernametxt.FormattingEnabled = true;
             this.customernametxt.IntegralHeight = false;
             this.customernametxt.Location = new System.Drawing.Point(157, 49);
+            this.customernametxt.MaximumSize = new System.Drawing.Size(280, 0);
             this.customernametxt.Name = "customernametxt";
             this.customernametxt.Size = new System.Drawing.Size(229, 28);
             this.customernametxt.TabIndex = 99;
@@ -475,7 +467,7 @@
             this.label19.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(681, 459);
+            this.label19.Location = new System.Drawing.Point(681, 479);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(102, 23);
             this.label19.TabIndex = 101;
@@ -485,7 +477,7 @@
             // 
             this.txtamountwithvat.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtamountwithvat.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtamountwithvat.Location = new System.Drawing.Point(828, 454);
+            this.txtamountwithvat.Location = new System.Drawing.Point(828, 474);
             this.txtamountwithvat.Name = "txtamountwithvat";
             this.txtamountwithvat.Size = new System.Drawing.Size(278, 28);
             this.txtamountwithvat.TabIndex = 100;
@@ -543,7 +535,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 255);
+            this.dataGridView1.Location = new System.Drawing.Point(1, 287);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -555,7 +547,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(661, 373);
+            this.dataGridView1.Size = new System.Drawing.Size(661, 341);
             this.dataGridView1.TabIndex = 28;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -639,11 +631,47 @@
             // 
             this.itmcalculationTableAdapter.ClearBeforeFill = true;
             // 
+            // itemnametxt
+            // 
+            this.itemnametxt.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.itemnametxt.FormattingEnabled = true;
+            this.itemnametxt.Location = new System.Drawing.Point(116, 240);
+            this.itemnametxt.Name = "itemnametxt";
+            this.itemnametxt.Size = new System.Drawing.Size(275, 25);
+            this.itemnametxt.TabIndex = 142;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(18, 198);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(76, 23);
+            this.label13.TabIndex = 144;
+            this.label13.Text = "Category";
+            // 
+            // categorytxt
+            // 
+            this.categorytxt.AllowDrop = true;
+            this.categorytxt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.categorytxt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.categorytxt.BackColor = System.Drawing.Color.White;
+            this.categorytxt.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.categorytxt.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categorytxt.FormattingEnabled = true;
+            this.categorytxt.Location = new System.Drawing.Point(116, 195);
+            this.categorytxt.Name = "categorytxt";
+            this.categorytxt.Size = new System.Drawing.Size(260, 25);
+            this.categorytxt.TabIndex = 143;
+            // 
             // ViewAllCouriers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 626);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.categorytxt);
+            this.Controls.Add(this.itemnametxt);
             this.Controls.Add(this.updtxt);
             this.Controls.Add(this.btnclear);
             this.Controls.Add(this.label19);
@@ -666,7 +694,6 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtsubtotal);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.itemnametxt);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.datetxt);
@@ -713,7 +740,6 @@
         private System.Windows.Forms.DateTimePicker datetxt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox itemnametxt;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox unittxt;
         private System.Windows.Forms.TextBox pricetxt;
@@ -748,5 +774,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn Discount;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total_Amount;
+        private System.Windows.Forms.ComboBox itemnametxt;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox categorytxt;
     }
 }

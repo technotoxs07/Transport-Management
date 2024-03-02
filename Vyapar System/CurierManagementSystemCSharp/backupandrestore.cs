@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace CurierManagementSystemCSharp
@@ -73,7 +75,9 @@ namespace CurierManagementSystemCSharp
 
         private void backupandrestore_Load(object sender, EventArgs e)
         {
-            
+            txtlocationbckup.Text = Properties.Settings.Default.usertext;
+            txtrestorelocation.Text = Properties.Settings.Default.passwordtxt;
+
         }
 
         private void btnbrowser_Click_1(object sender, EventArgs e)
@@ -191,6 +195,47 @@ namespace CurierManagementSystemCSharp
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void backupandrestore_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Properties.Settings.Default.usertext = txtlocationbckup.Text;
+            Properties.Settings.Default.passwordtxt = txtrestorelocation.Text;
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Login lg = new Login();
+            lg.Close();
+            register rg = new register();
+            rg.Close();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string msipath = AppDomain.CurrentDomain.BaseDirectory + "SqlLocalDB.msi";
+
+            if(System.IO.File.Exists(msipath))
+            {
+                try
+                {
+                    Process.Start(msipath);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Error starting the Server" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Installer not found at: " + msipath, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

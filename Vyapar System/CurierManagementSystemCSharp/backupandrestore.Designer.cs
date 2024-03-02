@@ -40,6 +40,9 @@
             this.txtlocationbckup = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -58,24 +61,32 @@
             // 
             // btnrestore
             // 
+            this.btnrestore.BackColor = System.Drawing.Color.Lime;
+            this.btnrestore.FlatAppearance.BorderSize = 0;
+            this.btnrestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnrestore.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnrestore.ForeColor = System.Drawing.Color.White;
             this.btnrestore.Location = new System.Drawing.Point(387, 59);
             this.btnrestore.Name = "btnrestore";
             this.btnrestore.Size = new System.Drawing.Size(83, 38);
             this.btnrestore.TabIndex = 3;
             this.btnrestore.Text = "Restore";
-            this.btnrestore.UseVisualStyleBackColor = true;
+            this.btnrestore.UseVisualStyleBackColor = false;
             this.btnrestore.Click += new System.EventHandler(this.btnrestore_Click);
             // 
             // btnbrowser2
             // 
+            this.btnbrowser2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnbrowser2.FlatAppearance.BorderSize = 0;
+            this.btnbrowser2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnbrowser2.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnbrowser2.ForeColor = System.Drawing.Color.White;
             this.btnbrowser2.Location = new System.Drawing.Point(387, 22);
             this.btnbrowser2.Name = "btnbrowser2";
             this.btnbrowser2.Size = new System.Drawing.Size(83, 31);
             this.btnbrowser2.TabIndex = 2;
             this.btnbrowser2.Text = "Browse";
-            this.btnbrowser2.UseVisualStyleBackColor = true;
+            this.btnbrowser2.UseVisualStyleBackColor = false;
             this.btnbrowser2.Click += new System.EventHandler(this.btnbrowser2_Click_1);
             // 
             // txtrestorelocation
@@ -120,24 +131,32 @@
             // 
             // btnbackup
             // 
+            this.btnbackup.BackColor = System.Drawing.Color.Lime;
+            this.btnbackup.FlatAppearance.BorderSize = 0;
+            this.btnbackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnbackup.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnbackup.ForeColor = System.Drawing.Color.White;
             this.btnbackup.Location = new System.Drawing.Point(387, 50);
             this.btnbackup.Name = "btnbackup";
             this.btnbackup.Size = new System.Drawing.Size(83, 38);
             this.btnbackup.TabIndex = 3;
             this.btnbackup.Text = "Backup";
-            this.btnbackup.UseVisualStyleBackColor = true;
+            this.btnbackup.UseVisualStyleBackColor = false;
             this.btnbackup.Click += new System.EventHandler(this.btnbackup_Click_1);
             // 
             // btnbrowser
             // 
+            this.btnbrowser.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnbrowser.FlatAppearance.BorderSize = 0;
+            this.btnbrowser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnbrowser.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnbrowser.ForeColor = System.Drawing.Color.White;
             this.btnbrowser.Location = new System.Drawing.Point(387, 13);
             this.btnbrowser.Name = "btnbrowser";
             this.btnbrowser.Size = new System.Drawing.Size(83, 31);
             this.btnbrowser.TabIndex = 2;
             this.btnbrowser.Text = "Browse";
-            this.btnbrowser.UseVisualStyleBackColor = true;
+            this.btnbrowser.UseVisualStyleBackColor = false;
             this.btnbrowser.Click += new System.EventHandler(this.btnbrowser_Click_1);
             // 
             // txtlocationbckup
@@ -169,12 +188,52 @@
             this.label1.Text = "Backup Database";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(480, 9);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(26, 26);
+            this.label11.TabIndex = 55;
+            this.label11.Text = "X";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(12, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 23);
+            this.label5.TabIndex = 56;
+            this.label5.Text = "< Back";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(376, 60);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(114, 38);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Install Server ";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // backupandrestore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(518, 444);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
@@ -182,6 +241,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "backupandrestore";
             this.Text = "backupandrestore";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.backupandrestore_FormClosed);
             this.Load += new System.EventHandler(this.backupandrestore_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -206,5 +266,8 @@
         private System.Windows.Forms.TextBox txtlocationbckup;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
     }
 }
