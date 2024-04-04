@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Microsoft.ReportingServices.Diagnostics.Internal;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -83,7 +85,7 @@ namespace CurierManagementSystemCSharp
             Properties.Settings.Default.Save();
         }
 
-       
+        SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
 
         private void checkbutton()
         {
@@ -97,13 +99,48 @@ namespace CurierManagementSystemCSharp
 
             // Save the updated items to settings
             SaveListBoxItems();
-            
+            foreach (var item in listBox2.Items)
+            {
+                InsertIntoDatabase(item.ToString());
+            }
+
+            MessageBox.Show("Data inserted successfully!");
+           
             //  return false;
-         //   Savesettings();
+            //   Savesettings();
 
         }
 
-      
+        private void InsertIntoDatabase(string item)
+        {
+            try
+            {
+                // Open the connection
+                connection.Open();
+
+                // SQL command to insert data into the table
+                string sql = "INSERT INTO unit_convers (Unit_Conversion) VALUES (@Item)";
+
+                // Create a SqlCommand object
+                using (SqlCommand cmd = new SqlCommand(sql, connection))
+                {
+                    // Add parameter for the item
+                    cmd.Parameters.AddWithValue("@Item", item);
+
+                    // Execute the command
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                // Close the connection
+                connection.Close();
+            }
+        }
 
         private void label2_Click(object sender, EventArgs e)
         {

@@ -509,5 +509,43 @@ namespace CurierManagementSystemCSharp
             ChildForm.BringToFront();
             ChildForm.Show();
         }
+
+        private void itemsSaleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gotoitemsale(new Showitemspurchase());
+        }
+
+        private void gotoitemsale(Showitemspurchase ChildForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = ChildForm;
+            ChildForm.TopLevel = false;
+            ChildForm.FormBorderStyle = FormBorderStyle.None;
+            ChildForm.Dock = DockStyle.Fill;
+            panel1.Controls.Add(ChildForm);
+            panel1.Tag = ChildForm;
+            ChildForm.BringToFront();
+            ChildForm.Show();
+        }
+
+        private void itemsPurchaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gotoitempurchase(new showitemsofsales());
+        }
+
+        private void gotoitempurchase(showitemsofsales ChildForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = ChildForm;
+            ChildForm.TopLevel = false;
+            ChildForm.FormBorderStyle = FormBorderStyle.None;
+            ChildForm.Dock = DockStyle.Fill;
+            panel1.Controls.Add(ChildForm);
+            panel1.Tag = ChildForm;
+            ChildForm.BringToFront();
+            ChildForm.Show();
+        }
     }
 }

@@ -163,13 +163,15 @@
             // 
             this.itemsSaleToolStripMenuItem.Name = "itemsSaleToolStripMenuItem";
             this.itemsSaleToolStripMenuItem.Size = new System.Drawing.Size(190, 28);
-            this.itemsSaleToolStripMenuItem.Text = "Items Sale";
+            this.itemsSaleToolStripMenuItem.Text = "Items Purchase";
+            this.itemsSaleToolStripMenuItem.Click += new System.EventHandler(this.itemsSaleToolStripMenuItem_Click);
             // 
             // itemsPurchaseToolStripMenuItem
             // 
             this.itemsPurchaseToolStripMenuItem.Name = "itemsPurchaseToolStripMenuItem";
             this.itemsPurchaseToolStripMenuItem.Size = new System.Drawing.Size(190, 28);
-            this.itemsPurchaseToolStripMenuItem.Text = "Items Purchase";
+            this.itemsPurchaseToolStripMenuItem.Text = "Items Sales";
+            this.itemsPurchaseToolStripMenuItem.Click += new System.EventHandler(this.itemsPurchaseToolStripMenuItem_Click);
             // 
             // SearchDeliveryToolStripMenuItem
             // 

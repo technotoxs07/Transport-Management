@@ -58,6 +58,23 @@ namespace CurierManagementSystemCSharp
                 dataGridView1.DataSource = new BindingSource(dt, null);
             }*/
             gettingname();
+            getitemfromcategory();
+        }
+
+        private void getitemfromcategory()
+        {
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select Category from Items", con);
+            SqlDataReader sdr = cmd.ExecuteReader();
+            while (sdr.Read())
+            {
+                categorytxt.Items.Add(sdr[0].ToString());
+                //customernumbertxt.Items.Add(sdr[0].ToString());
+                // string customerpayment = sdr["Amount_Charged"].ToString();
+                //amountchargedtxt.Text = customerpayment;
+            }
+            con.Close();
         }
 
         private void gettingname()
@@ -107,40 +124,32 @@ namespace CurierManagementSystemCSharp
                 con.Open();
                 try
                 {
-                    string query = "INSERT INTO Itmcalculation(Item_Name, Quantity, Unit, Price, Discount, Total_Amount)VALUES('" + itemnametxt.Text + "', '" + qtytxt.Text + "', '" + unittxt.Text + "', '" + pricetxt.Text + "','" + discouttxt.Text + "', '" + amountchargedtxt.Text + "');";
+                    string query = "INSERT INTO Itmcalculation(Item_Name, Quantity, Unit, Price, Discount, Total_Amount) " +
+                                    "VALUES(@ItemName, @Quantity, @Unit, @Price, @Discount, @TotalAmount);";
                     SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@ItemName", itemnametxt.Text);
+                    cmd.Parameters.AddWithValue("@Quantity", Convert.ToDecimal(qtytxt.Text)); // Convert to decimal
+                    cmd.Parameters.AddWithValue("@Unit", unittxt.Text);
+                    cmd.Parameters.AddWithValue("@Price", Convert.ToDecimal(pricetxt.Text)); // Convert to decimal
+                    cmd.Parameters.AddWithValue("@Discount", Convert.ToDecimal(discouttxt.Text)); // Convert to decimal
+                    cmd.Parameters.AddWithValue("@TotalAmount", Convert.ToDecimal(amountchargedtxt.Text)); // Convert to decimal
                     cmd.ExecuteNonQuery();
-                    string query2 = "select max(Id) from Itmcalculation";
+
+                    // Retrieve the maximum Id
+                    string query2 = "SELECT MAX(Id) FROM Itmcalculation;";
                     SqlCommand cmd2 = new SqlCommand(query2, con);
-                    SqlDataReader sdr = cmd2.ExecuteReader();
-                    if (sdr.Read())
-                    {
-                        // cmd.CommandType = CommandType.Text;
-                        itemnametxt.Text = "";
-                        qtytxt.Text = "";
-                        unittxt.Text = "";
-                        pricetxt.Text = "";
-                        discouttxt.Text = "";
-                        amountchargedtxt.Text = "";
-                    }
+                    int maxId = (int)cmd2.ExecuteScalar();
 
-
-
-
-
-                    using (SqlConnection con1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;"))
-                    {
-                        string str2 = "SELECT * FROM addcustomers WHERE Customer_Name = @Customer_Name";
-                        SqlCommand cmd3 = new SqlCommand(str2, con1);
-                        cmd3.Parameters.AddWithValue("@Customer_Name", customernametxt.Text);
-                        SqlDataAdapter sda = new SqlDataAdapter(cmd3);
-                        DataTable dt = new DataTable();
-                        sda.Fill(dt);
-                        dataGridView1.DataSource = new BindingSource(dt, null);
-                    }
-
-
+                    // Clear input fields
+                    itemnametxt.Text = "";
+                    qtytxt.Text = "";
+                    unittxt.Text = "";
+                    pricetxt.Text = "";
+                    discouttxt.Text = "";
+                    amountchargedtxt.Text = "";
                 }
+
+
                 catch (SqlException ex)
                 {
                     MessageBox.Show(ex.Message);
@@ -643,6 +652,92 @@ namespace CurierManagementSystemCSharp
                 conn.Close();
                 MessageBox.Show("Purchases Items are Successfully Updates", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 loadinfitemcalculation();
+            }
+        }
+
+        private void categorytxt_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedCategory = categorytxt.SelectedItem.ToString();
+            showitemsdata(selectedCategory);
+        }
+
+        private void showitemsdata(string selectedcategory)
+        {
+            using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT ItemName, Unit FROM Items WHERE Category = @selectedcategory", con);
+                    cmd.Parameters.AddWithValue("@selectedcategory", selectedcategory);
+                    itemnametxt.Items.Clear();
+                    unittxt.Items.Clear();
+
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        while (sdr.Read())
+                        {
+                            itemnametxt.Items.Add(sdr["ItemName"].ToString());
+
+
+                            unittxt.Items.Add(sdr["Unit"].ToString());
+                            // pricetxt.AppendText(sdr["SalePrice"].ToString() + Environment.NewLine);
+
+                        }
+                    }
+                    //
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
+        }
+
+        private void itemnametxt_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            showpricedata();
+
+        }
+
+        private void showpricedata()
+        {
+            pricetxt.Clear();
+
+            //Get the selected item name
+            string selectedItemName = itemnametxt.SelectedItem.ToString();
+
+            //Query to retreive the price data for the item name
+            string query = "SELECT SalePrice FROM Items WHERE ItemName = @selectedItemName";
+
+            using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@selectedItemName", selectedItemName);
+
+                    using (SqlDataReader srd = cmd.ExecuteReader())
+                    {
+                        while (srd.Read())
+                        {
+                            pricetxt.AppendText(srd["SalePrice"].ToString() + Environment.NewLine);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    con.Close();
+                }
             }
         }
     }

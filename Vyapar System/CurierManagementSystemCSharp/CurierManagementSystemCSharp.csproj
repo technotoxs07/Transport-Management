@@ -171,6 +171,12 @@
     <Compile Include="backupandrestore.Designer.cs">
       <DependentUpon>backupandrestore.cs</DependentUpon>
     </Compile>
+    <Compile Include="categoriesdetailes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="categoriesdetailes.Designer.cs">
+      <DependentUpon>categoriesdetailes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consignment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,15 +195,35 @@
     <Compile Include="Items.Designer.cs">
       <DependentUpon>Items.cs</DependentUpon>
     </Compile>
-    <Compile Include="Itemsdata.Designer.cs">
+    <Compile Include="Itemsdata.cs">
+      <DependentUpon>Itemsdata.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Itemsdata2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Itemsdata.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Items_Transaction.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Items_Transaction.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="productdetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="productdetails.Designer.cs">
+      <DependentUpon>productdetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="purchasecatgory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="purchasecatgory.Designer.cs">
+      <DependentUpon>purchasecatgory.cs</DependentUpon>
     </Compile>
     <Compile Include="Purchases%28Real%29.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -342,17 +368,29 @@
     <Compile Include="Reports\Sale.Designer.cs">
       <DependentUpon>Sale.cs</DependentUpon>
     </Compile>
+    <Compile Include="salesproductdetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salesproductdetails.Designer.cs">
+      <DependentUpon>salesproductdetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="settings.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="settings.Designer.cs">
       <DependentUpon>settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Showitemssale.cs">
+    <Compile Include="showitemsofsales.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Showitemssale.Designer.cs">
-      <DependentUpon>Showitemssale.cs</DependentUpon>
+    <Compile Include="showitemsofsales.Designer.cs">
+      <DependentUpon>showitemsofsales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Showitemspurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Showitemspurchase.Designer.cs">
+      <DependentUpon>Showitemspurchase.cs</DependentUpon>
     </Compile>
     <Compile Include="StaffDetails.cs">
       <SubType>Form</SubType>
@@ -365,6 +403,17 @@
     </Compile>
     <Compile Include="Unitconversion.Designer.cs">
       <DependentUpon>Unitconversion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="unitsdetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="unitsdetails.Designer.cs">
+      <DependentUpon>unitsdetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="unit_sonversion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>unit_sonversion.xsd</DependentUpon>
     </Compile>
     <Compile Include="UpdateStaff.cs">
       <SubType>Form</SubType>
@@ -392,6 +441,9 @@
     <EmbeddedResource Include="bin\Release\customerreportsdetails.rdlc" />
     <EmbeddedResource Include="bin\Release\purchase.rdlc" />
     <EmbeddedResource Include="bin\Release\Salesss.rdlc" />
+    <EmbeddedResource Include="categoriesdetailes.resx">
+      <DependentUpon>categoriesdetailes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consignment.resx">
       <DependentUpon>Consignment.cs</DependentUpon>
     </EmbeddedResource>
@@ -400,6 +452,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Items.resx">
       <DependentUpon>Items.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="productdetails.resx">
+      <DependentUpon>productdetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="purchasecatgory.resx">
+      <DependentUpon>purchasecatgory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Purchasesss.resx">
       <DependentUpon>Purchasesss.cs</DependentUpon>
@@ -445,17 +503,26 @@
     <EmbeddedResource Include="Reports\Sale.resx">
       <DependentUpon>Sale.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="salesproductdetails.resx">
+      <DependentUpon>salesproductdetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="settings.resx">
       <DependentUpon>settings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Showitemssale.resx">
-      <DependentUpon>Showitemssale.cs</DependentUpon>
+    <EmbeddedResource Include="showitemsofsales.resx">
+      <DependentUpon>showitemsofsales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Showitemspurchase.resx">
+      <DependentUpon>Showitemspurchase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StaffDetails.resx">
       <DependentUpon>StaffDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Unitconversion.resx">
       <DependentUpon>Unitconversion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="unitsdetails.resx">
+      <DependentUpon>unitsdetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateStaff.resx">
       <DependentUpon>UpdateStaff.cs</DependentUpon>
@@ -558,9 +625,21 @@
     <None Include="Itemsdata.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Itemsdata2.Designer.cs</LastGenOutput>
     </None>
     <None Include="Itemsdata.xss">
       <DependentUpon>Itemsdata.xsd</DependentUpon>
+    </None>
+    <None Include="Items_Transaction.xsc">
+      <DependentUpon>Items_Transaction.xsd</DependentUpon>
+    </None>
+    <None Include="Items_Transaction.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Items_Transaction.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Items_Transaction.xss">
+      <DependentUpon>Items_Transaction.xsd</DependentUpon>
     </None>
     <None Include="Properties\app.manifest" />
     <None Include="itemcalculation.xsc">
@@ -596,6 +675,17 @@
       <DependentUpon>Purchase.xsd</DependentUpon>
     </None>
     <None Include="SqlLocalDB.msi" />
+    <None Include="unit_sonversion.xsc">
+      <DependentUpon>unit_sonversion.xsd</DependentUpon>
+    </None>
+    <None Include="unit_sonversion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>unit_sonversion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="unit_sonversion.xss">
+      <DependentUpon>unit_sonversion.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -37,12 +37,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtpurchase = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtsale = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,11 +48,24 @@
             this.itemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.itemsdata = new CurierManagementSystemCSharp.Itemsdata();
             this.itemsTableAdapter = new CurierManagementSystemCSharp.ItemsdataTableAdapters.ItemsTableAdapter();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtpurchase = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtsale = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtlocation = new System.Windows.Forms.TextBox();
+            this.txtminstock = new System.Windows.Forms.TextBox();
+            this.txtprice = new System.Windows.Forms.TextBox();
+            this.txtopeningquantity = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemsdata)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // itemnametxt
@@ -123,84 +130,6 @@
             this.button1.Text = "Select Unit";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // txtpurchase
-            // 
-            this.txtpurchase.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtpurchase.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtpurchase.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
-            this.txtpurchase.BackColor = System.Drawing.Color.White;
-            this.txtpurchase.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpurchase.ForeColor = System.Drawing.Color.Black;
-            this.txtpurchase.Location = new System.Drawing.Point(42, 44);
-            this.txtpurchase.Name = "txtpurchase";
-            this.txtpurchase.Size = new System.Drawing.Size(262, 28);
-            this.txtpurchase.TabIndex = 124;
-            this.txtpurchase.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtpurchase.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.txtpurchase.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpurchase_KeyPress);
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(36, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 23);
-            this.label2.TabIndex = 123;
-            this.label2.Text = "Purchase";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // txtsale
-            // 
-            this.txtsale.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtsale.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txtsale.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
-            this.txtsale.BackColor = System.Drawing.Color.White;
-            this.txtsale.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtsale.ForeColor = System.Drawing.Color.Black;
-            this.txtsale.Location = new System.Drawing.Point(39, 47);
-            this.txtsale.Name = "txtsale";
-            this.txtsale.Size = new System.Drawing.Size(262, 28);
-            this.txtsale.TabIndex = 126;
-            this.txtsale.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtsale.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsale_KeyPress);
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(35, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 23);
-            this.label3.TabIndex = 125;
-            this.label3.Text = "Sales";
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txtsale);
-            this.panel1.Location = new System.Drawing.Point(16, 95);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1154, 89);
-            this.panel1.TabIndex = 127;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.SystemColors.Control;
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.txtpurchase);
-            this.panel2.Location = new System.Drawing.Point(16, 192);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1154, 86);
-            this.panel2.TabIndex = 128;
             // 
             // button2
             // 
@@ -323,16 +252,183 @@
             // 
             this.itemsTableAdapter.ClearBeforeFill = true;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(16, 112);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1118, 168);
+            this.tabControl1.TabIndex = 127;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.txtpurchase);
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.txtsale);
+            this.tabPage1.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage1.Location = new System.Drawing.Point(4, 26);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1110, 138);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Pricing";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(428, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 23);
+            this.label2.TabIndex = 131;
+            this.label2.Text = "Purchase";
+            // 
+            // txtpurchase
+            // 
+            this.txtpurchase.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtpurchase.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtpurchase.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
+            this.txtpurchase.BackColor = System.Drawing.Color.White;
+            this.txtpurchase.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpurchase.ForeColor = System.Drawing.Color.Black;
+            this.txtpurchase.Location = new System.Drawing.Point(434, 75);
+            this.txtpurchase.Name = "txtpurchase";
+            this.txtpurchase.Size = new System.Drawing.Size(262, 28);
+            this.txtpurchase.TabIndex = 132;
+            this.txtpurchase.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(20, 39);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 23);
+            this.label3.TabIndex = 129;
+            this.label3.Text = "Sales";
+            // 
+            // txtsale
+            // 
+            this.txtsale.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtsale.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtsale.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
+            this.txtsale.BackColor = System.Drawing.Color.White;
+            this.txtsale.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsale.ForeColor = System.Drawing.Color.Black;
+            this.txtsale.Location = new System.Drawing.Point(24, 74);
+            this.txtsale.Name = "txtsale";
+            this.txtsale.Size = new System.Drawing.Size(262, 28);
+            this.txtsale.TabIndex = 130;
+            this.txtsale.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dateTimePicker1);
+            this.tabPage2.Controls.Add(this.txtlocation);
+            this.tabPage2.Controls.Add(this.txtminstock);
+            this.tabPage2.Controls.Add(this.txtprice);
+            this.tabPage2.Controls.Add(this.txtopeningquantity);
+            this.tabPage2.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage2.Location = new System.Drawing.Point(4, 26);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1110, 138);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Stock";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(688, 20);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 24);
+            this.dateTimePicker1.TabIndex = 139;
+            // 
+            // txtlocation
+            // 
+            this.txtlocation.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtlocation.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtlocation.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
+            this.txtlocation.BackColor = System.Drawing.Color.White;
+            this.txtlocation.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtlocation.ForeColor = System.Drawing.Color.Gray;
+            this.txtlocation.Location = new System.Drawing.Point(361, 81);
+            this.txtlocation.Name = "txtlocation";
+            this.txtlocation.Size = new System.Drawing.Size(262, 28);
+            this.txtlocation.TabIndex = 138;
+            this.txtlocation.Text = "Location";
+            this.txtlocation.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtlocation.Enter += new System.EventHandler(this.textBox4_Enter);
+            this.txtlocation.Leave += new System.EventHandler(this.textBox4_Leave);
+            // 
+            // txtminstock
+            // 
+            this.txtminstock.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtminstock.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtminstock.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
+            this.txtminstock.BackColor = System.Drawing.Color.White;
+            this.txtminstock.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtminstock.ForeColor = System.Drawing.Color.Gray;
+            this.txtminstock.Location = new System.Drawing.Point(17, 81);
+            this.txtminstock.Name = "txtminstock";
+            this.txtminstock.Size = new System.Drawing.Size(262, 28);
+            this.txtminstock.TabIndex = 137;
+            this.txtminstock.Text = "Min Stock To Maintain";
+            this.txtminstock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtminstock.Enter += new System.EventHandler(this.textBox3_Enter);
+            this.txtminstock.Leave += new System.EventHandler(this.textBox3_Leave);
+            // 
+            // txtprice
+            // 
+            this.txtprice.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtprice.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtprice.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
+            this.txtprice.BackColor = System.Drawing.Color.White;
+            this.txtprice.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtprice.ForeColor = System.Drawing.Color.Gray;
+            this.txtprice.Location = new System.Drawing.Point(361, 16);
+            this.txtprice.Name = "txtprice";
+            this.txtprice.Size = new System.Drawing.Size(262, 28);
+            this.txtprice.TabIndex = 136;
+            this.txtprice.Text = "At Price";
+            this.txtprice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtprice.Enter += new System.EventHandler(this.textBox1_Enter);
+            this.txtprice.Leave += new System.EventHandler(this.textBox1_Leave);
+            // 
+            // txtopeningquantity
+            // 
+            this.txtopeningquantity.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtopeningquantity.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtopeningquantity.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
+            this.txtopeningquantity.BackColor = System.Drawing.Color.White;
+            this.txtopeningquantity.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtopeningquantity.ForeColor = System.Drawing.Color.Gray;
+            this.txtopeningquantity.Location = new System.Drawing.Point(17, 16);
+            this.txtopeningquantity.Name = "txtopeningquantity";
+            this.txtopeningquantity.Size = new System.Drawing.Size(262, 28);
+            this.txtopeningquantity.TabIndex = 134;
+            this.txtopeningquantity.Text = "Opening Quantity";
+            this.txtopeningquantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtopeningquantity.Click += new System.EventHandler(this.textBox2_Click);
+            this.txtopeningquantity.Enter += new System.EventHandler(this.textBox2_Enter);
+            this.txtopeningquantity.Leave += new System.EventHandler(this.textBox2_Leave);
+            // 
             // Items
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1182, 626);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
@@ -342,13 +438,14 @@
             this.Text = "Items";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Items_FormClosing);
             this.Load += new System.EventHandler(this.Items_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemsdata)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,12 +458,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtpurchase;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtsale;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private Itemsdata itemsdata;
@@ -378,5 +469,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn unitDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn salePriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn purchasePriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtpurchase;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtsale;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtlocation;
+        private System.Windows.Forms.TextBox txtminstock;
+        private System.Windows.Forms.TextBox txtprice;
+        private System.Windows.Forms.TextBox txtopeningquantity;
     }
 }

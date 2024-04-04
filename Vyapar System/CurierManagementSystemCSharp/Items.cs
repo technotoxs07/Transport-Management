@@ -16,6 +16,10 @@ namespace CurierManagementSystemCSharp
 {
     public partial class Items : Form
     {
+        private string watermarkText1 = "Opening Quantity";
+        private string watermarkText2 = "At Price";
+        private string watermarkText3 = "Min Stock To Maintain";
+        private string watermarkText4 = "Location";
         public Items()
         {
             InitializeComponent();
@@ -23,7 +27,7 @@ namespace CurierManagementSystemCSharp
             // LoadComboBoxText();
             //LoadComboBoxItems();
             showdatacategory();
-           
+            SetWatermark();
         }
 
 
@@ -211,10 +215,13 @@ namespace CurierManagementSystemCSharp
                     {
                         foreach (string item in listBoxItems)
                         {
+                            decimal openingQuantity = decimal.Parse(txtopeningquantity.Text);
+                            decimal price = decimal.Parse(txtprice.Text);
+                            decimal stockValue = openingQuantity * price;
                             // SQL query with parameters
-                           // string Id = Guid.NewGuid().ToString("N");
+                            // string Id = Guid.NewGuid().ToString("N");
 
-                            string query = "INSERT INTO Items (ItemName, Category, Unit, SalePrice, PurchasePrice) VALUES (@ItemName, @Category, @Unit, @SalePrice, @PurchasePrice)";
+                            string query = "INSERT INTO Items (ItemName, Category, Unit, SalePrice, PurchasePrice, opening_quantity, at_Price, date, Min_Stock, Location, Stock_Value) VALUES (@ItemName, @Category, @Unit, @SalePrice, @PurchasePrice, @opening_quantity, @at_Price, @date, @Min_Stock, @Location, @Stock_Value)";
                             SqlCommand cmd = new SqlCommand(query, con);
 
                             // Add parameters to the command
@@ -224,7 +231,12 @@ namespace CurierManagementSystemCSharp
                             cmd.Parameters.AddWithValue("@Unit", item);
                             cmd.Parameters.AddWithValue("@SalePrice", txtsale.Text);
                             cmd.Parameters.AddWithValue("@PurchasePrice", txtpurchase.Text);
-
+                            cmd.Parameters.AddWithValue("@opening_quantity", txtopeningquantity.Text);
+                                cmd.Parameters.AddWithValue("@at_Price", txtprice.Text);
+                            cmd.Parameters.AddWithValue("@date", dateTimePicker1.Value);
+                            cmd.Parameters.AddWithValue("@Min_Stock", txtminstock.Text);
+                            cmd.Parameters.AddWithValue("@Location", txtlocation.Text);
+                            cmd.Parameters.AddWithValue("@Stock_Value", stockValue); 
                             cmd.ExecuteNonQuery();
 
                             // Get the max Id from the Items table
@@ -237,6 +249,8 @@ namespace CurierManagementSystemCSharp
                             itemnametxt.Text = "";
                             txtsale.Text = "";
                             txtpurchase.Text = "";
+                            txtopeningquantity.Text = "";
+                           
 
                             // Reload the data in the DataGridView
                             showdatafromitems();
@@ -327,6 +341,114 @@ namespace CurierManagementSystemCSharp
         {
 
         }
+
+        private void textBox2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBox2_Enter(object sender, EventArgs e)
+        {
+            if (txtopeningquantity.Text == watermarkText1 && txtopeningquantity.ForeColor == System.Drawing.Color.Gray)
+            {
+                txtopeningquantity.Text = "";
+                txtopeningquantity.ForeColor = System.Drawing.Color.Black;
+            }
+        }
+
+        private void ClearWatermark()
+        {
+          
+           
+        }
+
+        private void textBox2_Leave(object sender, EventArgs e)
+        {
+           // SetWatermark();
+            if (string.IsNullOrEmpty(txtopeningquantity.Text))
+            {
+                txtopeningquantity.Text = watermarkText1;
+                txtopeningquantity.ForeColor = System.Drawing.Color.Gray;
+            }
+        }
+
+        private void SetWatermark()
+        {
+            if (string.IsNullOrEmpty(txtopeningquantity.Text))
+            {
+                txtopeningquantity.Text = watermarkText1;
+                txtopeningquantity.ForeColor = System.Drawing.Color.Gray;
+            }
+            /*else if (string.IsNullOrEmpty(textBox1.Text))
+             {
+                 textBox1.Text = watermarkText2;
+                 textBox1.ForeColor = System.Drawing.Color.Gray;
+             }
+             else if (string.IsNullOrEmpty(textBox3.Text))
+             {
+                 textBox3.Text = watermarkText3;
+                 textBox3.ForeColor = System.Drawing.Color.Gray;
+             }
+             else if (string.IsNullOrEmpty(textBox4.Text))
+             {
+                 textBox4.Text = watermarkText4;
+                 textBox4.ForeColor = System.Drawing.Color.Gray;
+             }*/
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            if (txtprice.Text == watermarkText2 && txtprice.ForeColor == System.Drawing.Color.Gray)
+            {
+                txtprice.Text = "";
+                txtprice.ForeColor = System.Drawing.Color.Black;
+            }
+        }
+
+        private void textBox3_Enter(object sender, EventArgs e)
+        {
+            if (txtminstock.Text == watermarkText3 && txtminstock.ForeColor == System.Drawing.Color.Gray)
+            {
+                txtminstock.Text = "";
+                txtminstock.ForeColor = System.Drawing.Color.Black;
+            }
+        }
+
+        private void textBox4_Enter(object sender, EventArgs e)
+        {
+            if (txtlocation.Text == watermarkText4 && txtlocation.ForeColor == System.Drawing.Color.Gray)
+            {
+                txtlocation.Text = "";
+                txtlocation.ForeColor = System.Drawing.Color.Black;
+            }
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtprice.Text))
+            {
+                txtprice.Text = watermarkText2;
+                txtprice.ForeColor = System.Drawing.Color.Gray;
+            }
+        }
+
+        private void textBox3_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtminstock.Text))
+            {
+                txtminstock.Text = watermarkText3;
+                txtminstock.ForeColor = System.Drawing.Color.Gray;
+            }
+        }
+
+        private void textBox4_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtlocation.Text))
+            {
+                txtlocation.Text = watermarkText4;
+                txtlocation.ForeColor = System.Drawing.Color.Gray;
+            }
+        }
     }
-    }
+}
 

@@ -16,7 +16,7 @@ namespace CurierManagementSystemCSharp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Showitemssale());
+            Application.Run(new Home());
         }
     }
 }

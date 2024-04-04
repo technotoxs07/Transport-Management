@@ -65,8 +65,16 @@ namespace CurierManagementSystemCSharp
         }
         private void categorytxt_SelectedIndexChanged(object sender, EventArgs e)
         {
+           
             string selectedCategory = categorytxt.SelectedItem.ToString();
             showitemsdata(selectedCategory);
+            if (categorytxt.SelectedItem != null && itemnametxt.SelectedItem != null)
+            {
+               // string selectedCategory = categorytxt.SelectedItem.ToString();
+                string selectedItemName = itemnametxt.SelectedItem.ToString(); // or however you retrieve the selected item name
+               // showitemsdata(selectedCategory);
+                showpricedata(selectedItemName, selectedCategory);
+            }
         }
        
 
@@ -80,9 +88,11 @@ namespace CurierManagementSystemCSharp
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SELECT ItemName, Unit FROM Items WHERE Category = @selectedcategory", con);
                     cmd.Parameters.AddWithValue("@selectedcategory", selectedcategory);
-                    itemnametxt.Items.Clear();
-                    unittxt.Items.Clear();
                    
+                        itemnametxt.Items.Clear();
+
+                    unittxt.Items.Clear();
+
                     using (SqlDataReader sdr = cmd.ExecuteReader())
                     {
                         while (sdr.Read())
@@ -108,33 +118,31 @@ namespace CurierManagementSystemCSharp
             }
         }
 
-        private void showpricedata()
+        private void showpricedata(string selectedItemName, string selectedCategory)
         {
             pricetxt.Clear();
 
-            //Get the selected item name
-            string selectedItemName = itemnametxt.SelectedItem.ToString();
+            // Query to retrieve the price data for the item name and category
+            string query = "SELECT PurchasePrice FROM Items WHERE ItemName = @selectedItemName AND Category = @selectedCategory";
 
-            //Query to retreive the price data for the item name
-            string query = "SELECT SalePrice FROM Items WHERE ItemName = @selectedItemName";
-
-            using(SqlConnection  con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
+            using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
             {
                 try
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.Parameters.AddWithValue("@selectedItemName", selectedItemName);
+                    cmd.Parameters.AddWithValue("@selectedCategory", selectedCategory);
 
                     using (SqlDataReader srd = cmd.ExecuteReader())
                     {
-                        while(srd.Read())
+                        while (srd.Read())
                         {
-                            pricetxt.AppendText(srd["SalePrice"].ToString() + Environment.NewLine);
+                            pricetxt.AppendText(srd["PurchasePrice"].ToString() + Environment.NewLine);
                         }
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -214,6 +222,7 @@ namespace CurierManagementSystemCSharp
                loadingdatafromitemcal();
             }
         }
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True;");
 
         private void loadingdatafromitemcal()
         {
@@ -538,7 +547,7 @@ namespace CurierManagementSystemCSharp
                 }
             }
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;");
+       SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;");
 
         private void updtxt_Click(object sender, EventArgs e)
         {
@@ -582,11 +591,16 @@ namespace CurierManagementSystemCSharp
 
                 // Repeat similar checks for other cells...
 
-                int qty;
+                decimal qty;
                 if (selectedRow.Cells[2].Value != null && selectedRow.Cells[2].Value != DBNull.Value &&
-                    int.TryParse(selectedRow.Cells[2].Value.ToString(), out qty))
+                    decimal.TryParse(selectedRow.Cells[2].Value.ToString(), out qty))
                 {
                     qtytxt.Text = qty.ToString();
+                }
+
+                if (selectedRow.Cells[3].Value != null && selectedRow.Cells[3].Value != DBNull.Value)
+                {
+                    unittxt.Text = selectedRow.Cells[3].Value.ToString();
                 }
 
                 // Repeat for other cells...
@@ -618,7 +632,12 @@ namespace CurierManagementSystemCSharp
 
         private void itemnametxt_SelectedIndexChanged(object sender, EventArgs e)
         {
-            showpricedata();
+            if (itemnametxt.SelectedItem != null && categorytxt.SelectedItem != null)
+            {
+                string selectedItemName = itemnametxt.SelectedItem.ToString();
+                string selectedCategory = categorytxt.SelectedItem.ToString();
+                showpricedata(selectedItemName, selectedCategory);
+            }
         }
     }
 }
