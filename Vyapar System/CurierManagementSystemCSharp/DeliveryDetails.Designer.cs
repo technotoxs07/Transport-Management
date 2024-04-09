@@ -71,9 +71,6 @@
             this.refreshbtn = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.deliveryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.courierDataSet1 = new CurierManagementSystemCSharp.courierDataSet1();
-            this.deliveryTableAdapter = new CurierManagementSystemCSharp.courierDataSet1TableAdapters.deliveryTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sender_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,6 +88,9 @@
             this.Rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delivery_Man = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delivery_Phone_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deliveryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.courierDataSet1 = new CurierManagementSystemCSharp.courierDataSet1();
+            this.deliveryTableAdapter = new CurierManagementSystemCSharp.courierDataSet1TableAdapters.deliveryTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deliveryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courierDataSet1)).BeginInit();
@@ -577,20 +577,6 @@
             this.dataGridView1.TabIndex = 73;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // deliveryBindingSource
-            // 
-            this.deliveryBindingSource.DataMember = "delivery";
-            this.deliveryBindingSource.DataSource = this.courierDataSet1;
-            // 
-            // courierDataSet1
-            // 
-            this.courierDataSet1.DataSetName = "courierDataSet1";
-            this.courierDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // deliveryTableAdapter
-            // 
-            this.deliveryTableAdapter.ClearBeforeFill = true;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -727,6 +713,20 @@
             this.Delivery_Phone_Number.ReadOnly = true;
             this.Delivery_Phone_Number.Width = 67;
             // 
+            // deliveryBindingSource
+            // 
+            this.deliveryBindingSource.DataMember = "delivery";
+            this.deliveryBindingSource.DataSource = this.courierDataSet1;
+            // 
+            // courierDataSet1
+            // 
+            this.courierDataSet1.DataSetName = "courierDataSet1";
+            this.courierDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // deliveryTableAdapter
+            // 
+            this.deliveryTableAdapter.ClearBeforeFill = true;
+            // 
             // DeliveryDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -772,7 +772,6 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "DeliveryDetails";
-            this.Text = "DeliveryDetails";
             this.Load += new System.EventHandler(this.DeliveryDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deliveryBindingSource)).EndInit();

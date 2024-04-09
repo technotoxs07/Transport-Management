@@ -224,6 +224,7 @@ namespace CurierManagementSystemCSharp
             {
                 using (HttpClient client = new HttpClient())
                 {
+               // https://www.dropbox.com/scl/fi/b7ogr6rotnk3k638oe5l8/Vyapar-System.msi?rlkey=t2kxzi2ii0y1hfo9gfligu2oa&dl=0
                     // Replace MsiUrl with your Google Drive or appropriate URL
                     string msiUrl = "https://www.dropbox.com/scl/fi/b7ogr6rotnk3k638oe5l8/Transportation-Setup.msi?rlkey=t2kxzi2ii0y1hfo9gfligu2oa&dl=1";
 

@@ -48,10 +48,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnaddbusiness = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.addbusinessBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.add_business = new CurierManagementSystemCSharp.add_business();
-            this.button3 = new System.Windows.Forms.Button();
-            this.add_businessTableAdapter = new CurierManagementSystemCSharp.add_businessTableAdapters.add_businessTableAdapter();
             this.Business_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Business_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Business_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +55,10 @@
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.authorized_dealer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addbusinessBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.add_business = new CurierManagementSystemCSharp.add_business();
+            this.button3 = new System.Windows.Forms.Button();
+            this.add_businessTableAdapter = new CurierManagementSystemCSharp.add_businessTableAdapters.add_businessTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addbusinessBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.add_business)).BeginInit();
@@ -67,9 +67,9 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(244, 62);
+            this.textBox1.Location = new System.Drawing.Point(186, 66);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(147, 30);
+            this.textBox1.Size = new System.Drawing.Size(190, 30);
             this.textBox1.TabIndex = 76;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -110,7 +110,7 @@
             this.teltxt.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.teltxt.Location = new System.Drawing.Point(637, 62);
             this.teltxt.Name = "teltxt";
-            this.teltxt.Size = new System.Drawing.Size(196, 30);
+            this.teltxt.Size = new System.Drawing.Size(239, 30);
             this.teltxt.TabIndex = 72;
             this.teltxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.teltxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.teltxt_KeyPress);
@@ -118,10 +118,10 @@
             // businessaddrtxt
             // 
             this.businessaddrtxt.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.businessaddrtxt.Location = new System.Drawing.Point(244, 213);
+            this.businessaddrtxt.Location = new System.Drawing.Point(186, 217);
             this.businessaddrtxt.Multiline = true;
             this.businessaddrtxt.Name = "businessaddrtxt";
-            this.businessaddrtxt.Size = new System.Drawing.Size(196, 62);
+            this.businessaddrtxt.Size = new System.Drawing.Size(263, 62);
             this.businessaddrtxt.TabIndex = 71;
             this.businessaddrtxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -129,9 +129,9 @@
             // 
             this.businessnametxt.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.businessnametxt.ForeColor = System.Drawing.Color.Black;
-            this.businessnametxt.Location = new System.Drawing.Point(244, 136);
+            this.businessnametxt.Location = new System.Drawing.Point(186, 140);
             this.businessnametxt.Name = "businessnametxt";
-            this.businessnametxt.Size = new System.Drawing.Size(196, 30);
+            this.businessnametxt.Size = new System.Drawing.Size(263, 30);
             this.businessnametxt.TabIndex = 70;
             this.businessnametxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -272,35 +272,6 @@
             this.dataGridView1.TabIndex = 82;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // addbusinessBindingSource
-            // 
-            this.addbusinessBindingSource.DataMember = "add_business";
-            this.addbusinessBindingSource.DataSource = this.add_business;
-            // 
-            // add_business
-            // 
-            this.add_business.DataSetName = "add_business";
-            this.add_business.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(974, 291);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(128, 36);
-            this.button3.TabIndex = 83;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // add_businessTableAdapter
-            // 
-            this.add_businessTableAdapter.ClearBeforeFill = true;
-            // 
             // Business_id
             // 
             this.Business_id.DataPropertyName = "Business_id";
@@ -350,6 +321,35 @@
             this.pan.Name = "pan";
             this.pan.ReadOnly = true;
             // 
+            // addbusinessBindingSource
+            // 
+            this.addbusinessBindingSource.DataMember = "add_business";
+            this.addbusinessBindingSource.DataSource = this.add_business;
+            // 
+            // add_business
+            // 
+            this.add_business.DataSetName = "add_business";
+            this.add_business.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.BackColor = System.Drawing.Color.Red;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(974, 291);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(128, 36);
+            this.button3.TabIndex = 83;
+            this.button3.Text = "Delete";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // add_businessTableAdapter
+            // 
+            this.add_businessTableAdapter.ClearBeforeFill = true;
+            // 
             // Internalcompanydetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -373,7 +373,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Name = "Internalcompanydetails";
-            this.Text = "Internalcompanydetails";
             this.Load += new System.EventHandler(this.Internalcompanydetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addbusinessBindingSource)).EndInit();

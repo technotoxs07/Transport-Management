@@ -47,6 +47,9 @@
             this.DeliveryDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ConsignmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.expensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addExpensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.expensesDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.purchaseAndSaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consignmentReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,6 +82,7 @@
             this.DeliveryDetailsToolStripMenuItem,
             this.ConsignmentToolStripMenuItem,
             this.customerPaymentToolStripMenuItem,
+            this.expensesToolStripMenuItem,
             this.reportToolStripMenuItem});
             this.MenuStrip1.Location = new System.Drawing.Point(0, 0);
             this.MenuStrip1.Name = "MenuStrip1";
@@ -106,6 +110,7 @@
             // 
             // updateStaffToolStripMenuItem
             // 
+            this.updateStaffToolStripMenuItem.Image = global::CurierManagementSystemCSharp.Properties.Resources.Staff1;
             this.updateStaffToolStripMenuItem.Name = "updateStaffToolStripMenuItem";
             this.updateStaffToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
             this.updateStaffToolStripMenuItem.Text = "Add Staff";
@@ -113,6 +118,7 @@
             // 
             // updateStaffToolStripMenuItem1
             // 
+            this.updateStaffToolStripMenuItem1.Image = global::CurierManagementSystemCSharp.Properties.Resources.Update_staff;
             this.updateStaffToolStripMenuItem1.Name = "updateStaffToolStripMenuItem1";
             this.updateStaffToolStripMenuItem1.Size = new System.Drawing.Size(180, 28);
             this.updateStaffToolStripMenuItem1.Text = "Update Staff";
@@ -130,6 +136,7 @@
             // 
             // addBusinessToolStripMenuItem
             // 
+            this.addBusinessToolStripMenuItem.Image = global::CurierManagementSystemCSharp.Properties.Resources.Customer;
             this.addBusinessToolStripMenuItem.Name = "addBusinessToolStripMenuItem";
             this.addBusinessToolStripMenuItem.Size = new System.Drawing.Size(182, 28);
             this.addBusinessToolStripMenuItem.Text = "Add Customer";
@@ -137,6 +144,7 @@
             // 
             // addBusinessToolStripMenuItem1
             // 
+            this.addBusinessToolStripMenuItem1.Image = global::CurierManagementSystemCSharp.Properties.Resources.Business_Documentation;
             this.addBusinessToolStripMenuItem1.Name = "addBusinessToolStripMenuItem1";
             this.addBusinessToolStripMenuItem1.Size = new System.Drawing.Size(182, 28);
             this.addBusinessToolStripMenuItem1.Text = "Add Business";
@@ -151,9 +159,11 @@
             this.itemToolStripMenuItem.Name = "itemToolStripMenuItem";
             this.itemToolStripMenuItem.Size = new System.Drawing.Size(57, 27);
             this.itemToolStripMenuItem.Text = "Item";
+            this.itemToolStripMenuItem.Click += new System.EventHandler(this.itemToolStripMenuItem_Click);
             // 
             // addItemsToolStripMenuItem
             // 
+            this.addItemsToolStripMenuItem.Image = global::CurierManagementSystemCSharp.Properties.Resources.Item;
             this.addItemsToolStripMenuItem.Name = "addItemsToolStripMenuItem";
             this.addItemsToolStripMenuItem.Size = new System.Drawing.Size(190, 28);
             this.addItemsToolStripMenuItem.Text = "Add Items";
@@ -161,6 +171,7 @@
             // 
             // itemsSaleToolStripMenuItem
             // 
+            this.itemsSaleToolStripMenuItem.Image = global::CurierManagementSystemCSharp.Properties.Resources.item_Buy;
             this.itemsSaleToolStripMenuItem.Name = "itemsSaleToolStripMenuItem";
             this.itemsSaleToolStripMenuItem.Size = new System.Drawing.Size(190, 28);
             this.itemsSaleToolStripMenuItem.Text = "Items Purchase";
@@ -168,6 +179,7 @@
             // 
             // itemsPurchaseToolStripMenuItem
             // 
+            this.itemsPurchaseToolStripMenuItem.Image = global::CurierManagementSystemCSharp.Properties.Resources.Item_Sale;
             this.itemsPurchaseToolStripMenuItem.Name = "itemsPurchaseToolStripMenuItem";
             this.itemsPurchaseToolStripMenuItem.Size = new System.Drawing.Size(190, 28);
             this.itemsPurchaseToolStripMenuItem.Text = "Items Sales";
@@ -185,6 +197,7 @@
             // 
             // purchaseToolStripMenuItem
             // 
+            this.purchaseToolStripMenuItem.Image = global::CurierManagementSystemCSharp.Properties.Resources.item_Buy;
             this.purchaseToolStripMenuItem.Name = "purchaseToolStripMenuItem";
             this.purchaseToolStripMenuItem.Size = new System.Drawing.Size(143, 28);
             this.purchaseToolStripMenuItem.Text = "Purchase";
@@ -192,6 +205,7 @@
             // 
             // saleToolStripMenuItem
             // 
+            this.saleToolStripMenuItem.Image = global::CurierManagementSystemCSharp.Properties.Resources.Item_Sale;
             this.saleToolStripMenuItem.Name = "saleToolStripMenuItem";
             this.saleToolStripMenuItem.Size = new System.Drawing.Size(143, 28);
             this.saleToolStripMenuItem.Text = "Sale";
@@ -218,6 +232,31 @@
             this.customerPaymentToolStripMenuItem.Text = "Customer Payment";
             this.customerPaymentToolStripMenuItem.Click += new System.EventHandler(this.customerPaymentToolStripMenuItem_Click);
             // 
+            // expensesToolStripMenuItem
+            // 
+            this.expensesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addExpensesToolStripMenuItem,
+            this.expensesDetailsToolStripMenuItem});
+            this.expensesToolStripMenuItem.Name = "expensesToolStripMenuItem";
+            this.expensesToolStripMenuItem.Size = new System.Drawing.Size(88, 27);
+            this.expensesToolStripMenuItem.Text = "Expenses";
+            // 
+            // addExpensesToolStripMenuItem
+            // 
+            this.addExpensesToolStripMenuItem.Image = global::CurierManagementSystemCSharp.Properties.Resources.Budget;
+            this.addExpensesToolStripMenuItem.Name = "addExpensesToolStripMenuItem";
+            this.addExpensesToolStripMenuItem.Size = new System.Drawing.Size(203, 28);
+            this.addExpensesToolStripMenuItem.Text = "Add Expenses";
+            this.addExpensesToolStripMenuItem.Click += new System.EventHandler(this.addExpensesToolStripMenuItem_Click);
+            // 
+            // expensesDetailsToolStripMenuItem
+            // 
+            this.expensesDetailsToolStripMenuItem.Image = global::CurierManagementSystemCSharp.Properties.Resources.Depreciation;
+            this.expensesDetailsToolStripMenuItem.Name = "expensesDetailsToolStripMenuItem";
+            this.expensesDetailsToolStripMenuItem.Size = new System.Drawing.Size(203, 28);
+            this.expensesDetailsToolStripMenuItem.Text = "Expenses Details";
+            this.expensesDetailsToolStripMenuItem.Click += new System.EventHandler(this.expensesDetailsToolStripMenuItem_Click);
+            // 
             // reportToolStripMenuItem
             // 
             this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -233,6 +272,7 @@
             // 
             // purchaseAndSaleToolStripMenuItem
             // 
+            this.purchaseAndSaleToolStripMenuItem.Image = global::CurierManagementSystemCSharp.Properties.Resources.PURCHASE_Report;
             this.purchaseAndSaleToolStripMenuItem.Name = "purchaseAndSaleToolStripMenuItem";
             this.purchaseAndSaleToolStripMenuItem.Size = new System.Drawing.Size(267, 28);
             this.purchaseAndSaleToolStripMenuItem.Text = "Purchase Report";
@@ -240,6 +280,7 @@
             // 
             // consignmentReportToolStripMenuItem
             // 
+            this.consignmentReportToolStripMenuItem.Image = global::CurierManagementSystemCSharp.Properties.Resources.Total_Sales;
             this.consignmentReportToolStripMenuItem.Name = "consignmentReportToolStripMenuItem";
             this.consignmentReportToolStripMenuItem.Size = new System.Drawing.Size(267, 28);
             this.consignmentReportToolStripMenuItem.Text = "Sales Report";
@@ -247,6 +288,7 @@
             // 
             // customerPaymeentReportToolStripMenuItem
             // 
+            this.customerPaymeentReportToolStripMenuItem.Image = global::CurierManagementSystemCSharp.Properties.Resources.Statistics_Report;
             this.customerPaymeentReportToolStripMenuItem.Name = "customerPaymeentReportToolStripMenuItem";
             this.customerPaymeentReportToolStripMenuItem.Size = new System.Drawing.Size(267, 28);
             this.customerPaymeentReportToolStripMenuItem.Text = "Customer Payment Report";
@@ -254,6 +296,7 @@
             // 
             // consignmentReportToolStripMenuItem1
             // 
+            this.consignmentReportToolStripMenuItem1.Image = global::CurierManagementSystemCSharp.Properties.Resources.ConsReport;
             this.consignmentReportToolStripMenuItem1.Name = "consignmentReportToolStripMenuItem1";
             this.consignmentReportToolStripMenuItem1.Size = new System.Drawing.Size(267, 28);
             this.consignmentReportToolStripMenuItem1.Text = "Consignment Report";
@@ -261,6 +304,7 @@
             // 
             // customerReportToolStripMenuItem
             // 
+            this.customerReportToolStripMenuItem.Image = global::CurierManagementSystemCSharp.Properties.Resources.Customer;
             this.customerReportToolStripMenuItem.Name = "customerReportToolStripMenuItem";
             this.customerReportToolStripMenuItem.Size = new System.Drawing.Size(267, 28);
             this.customerReportToolStripMenuItem.Text = "Customer Report";
@@ -367,7 +411,6 @@
             this.MinimumSize = new System.Drawing.Size(1198, 694);
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Home";
             this.Load += new System.EventHandler(this.Home_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Home_Paint);
             this.MenuStrip1.ResumeLayout(false);
@@ -413,5 +456,8 @@
         private System.Windows.Forms.ToolStripMenuItem addItemsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem itemsSaleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem itemsPurchaseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem expensesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addExpensesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem expensesDetailsToolStripMenuItem;
     }
 }

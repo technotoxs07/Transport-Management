@@ -34,7 +34,6 @@
             this.itemsTableAdapter = new CurierManagementSystemCSharp.ItemsdataTableAdapters.ItemsTableAdapter();
             this.purchaserealBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._Purchases_Real_ = new CurierManagementSystemCSharp._Purchases_Real_();
-            this.purchase_real_TableAdapter = new CurierManagementSystemCSharp._Purchases_Real_TableAdapters.Purchase_real_TableAdapter();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
@@ -69,10 +68,6 @@
             // 
             this._Purchases_Real_.DataSetName = "Purchases(Real)";
             this._Purchases_Real_.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // purchase_real_TableAdapter
-            // 
-            this.purchase_real_TableAdapter.ClearBeforeFill = true;
             // 
             // panel2
             // 
@@ -147,7 +142,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Name = "Showitemspurchase";
-            this.Text = "Showitemssale";
             this.Load += new System.EventHandler(this.Showitemssale_Load);
             ((System.ComponentModel.ISupportInitialize)(this.itemsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemsdata)).EndInit();
@@ -164,7 +158,6 @@
         private ItemsdataTableAdapters.ItemsTableAdapter itemsTableAdapter;
         private _Purchases_Real_ _Purchases_Real_;
         private System.Windows.Forms.BindingSource purchaserealBindingSource;
-        private _Purchases_Real_TableAdapters.Purchase_real_TableAdapter purchase_real_TableAdapter;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button4;

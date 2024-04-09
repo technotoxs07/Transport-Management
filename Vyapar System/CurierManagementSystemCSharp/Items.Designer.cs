@@ -435,7 +435,6 @@
             this.Controls.Add(this.itemnametxt);
             this.Controls.Add(this.label16);
             this.Name = "Items";
-            this.Text = "Items";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Items_FormClosing);
             this.Load += new System.EventHandler(this.Items_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

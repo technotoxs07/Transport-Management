@@ -59,7 +59,7 @@ namespace CurierManagementSystemCSharp
         }
 
 
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"l");
 
         private void gettingcatitems()
         {
@@ -67,7 +67,7 @@ namespace CurierManagementSystemCSharp
             {
                 string query = "SELECT Category, COUNT(ItemName) AS Items FROM Items GROUP BY Category";
 
-                using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
+                using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;"))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand(query, con);
@@ -104,7 +104,7 @@ namespace CurierManagementSystemCSharp
                     
                     // Query to retrieve data from the Purchase table for the selected category
                     string query = "SELECT ItemName, opening_quantity, at_Price, Stock_Value FROM Items WHERE Category = @Category";
-                    using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
+                    using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;"))
                     {
                         con.Open();
 
@@ -132,7 +132,7 @@ namespace CurierManagementSystemCSharp
             {
                 string query = "SELECT ItemName, opening_quantity, at_Price, Stock_Value FROM Items ";
 
-                using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
+                using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;"))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand(query, con);

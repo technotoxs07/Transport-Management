@@ -24,12 +24,14 @@ namespace CurierManagementSystemCSharp
 
         private void productdetails_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the '_Purchases_Real_._Purchase_real_' table. You can move, or remove it, as needed.
+            this.purchase_real_TableAdapter1.Fill(this._Purchases_Real_._Purchase_real_);
             // TODO: This line of code loads data into the 'itemsdata.Items' table. You can move, or remove it, as needed.
             this.itemsTableAdapter.Fill(this.itemsdata.Items);
             // TODO: This line of code loads data into the 'itemsdata.Items' table. You can move, or remove it, as needed.
             this.itemsTableAdapter.Fill(this.itemsdata.Items);
             // TODO: This line of code loads data into the '_Purchases_Real_._Purchase_real_' table. You can move, or remove it, as needed.
-            this.purchase_real_TableAdapter.Fill(this._Purchases_Real_._Purchase_real_);
+          
             // TODO: This line of code loads data into the 'itemsdata.Items' table. You can move, or remove it, as needed.
            
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -65,14 +67,14 @@ namespace CurierManagementSystemCSharp
             }
         }
 
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True;");
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;");
 
         private void getitemsandquantity()
         {
             try
             {
                 string query = "SELECT DISTINCT Category, opening_quantity FROM Items";
-                using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True;"))
+                using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;"))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand(query, con);
@@ -105,19 +107,19 @@ namespace CurierManagementSystemCSharp
                 try
                 {
                     // Query to retrieve data from the Purchase table for the selected item
-                    string query = "SELECT Id, Date, Item_Name, Quantity, Unit, Price FROM [Purchase(real)] WHERE Item_Name = @Item_Name";
+                    string query = "SELECT Id, Date, Item_Name,Category, Quantity, Unit, Price FROM [Purchase(real)] WHERE Category = @Category";
                     string query3 = "SELECT opening_quantity, Stock_Value FROM items WHERE Category = @Category";
-                    using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
+                    using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;"))
                     {
                         con.Open();
 
                         // Execute query to fetch purchase price from Items table
-                        string query2 = "SELECT PurchasePrice FROM Items WHERE ItemName = @ItemName";
+                        string query2 = "SELECT PurchasePrice FROM Items WHERE Category = @Category";
                         SqlCommand cmd2 = new SqlCommand(query2, con);
 
                         //feting data from Items of Quantity and Stock Value
                         SqlCommand command = new SqlCommand(query3, con);
-                        cmd2.Parameters.AddWithValue("@ItemName", selectedItemName);
+                        cmd2.Parameters.AddWithValue("@Category", selectedItemName);
 
                         //
                         command.Parameters.AddWithValue("@Category", selectedItemName);
@@ -158,7 +160,7 @@ namespace CurierManagementSystemCSharp
 
                         // Fill dataGridView2 with data from Purchase(real) table
                         SqlCommand cmd = new SqlCommand(query, con);
-                        cmd.Parameters.AddWithValue("@Item_Name", selectedItemName);
+                        cmd.Parameters.AddWithValue("@Category", selectedItemName);
                         SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                         DataTable dt = new DataTable();
                         adapter.Fill(dt);
@@ -170,6 +172,10 @@ namespace CurierManagementSystemCSharp
                 catch (Exception ex)
                 {
                     MessageBox.Show("An error occurred: " + ex.Message);
+                }
+                finally
+                {
+                    con.Close();
                 }
             }
             else
@@ -183,8 +189,8 @@ namespace CurierManagementSystemCSharp
         {
             try
             {
-                string query = "SELECT  Id, Date, Item_Name, Quantity, Unit, Price FROM [Purchase(real)]";
-                using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True;"))
+                string query = "SELECT  Id, Date,Category, Item_Name, Quantity, Unit, Price FROM [Purchase(real)]";
+                using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;"))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand(query, con);

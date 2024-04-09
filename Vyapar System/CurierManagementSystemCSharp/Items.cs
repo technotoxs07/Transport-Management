@@ -64,7 +64,7 @@ namespace CurierManagementSystemCSharp
 
         private void showdatafromitems()
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
+            using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;"))
             {
                 try
                 {
@@ -89,7 +89,7 @@ namespace CurierManagementSystemCSharp
 
         private void showdatacategory()
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;");
             try
             {
 
@@ -160,14 +160,16 @@ namespace CurierManagementSystemCSharp
                 AC.Location = new Point(centerX, centerY);
                 this.Controls.Add(AC);
                 AC.BringToFront();
+
                 //Savesettings();
             }
+            
            
         }
 
         private void showrecentdatacategory()
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;");
 
             try
             {
@@ -207,7 +209,7 @@ namespace CurierManagementSystemCSharp
                 Unitconversion UN = new Unitconversion();
                 List<string> listBoxItems = UN.GetListBoxItems();
 
-                using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
+                using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;"))
                 {
                     con.Open();
 
@@ -244,7 +246,7 @@ namespace CurierManagementSystemCSharp
                             SqlCommand cmd2 = new SqlCommand(query2, con);
                             int maxId = (int)cmd2.ExecuteScalar();
 
-                            MessageBox.Show("Item added successfully with Id: " + maxId, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Item added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                            
                             itemnametxt.Text = "";
                             txtsale.Text = "";
@@ -273,6 +275,11 @@ namespace CurierManagementSystemCSharp
 
         private bool isempty()
         {
+             if(comboBox1.SelectedItem == "+ Add Category")
+            {
+                MessageBox.Show("Please Select A Category", "Unselected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
            if(itemnametxt.Text == string.Empty)
             {
                 MessageBox.Show("Please Enter Item Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);

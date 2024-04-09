@@ -24,6 +24,7 @@ namespace CurierManagementSystemCSharp
         {
             // TODO: This line of code loads data into the 'purchase._Purchase' table. You can move, or remove it, as needed.
             this.purchaseTableAdapter.Fill(this.purchase._Purchase);
+            // TODO: This line of code loads data into the 'purchase._Purchase' table. You can move, or remove it, as needed.
             // TODO: This line of code loads data into the 'itemsdata.Items' table. You can move, or remove it, as needed.
             this.itemsTableAdapter.Fill(this.itemsdata.Items);
             getitemsandquantity();
@@ -36,7 +37,7 @@ namespace CurierManagementSystemCSharp
         {
             try
             {
-                string query = "SELECT * FROM [Purchase(real)] WHERE CONCAT( Id, Date, Item_Name, Quantity, Unit, Price) LIKE @valueToSearch";
+                string query = "SELECT * FROM Purchase WHERE CONCAT( Id, Date, Item_Name, Quantity, Unit, Price) LIKE @valueToSearch";
                 using (SqlCommand command = new SqlCommand(query, con))
                 {
                     command.Parameters.AddWithValue("@valueToSearch", "%" + valueToSearch + "%");
@@ -62,10 +63,8 @@ namespace CurierManagementSystemCSharp
         {
             try
             {
-
-
                 string query = "SELECT Category, opening_quantity FROM Items";
-                using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True;"))
+                using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;"))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand(query, con);
@@ -79,14 +78,13 @@ namespace CurierManagementSystemCSharp
             catch (Exception ex)
             {
                 MessageBox.Show("An error occurred: " + ex.Message);
-
             }
             finally
             {
                 con.Close();
             }
         }
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True;");
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;");
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -98,19 +96,19 @@ namespace CurierManagementSystemCSharp
                 try
                 {
                     // Query to retrieve data from the Purchase table for the selected item
-                    string query = "SELECT Id, Date, Item_Name, Quantity, Unit, Price FROM Purchase WHERE Item_Name = @Item_Name";
+                    string query = "SELECT Id, Date, Category, Item_Name, Quantity, Unit, Price FROM Purchase WHERE Category = @Category";
                     string query3 = "SELECT opening_quantity, Stock_Value FROM items WHERE Category = @Category";
 
-                    using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
+                    using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;"))
                     {
                         con.Open();
 
                         // Execute query to fetch purchase price from Items table
-                        string query2 = "SELECT PurchasePrice FROM Items WHERE ItemName = @ItemName";
+                        string query2 = "SELECT PurchasePrice FROM Items WHERE Category = @Category";
                         SqlCommand command = new SqlCommand(query3, con);
 
                         SqlCommand cmd2 = new SqlCommand(query2, con);
-                        cmd2.Parameters.AddWithValue("@ItemName", selectedItemName);
+                        cmd2.Parameters.AddWithValue("@Category", selectedItemName);
                         command.Parameters.AddWithValue("@Category", selectedItemName);
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
@@ -148,7 +146,7 @@ namespace CurierManagementSystemCSharp
 
                         // Fill dataGridView2 with data from Purchase(real) table
                         SqlCommand cmd = new SqlCommand(query, con);
-                        cmd.Parameters.AddWithValue("@Item_Name", selectedItemName);
+                        cmd.Parameters.AddWithValue("@Category", selectedItemName);
                         SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                         DataTable dt = new DataTable();
                         adapter.Fill(dt);
@@ -169,8 +167,8 @@ namespace CurierManagementSystemCSharp
         {
             try
             {
-                string query = "SELECT  Id, Date, Item_Name, Quantity, Unit, Price FROM Purchase";
-                using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True;"))
+                string query = "SELECT  Id, Date, Category, Item_Name, Quantity, Unit, Price FROM Purchase";
+                using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;"))
                 {
                     con.Open();
                     SqlCommand cmd = new SqlCommand(query, con);
@@ -203,10 +201,10 @@ namespace CurierManagementSystemCSharp
         private void textBox1_Leave(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrEmpty(textBox1.Text))
+            if (textBox1.Text == watermarkText1 && textBox1.ForeColor == System.Drawing.Color.Gray)
             {
-                textBox1.Text = watermarkText1;
-                textBox1.ForeColor = System.Drawing.Color.Gray;
+                textBox1.Text = "";
+                textBox1.ForeColor = System.Drawing.Color.Black;
             }
         }
 

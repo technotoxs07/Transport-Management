@@ -51,13 +51,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.staffBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.courierDataSet3 = new CurierManagementSystemCSharp.courierDataSet3();
-            this.textBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox5 = new System.Windows.Forms.ComboBox();
-            this.btnrefresh = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.DateTimePicker();
-            this.staffTableAdapter = new CurierManagementSystemCSharp.courierDataSet3TableAdapters.staffTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +60,13 @@
             this.Qualifications = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Designation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staffBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.courierDataSet3 = new CurierManagementSystemCSharp.courierDataSet3();
+            this.textBox3 = new System.Windows.Forms.ComboBox();
+            this.textBox5 = new System.Windows.Forms.ComboBox();
+            this.btnrefresh = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.DateTimePicker();
+            this.staffTableAdapter = new CurierManagementSystemCSharp.courierDataSet3TableAdapters.staffTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courierDataSet3)).BeginInit();
@@ -327,6 +327,61 @@
             this.dataGridView1.Size = new System.Drawing.Size(1182, 297);
             this.dataGridView1.TabIndex = 50;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Name
+            // 
+            this.Name.DataPropertyName = "Name";
+            this.Name.HeaderText = "Name";
+            this.Name.Name = "Name";
+            // 
+            // Gender
+            // 
+            this.Gender.DataPropertyName = "Gender";
+            this.Gender.HeaderText = "Gender";
+            this.Gender.Name = "Gender";
+            // 
+            // Mobile_Number
+            // 
+            this.Mobile_Number.DataPropertyName = "Mobile_Number";
+            this.Mobile_Number.HeaderText = "Mobile Number";
+            this.Mobile_Number.Name = "Mobile_Number";
+            // 
+            // Blood_Group
+            // 
+            this.Blood_Group.DataPropertyName = "Blood_Group";
+            this.Blood_Group.HeaderText = "Blood Group";
+            this.Blood_Group.Name = "Blood_Group";
+            // 
+            // Date_of_Birth
+            // 
+            this.Date_of_Birth.DataPropertyName = "Date_of_Birth";
+            this.Date_of_Birth.HeaderText = "Date of Birth";
+            this.Date_of_Birth.Name = "Date_of_Birth";
+            // 
+            // Qualifications
+            // 
+            this.Qualifications.DataPropertyName = "Qualifications";
+            this.Qualifications.HeaderText = "Qualifications";
+            this.Qualifications.Name = "Qualifications";
+            // 
+            // Designation
+            // 
+            this.Designation.DataPropertyName = "Designation";
+            this.Designation.HeaderText = "Designation";
+            this.Designation.Name = "Designation";
+            // 
+            // Address
+            // 
+            this.Address.DataPropertyName = "Address";
+            this.Address.HeaderText = "Address";
+            this.Address.Name = "Address";
+            // 
             // staffBindingSource
             // 
             this.staffBindingSource.DataMember = "staff";
@@ -389,61 +444,6 @@
             // 
             this.staffTableAdapter.ClearBeforeFill = true;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // Name
-            // 
-            this.Name.DataPropertyName = "Name";
-            this.Name.HeaderText = "Name";
-            this.Name.Name = "Name";
-            // 
-            // Gender
-            // 
-            this.Gender.DataPropertyName = "Gender";
-            this.Gender.HeaderText = "Gender";
-            this.Gender.Name = "Gender";
-            // 
-            // Mobile_Number
-            // 
-            this.Mobile_Number.DataPropertyName = "Mobile_Number";
-            this.Mobile_Number.HeaderText = "Mobile Number";
-            this.Mobile_Number.Name = "Mobile_Number";
-            // 
-            // Blood_Group
-            // 
-            this.Blood_Group.DataPropertyName = "Blood_Group";
-            this.Blood_Group.HeaderText = "Blood Group";
-            this.Blood_Group.Name = "Blood_Group";
-            // 
-            // Date_of_Birth
-            // 
-            this.Date_of_Birth.DataPropertyName = "Date_of_Birth";
-            this.Date_of_Birth.HeaderText = "Date of Birth";
-            this.Date_of_Birth.Name = "Date_of_Birth";
-            // 
-            // Qualifications
-            // 
-            this.Qualifications.DataPropertyName = "Qualifications";
-            this.Qualifications.HeaderText = "Qualifications";
-            this.Qualifications.Name = "Qualifications";
-            // 
-            // Designation
-            // 
-            this.Designation.DataPropertyName = "Designation";
-            this.Designation.HeaderText = "Designation";
-            this.Designation.Name = "Designation";
-            // 
-            // Address
-            // 
-            this.Address.DataPropertyName = "Address";
-            this.Address.HeaderText = "Address";
-            this.Address.Name = "Address";
-            // 
             // UpdateStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -472,9 +472,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-         
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "UpdateStaff";
             this.Load += new System.EventHandler(this.UpdateStaff_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).EndInit();

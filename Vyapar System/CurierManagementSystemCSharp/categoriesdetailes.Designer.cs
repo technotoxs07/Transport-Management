@@ -340,7 +340,6 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel5);
             this.Name = "categoriesdetailes";
-            this.Text = "categoriesdetailes";
             this.Load += new System.EventHandler(this.categoriesdetailes_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();

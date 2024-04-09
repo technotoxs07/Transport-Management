@@ -147,7 +147,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.Name = "showitemsofsales";
-            this.Text = "showitemsofsales";
             this.Load += new System.EventHandler(this.showitemsofsales_Load);
             ((System.ComponentModel.ISupportInitialize)(this.purchaseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.purchase)).EndInit();

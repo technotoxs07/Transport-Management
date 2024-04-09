@@ -47,7 +47,7 @@ namespace CurierManagementSystemCSharp
 
         private void Getcategoryfromitems()
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;");
             con.Open();
             SqlCommand cmd = new SqlCommand("select Category from Items", con);
             SqlDataReader sdr = cmd.ExecuteReader();
@@ -81,12 +81,12 @@ namespace CurierManagementSystemCSharp
 
         private void showitemsdata(string selectedcategory)
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
+            using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;"))
             {
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT ItemName, Unit FROM Items WHERE Category = @selectedcategory", con);
+                    SqlCommand cmd = new SqlCommand("SELECT ItemName FROM Items WHERE Category = @selectedcategory", con);
                     cmd.Parameters.AddWithValue("@selectedcategory", selectedcategory);
                    
                         itemnametxt.Items.Clear();
@@ -100,7 +100,7 @@ namespace CurierManagementSystemCSharp
                             itemnametxt.Items.Add(sdr["ItemName"].ToString());
                            
 
-                            unittxt.Items.Add(sdr["Unit"].ToString());
+                           // unittxt.Items.Add(sdr["Unit"].ToString());
                             // pricetxt.AppendText(sdr["SalePrice"].ToString() + Environment.NewLine);
                            
                         }
@@ -123,9 +123,9 @@ namespace CurierManagementSystemCSharp
             pricetxt.Clear();
 
             // Query to retrieve the price data for the item name and category
-            string query = "SELECT PurchasePrice FROM Items WHERE ItemName = @selectedItemName AND Category = @selectedCategory";
+            string query = "SELECT PurchasePrice, Unit FROM Items WHERE ItemName = @selectedItemName AND Category = @selectedCategory";
 
-            using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True"))
+            using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;"))
             {
                 try
                 {
@@ -139,6 +139,8 @@ namespace CurierManagementSystemCSharp
                         while (srd.Read())
                         {
                             pricetxt.AppendText(srd["PurchasePrice"].ToString() + Environment.NewLine);
+                            unittxt.Items.Add(srd["Unit"].ToString() + Environment.NewLine); // Display unit
+
                         }
                     }
                 }
@@ -222,7 +224,7 @@ namespace CurierManagementSystemCSharp
                loadingdatafromitemcal();
             }
         }
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA\CURIERMANAGEMENTSYSTEMCSHARP\CURIERMANAGEMENTSYSTEMCSHARP\COURIER.MDF;Integrated Security=True;");
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;");
 
         private void loadingdatafromitemcal()
         {
@@ -436,14 +438,15 @@ namespace CurierManagementSystemCSharp
 
 
                             // Insert each item record into the "Purchase" table
-                            string query = "INSERT INTO [Purchase(real)] (Date, Party_Name, Party_Phone_Number, Address, Email, Item_Name, Quantity, Unit, Price, Discount, Total_Amount, Sub_Total, VAT, Amout_VAT, Grand_Total) " +
-                                           "VALUES (@Date, @Party_Name, @Party_Phone_Number, @Address, @Email, @Item_Name, @Quantity, @Unit, @Price, @Discount, @Total_Amount, @Sub_Total, @VAT, @Amout_VAT, @Grand_Total)";
+                            string query = "INSERT INTO [Purchase(real)] (Date, Party_Name, Party_Phone_Number, Address, Email, Category, Item_Name, Quantity, Unit, Price, Discount, Total_Amount, Sub_Total, VAT, Amout_VAT, Grand_Total) " +
+                                           "VALUES (@Date, @Party_Name, @Party_Phone_Number, @Address, @Email, @Category, @Item_Name, @Quantity, @Unit, @Price, @Discount, @Total_Amount, @Sub_Total, @VAT, @Amout_VAT, @Grand_Total)";
                             SqlCommand cmd = new SqlCommand(query, con, transaction);
                             cmd.Parameters.AddWithValue("@Date", date);
                             cmd.Parameters.AddWithValue("@Party_Name", customerName);
                             cmd.Parameters.AddWithValue("@Party_Phone_Number", customerPhoneNumber);
                             cmd.Parameters.AddWithValue("@Address", address);
                             cmd.Parameters.AddWithValue("@Email", email);
+                            cmd.Parameters.AddWithValue("@Category", categorytxt.SelectedItem);
                             cmd.Parameters.AddWithValue("@Item_Name", itemName);
                             cmd.Parameters.AddWithValue("@Quantity", quantity);
                             cmd.Parameters.AddWithValue("@Unit", unit);
@@ -638,6 +641,35 @@ namespace CurierManagementSystemCSharp
                 string selectedCategory = categorytxt.SelectedItem.ToString();
                 showpricedata(selectedItemName, selectedCategory);
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            unittxt.Items.Clear();
+
+            // Add "NONE" to the ComboBox
+            unittxt.Items.Add("NONE");
+            unittxt.Items.Add("BAGS (BAG)");
+            unittxt.Items.Add("BOTTLES (BTL)");
+            unittxt.Items.Add("BOX (BOX)");
+            unittxt.Items.Add("BUNDLES (BDL)");
+            unittxt.Items.Add("CANS (CAN)");
+            unittxt.Items.Add("CARTONS (CTN)");
+            unittxt.Items.Add("DOZENS (DZN)");
+            unittxt.Items.Add("GRAMMES (GM)");
+            unittxt.Items.Add("KILOGRAMS (KG)");
+            unittxt.Items.Add("LITRE (LTR)");
+            unittxt.Items.Add("METERS (MTR)");
+            unittxt.Items.Add("MILILITRE (ML)");
+            unittxt.Items.Add("NUMBERS (NOS)");
+            unittxt.Items.Add("PACKS (PAC)");
+            unittxt.Items.Add("PAIRS (PRS)");
+            unittxt.Items.Add("PIECES (PCS)");
+            unittxt.Items.Add("QUINTAL (QTL)");
+            unittxt.Items.Add("ROLLS (ROL)");
+            unittxt.Items.Add("SQUARE FEET (SQF)");
+            unittxt.Items.Add("SQUARE METERS (SQM)");
+            unittxt.Items.Add("TABLETS (TBS)");
         }
     }
 }

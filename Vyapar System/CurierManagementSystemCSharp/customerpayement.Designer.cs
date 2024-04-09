@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.customernametxt = new System.Windows.Forms.ComboBox();
@@ -44,6 +44,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Customer_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Custome_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount_Charged = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount_Paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Account_Holder_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Account_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bank_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.branch = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerpaymentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customer_payement = new CurierManagementSystemCSharp.customer_payement();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -59,16 +69,6 @@
             this.customernumbertxt = new System.Windows.Forms.ComboBox();
             this.btnupdate = new System.Windows.Forms.Button();
             this.customer_paymentTableAdapter = new CurierManagementSystemCSharp.customer_payementTableAdapters.Customer_paymentTableAdapter();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Customer_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Custome_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount_Charged = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount_Paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Account_Holder_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Account_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bank_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.branch = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerpaymentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customer_payement)).BeginInit();
@@ -204,14 +204,14 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -225,29 +225,108 @@
             this.Bank_Name,
             this.branch});
             this.dataGridView1.DataSource = this.customerpaymentBindingSource;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Location = new System.Drawing.Point(0, 396);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1182, 230);
             this.dataGridView1.TabIndex = 70;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // Customer_Name
+            // 
+            this.Customer_Name.DataPropertyName = "Customer_Name";
+            this.Customer_Name.HeaderText = "Customer Name";
+            this.Customer_Name.Name = "Customer_Name";
+            this.Customer_Name.ReadOnly = true;
+            this.Customer_Name.Width = 200;
+            // 
+            // Custome_Number
+            // 
+            this.Custome_Number.DataPropertyName = "Custome_Number";
+            this.Custome_Number.HeaderText = "Custome Number";
+            this.Custome_Number.Name = "Custome_Number";
+            this.Custome_Number.ReadOnly = true;
+            this.Custome_Number.Width = 200;
+            // 
+            // Amount_Charged
+            // 
+            this.Amount_Charged.DataPropertyName = "Amount_Charged";
+            this.Amount_Charged.HeaderText = "Amount Charged";
+            this.Amount_Charged.Name = "Amount_Charged";
+            this.Amount_Charged.ReadOnly = true;
+            this.Amount_Charged.Width = 200;
+            // 
+            // Amount_Paid
+            // 
+            this.Amount_Paid.DataPropertyName = "Amount_Paid";
+            this.Amount_Paid.HeaderText = "Amount Paid";
+            this.Amount_Paid.Name = "Amount_Paid";
+            this.Amount_Paid.ReadOnly = true;
+            this.Amount_Paid.Width = 200;
+            // 
+            // Account_Holder_Name
+            // 
+            this.Account_Holder_Name.DataPropertyName = "Account_Holder_Name";
+            this.Account_Holder_Name.HeaderText = "Account Holder Name";
+            this.Account_Holder_Name.Name = "Account_Holder_Name";
+            this.Account_Holder_Name.ReadOnly = true;
+            this.Account_Holder_Name.Width = 200;
+            // 
+            // Account_Number
+            // 
+            this.Account_Number.DataPropertyName = "Account_Number";
+            this.Account_Number.HeaderText = "Account Number";
+            this.Account_Number.Name = "Account_Number";
+            this.Account_Number.ReadOnly = true;
+            this.Account_Number.Width = 200;
+            // 
+            // Bank_Name
+            // 
+            this.Bank_Name.DataPropertyName = "Bank_Name";
+            this.Bank_Name.HeaderText = "Bank Name";
+            this.Bank_Name.Name = "Bank_Name";
+            this.Bank_Name.ReadOnly = true;
+            this.Bank_Name.Width = 200;
+            // 
+            // branch
+            // 
+            this.branch.DataPropertyName = "branch";
+            this.branch.HeaderText = "Branch";
+            this.branch.Name = "branch";
+            this.branch.ReadOnly = true;
+            this.branch.Width = 200;
             // 
             // customerpaymentBindingSource
             // 
@@ -445,85 +524,6 @@
             // 
             this.customer_paymentTableAdapter.ClearBeforeFill = true;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // Customer_Name
-            // 
-            this.Customer_Name.DataPropertyName = "Customer_Name";
-            this.Customer_Name.HeaderText = "Customer Name";
-            this.Customer_Name.Name = "Customer_Name";
-            this.Customer_Name.ReadOnly = true;
-            this.Customer_Name.Width = 200;
-            // 
-            // Custome_Number
-            // 
-            this.Custome_Number.DataPropertyName = "Custome_Number";
-            this.Custome_Number.HeaderText = "Custome Number";
-            this.Custome_Number.Name = "Custome_Number";
-            this.Custome_Number.ReadOnly = true;
-            this.Custome_Number.Width = 200;
-            // 
-            // Amount_Charged
-            // 
-            this.Amount_Charged.DataPropertyName = "Amount_Charged";
-            this.Amount_Charged.HeaderText = "Amount Charged";
-            this.Amount_Charged.Name = "Amount_Charged";
-            this.Amount_Charged.ReadOnly = true;
-            this.Amount_Charged.Width = 200;
-            // 
-            // Amount_Paid
-            // 
-            this.Amount_Paid.DataPropertyName = "Amount_Paid";
-            this.Amount_Paid.HeaderText = "Amount Paid";
-            this.Amount_Paid.Name = "Amount_Paid";
-            this.Amount_Paid.ReadOnly = true;
-            this.Amount_Paid.Width = 200;
-            // 
-            // Account_Holder_Name
-            // 
-            this.Account_Holder_Name.DataPropertyName = "Account_Holder_Name";
-            this.Account_Holder_Name.HeaderText = "Account Holder Name";
-            this.Account_Holder_Name.Name = "Account_Holder_Name";
-            this.Account_Holder_Name.ReadOnly = true;
-            this.Account_Holder_Name.Width = 200;
-            // 
-            // Account_Number
-            // 
-            this.Account_Number.DataPropertyName = "Account_Number";
-            this.Account_Number.HeaderText = "Account Number";
-            this.Account_Number.Name = "Account_Number";
-            this.Account_Number.ReadOnly = true;
-            this.Account_Number.Width = 200;
-            // 
-            // Bank_Name
-            // 
-            this.Bank_Name.DataPropertyName = "Bank_Name";
-            this.Bank_Name.HeaderText = "Bank Name";
-            this.Bank_Name.Name = "Bank_Name";
-            this.Bank_Name.ReadOnly = true;
-            this.Bank_Name.Width = 200;
-            // 
-            // branch
-            // 
-            this.branch.DataPropertyName = "branch";
-            this.branch.HeaderText = "Branch";
-            this.branch.Name = "branch";
-            this.branch.ReadOnly = true;
-            this.branch.Width = 200;
-            // 
             // customerpayement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -545,7 +545,6 @@
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Name = "customerpayement";
-            this.Text = "customerpayement";
             this.Load += new System.EventHandler(this.customerpayement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerpaymentBindingSource)).EndInit();

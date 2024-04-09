@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@
             this.txtfirstname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -88,6 +88,17 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(489, 5);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(26, 26);
+            this.label11.TabIndex = 53;
+            this.label11.Text = "X";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -121,7 +132,7 @@
             this.button2.Location = new System.Drawing.Point(179, 398);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(152, 29);
-            this.button2.TabIndex = 50;
+            this.button2.TabIndex = 10;
             this.button2.Text = "Reset";
             this.button2.UseVisualStyleBackColor = false;
             // 
@@ -132,7 +143,7 @@
             this.label10.Location = new System.Drawing.Point(459, 411);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(48, 23);
-            this.label10.TabIndex = 49;
+            this.label10.TabIndex = 11;
             this.label10.Text = "Login";
             this.label10.Click += new System.EventHandler(this.label10_Click_1);
             // 
@@ -148,7 +159,7 @@
             this.button1.Location = new System.Drawing.Point(179, 363);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(152, 29);
-            this.button1.TabIndex = 48;
+            this.button1.TabIndex = 9;
             this.button1.Text = "Register";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -161,7 +172,7 @@
             this.txtconfirmpassword.Name = "txtconfirmpassword";
             this.txtconfirmpassword.PasswordChar = '*';
             this.txtconfirmpassword.Size = new System.Drawing.Size(170, 25);
-            this.txtconfirmpassword.TabIndex = 47;
+            this.txtconfirmpassword.TabIndex = 8;
             this.txtconfirmpassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtconfirmpassword.UseSystemPasswordChar = true;
             // 
@@ -182,7 +193,7 @@
             this.txtuserandemail.Multiline = true;
             this.txtuserandemail.Name = "txtuserandemail";
             this.txtuserandemail.Size = new System.Drawing.Size(296, 25);
-            this.txtuserandemail.TabIndex = 45;
+            this.txtuserandemail.TabIndex = 6;
             this.txtuserandemail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
@@ -203,7 +214,7 @@
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.PasswordChar = '*';
             this.txtpassword.Size = new System.Drawing.Size(170, 25);
-            this.txtpassword.TabIndex = 43;
+            this.txtpassword.TabIndex = 7;
             this.txtpassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtpassword.UseSystemPasswordChar = true;
             // 
@@ -224,7 +235,7 @@
             this.txtbusinessname.Multiline = true;
             this.txtbusinessname.Name = "txtbusinessname";
             this.txtbusinessname.Size = new System.Drawing.Size(247, 25);
-            this.txtbusinessname.TabIndex = 41;
+            this.txtbusinessname.TabIndex = 5;
             this.txtbusinessname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
@@ -244,7 +255,7 @@
             this.txtphonenumber.Multiline = true;
             this.txtphonenumber.Name = "txtphonenumber";
             this.txtphonenumber.Size = new System.Drawing.Size(170, 25);
-            this.txtphonenumber.TabIndex = 39;
+            this.txtphonenumber.TabIndex = 4;
             this.txtphonenumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
@@ -264,7 +275,7 @@
             this.txtaddress.Multiline = true;
             this.txtaddress.Name = "txtaddress";
             this.txtaddress.Size = new System.Drawing.Size(170, 25);
-            this.txtaddress.TabIndex = 37;
+            this.txtaddress.TabIndex = 3;
             this.txtaddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
@@ -284,7 +295,7 @@
             this.txtlastname.Multiline = true;
             this.txtlastname.Name = "txtlastname";
             this.txtlastname.Size = new System.Drawing.Size(170, 25);
-            this.txtlastname.TabIndex = 35;
+            this.txtlastname.TabIndex = 2;
             this.txtlastname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
@@ -304,7 +315,7 @@
             this.txtfirstname.Multiline = true;
             this.txtfirstname.Name = "txtfirstname";
             this.txtfirstname.Size = new System.Drawing.Size(170, 25);
-            this.txtfirstname.TabIndex = 33;
+            this.txtfirstname.TabIndex = 1;
             this.txtfirstname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
@@ -328,17 +339,6 @@
             this.label1.TabIndex = 31;
             this.label1.Text = "Register";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(489, 5);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(26, 26);
-            this.label11.TabIndex = 53;
-            this.label11.Text = "X";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
-            // 
             // register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -348,7 +348,6 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "register";
-            this.Text = "register";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

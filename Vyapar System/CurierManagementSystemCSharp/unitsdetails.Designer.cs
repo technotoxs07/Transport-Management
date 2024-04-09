@@ -324,7 +324,6 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel5);
             this.Name = "unitsdetails";
-            this.Text = "unitsdetails";
             this.Load += new System.EventHandler(this.unitsdetails_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();

@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label29 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
@@ -76,6 +80,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel12.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -90,6 +95,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel12);
             this.panel1.Controls.Add(this.panel11);
             this.panel1.Controls.Add(this.panel10);
             this.panel1.Controls.Add(this.panel9);
@@ -106,6 +112,55 @@
             this.panel1.Size = new System.Drawing.Size(1182, 587);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
+            // 
+            // panel12
+            // 
+            this.panel12.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel12.BackColor = System.Drawing.Color.White;
+            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel12.Controls.Add(this.comboBox3);
+            this.panel12.Controls.Add(this.label9);
+            this.panel12.Controls.Add(this.label27);
+            this.panel12.Location = new System.Drawing.Point(19, 253);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(471, 155);
+            this.panel12.TabIndex = 8;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Today Expenses",
+            "This Week Expenses",
+            "This Months Expenses",
+            "This Year Expenses",
+            "Entire Expenses"});
+            this.comboBox3.Location = new System.Drawing.Point(278, 36);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(179, 28);
+            this.comboBox3.TabIndex = 2;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(14, 99);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(0, 19);
+            this.label9.TabIndex = 1;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(14, 9);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(95, 27);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "Expenses";
             // 
             // panel11
             // 
@@ -360,7 +415,7 @@
             this.panel7.Controls.Add(this.comboBox1);
             this.panel7.Controls.Add(this.label12);
             this.panel7.Controls.Add(this.label11);
-            this.panel7.Location = new System.Drawing.Point(20, 414);
+            this.panel7.Location = new System.Drawing.Point(19, 414);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(471, 161);
             this.panel7.TabIndex = 7;
@@ -634,7 +689,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(36, 16);
+            this.label1.Location = new System.Drawing.Point(39, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 19);
             this.label1.TabIndex = 0;
@@ -647,9 +702,10 @@
             this.ClientSize = new System.Drawing.Size(1182, 587);
             this.Controls.Add(this.panel1);
             this.Name = "Homeway";
-            this.Text = "Homeway";
             this.Load += new System.EventHandler(this.Homeway_Load);
             this.panel1.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.panel10.ResumeLayout(false);
@@ -723,5 +779,9 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label27;
     }
 }

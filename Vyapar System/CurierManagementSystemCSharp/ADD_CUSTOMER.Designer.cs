@@ -48,6 +48,15 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Customer_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Customer_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Customer_Phone_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Customer_Mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Customer_Receipt_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addcustomersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.addcustomer = new CurierManagementSystemCSharp.addcustomer();
             this.btnaddcustomer = new System.Windows.Forms.Button();
@@ -58,15 +67,6 @@
             this.btndelete = new System.Windows.Forms.Button();
             this.txtdate = new System.Windows.Forms.DateTimePicker();
             this.addcustomersTableAdapter = new CurierManagementSystemCSharp.addcustomerTableAdapters.addcustomersTableAdapter();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Customer_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Customer_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Customer_Phone_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Customer_Mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Customer_Receipt_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addcustomersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addcustomer)).BeginInit();
@@ -295,6 +295,69 @@
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Customer Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Date
+            // 
+            this.Date.DataPropertyName = "Date";
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // Customer_Name
+            // 
+            this.Customer_Name.DataPropertyName = "Customer_Name";
+            this.Customer_Name.HeaderText = "Customer Name";
+            this.Customer_Name.Name = "Customer_Name";
+            this.Customer_Name.ReadOnly = true;
+            // 
+            // Customer_Address
+            // 
+            this.Customer_Address.DataPropertyName = "Customer_Address";
+            this.Customer_Address.HeaderText = "Customer Address";
+            this.Customer_Address.Name = "Customer_Address";
+            this.Customer_Address.ReadOnly = true;
+            // 
+            // Customer_Phone_Number
+            // 
+            this.Customer_Phone_Number.DataPropertyName = "Customer_Phone_Number";
+            this.Customer_Phone_Number.HeaderText = "Customer Phone Number";
+            this.Customer_Phone_Number.Name = "Customer_Phone_Number";
+            this.Customer_Phone_Number.ReadOnly = true;
+            // 
+            // Customer_Mail
+            // 
+            this.Customer_Mail.DataPropertyName = "Customer_Mail";
+            this.Customer_Mail.HeaderText = "Customer Mail";
+            this.Customer_Mail.Name = "Customer_Mail";
+            this.Customer_Mail.ReadOnly = true;
+            // 
+            // Customer_Receipt_Number
+            // 
+            this.Customer_Receipt_Number.DataPropertyName = "Customer_Receipt_Number";
+            this.Customer_Receipt_Number.HeaderText = "Customer Receipt Number";
+            this.Customer_Receipt_Number.Name = "Customer_Receipt_Number";
+            this.Customer_Receipt_Number.ReadOnly = true;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            // 
+            // Balance
+            // 
+            this.Balance.DataPropertyName = "Balance";
+            this.Balance.HeaderText = "Balance";
+            this.Balance.Name = "Balance";
+            this.Balance.ReadOnly = true;
+            // 
             // addcustomersBindingSource
             // 
             this.addcustomersBindingSource.DataMember = "addcustomers";
@@ -402,69 +465,6 @@
             // 
             this.addcustomersTableAdapter.ClearBeforeFill = true;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Customer Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // Date
-            // 
-            this.Date.DataPropertyName = "Date";
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            // 
-            // Customer_Name
-            // 
-            this.Customer_Name.DataPropertyName = "Customer_Name";
-            this.Customer_Name.HeaderText = "Customer Name";
-            this.Customer_Name.Name = "Customer_Name";
-            this.Customer_Name.ReadOnly = true;
-            // 
-            // Customer_Address
-            // 
-            this.Customer_Address.DataPropertyName = "Customer_Address";
-            this.Customer_Address.HeaderText = "Customer Address";
-            this.Customer_Address.Name = "Customer_Address";
-            this.Customer_Address.ReadOnly = true;
-            // 
-            // Customer_Phone_Number
-            // 
-            this.Customer_Phone_Number.DataPropertyName = "Customer_Phone_Number";
-            this.Customer_Phone_Number.HeaderText = "Customer Phone Number";
-            this.Customer_Phone_Number.Name = "Customer_Phone_Number";
-            this.Customer_Phone_Number.ReadOnly = true;
-            // 
-            // Customer_Mail
-            // 
-            this.Customer_Mail.DataPropertyName = "Customer_Mail";
-            this.Customer_Mail.HeaderText = "Customer Mail";
-            this.Customer_Mail.Name = "Customer_Mail";
-            this.Customer_Mail.ReadOnly = true;
-            // 
-            // Customer_Receipt_Number
-            // 
-            this.Customer_Receipt_Number.DataPropertyName = "Customer_Receipt_Number";
-            this.Customer_Receipt_Number.HeaderText = "Customer Receipt Number";
-            this.Customer_Receipt_Number.Name = "Customer_Receipt_Number";
-            this.Customer_Receipt_Number.ReadOnly = true;
-            // 
-            // Status
-            // 
-            this.Status.DataPropertyName = "Status";
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            // 
-            // Balance
-            // 
-            this.Balance.DataPropertyName = "Balance";
-            this.Balance.HeaderText = "Balance";
-            this.Balance.Name = "Balance";
-            this.Balance.ReadOnly = true;
-            // 
             // ADD_CUSTOMER
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -494,7 +494,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Name = "ADD_CUSTOMER";
-            this.Text = "ADD_CUSTOMER";
             this.Load += new System.EventHandler(this.ADD_CUSTOMER_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addcustomersBindingSource)).EndInit();

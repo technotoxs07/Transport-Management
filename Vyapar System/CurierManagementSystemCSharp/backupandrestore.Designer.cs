@@ -61,7 +61,7 @@
             // 
             // btnrestore
             // 
-            this.btnrestore.BackColor = System.Drawing.Color.Lime;
+            this.btnrestore.BackColor = System.Drawing.Color.LimeGreen;
             this.btnrestore.FlatAppearance.BorderSize = 0;
             this.btnrestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnrestore.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -131,7 +131,7 @@
             // 
             // btnbackup
             // 
-            this.btnbackup.BackColor = System.Drawing.Color.Lime;
+            this.btnbackup.BackColor = System.Drawing.Color.LimeGreen;
             this.btnbackup.FlatAppearance.BorderSize = 0;
             this.btnbackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnbackup.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -240,7 +240,6 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "backupandrestore";
-            this.Text = "backupandrestore";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.backupandrestore_FormClosed);
             this.Load += new System.EventHandler(this.backupandrestore_Load);
             this.panel2.ResumeLayout(false);

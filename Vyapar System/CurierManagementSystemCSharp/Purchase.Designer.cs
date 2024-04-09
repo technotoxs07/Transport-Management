@@ -291,6 +291,8 @@ namespace CurierManagementSystemCSharp {
             
             private global::System.Data.DataColumn columnEmail;
             
+            private global::System.Data.DataColumn columnCategory;
+            
             private global::System.Data.DataColumn columnItem_Name;
             
             private global::System.Data.DataColumn columnQuantity;
@@ -389,6 +391,14 @@ namespace CurierManagementSystemCSharp {
             public global::System.Data.DataColumn EmailColumn {
                 get {
                     return this.columnEmail;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CategoryColumn {
+                get {
+                    return this.columnCategory;
                 }
             }
             
@@ -509,7 +519,23 @@ namespace CurierManagementSystemCSharp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PurchaseRow AddPurchaseRow(System.DateTime Date, string Customer_Name, string Customer_Phone_Number, string Address, string Email, string Item_Name, double Quantity, string Unit, double Price, double Discount, double Total_Amount, double Sub_Total, double VAT, double Amout_VAT, double Grand_Total) {
+            public PurchaseRow AddPurchaseRow(
+                        System.DateTime Date, 
+                        string Customer_Name, 
+                        string Customer_Phone_Number, 
+                        string Address, 
+                        string Email, 
+                        string Category, 
+                        string Item_Name, 
+                        double Quantity, 
+                        string Unit, 
+                        double Price, 
+                        double Discount, 
+                        double Total_Amount, 
+                        double Sub_Total, 
+                        double VAT, 
+                        double Amout_VAT, 
+                        double Grand_Total) {
                 PurchaseRow rowPurchaseRow = ((PurchaseRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -518,6 +544,7 @@ namespace CurierManagementSystemCSharp {
                         Customer_Phone_Number,
                         Address,
                         Email,
+                        Category,
                         Item_Name,
                         Quantity,
                         Unit,
@@ -563,6 +590,7 @@ namespace CurierManagementSystemCSharp {
                 this.columnCustomer_Phone_Number = base.Columns["Customer_Phone_Number"];
                 this.columnAddress = base.Columns["Address"];
                 this.columnEmail = base.Columns["Email"];
+                this.columnCategory = base.Columns["Category"];
                 this.columnItem_Name = base.Columns["Item_Name"];
                 this.columnQuantity = base.Columns["Quantity"];
                 this.columnUnit = base.Columns["Unit"];
@@ -590,6 +618,8 @@ namespace CurierManagementSystemCSharp {
                 base.Columns.Add(this.columnAddress);
                 this.columnEmail = new global::System.Data.DataColumn("Email", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEmail);
+                this.columnCategory = new global::System.Data.DataColumn("Category", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCategory);
                 this.columnItem_Name = new global::System.Data.DataColumn("Item_Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnItem_Name);
                 this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(double), null, global::System.Data.MappingType.Element);
@@ -622,6 +652,7 @@ namespace CurierManagementSystemCSharp {
                 this.columnCustomer_Phone_Number.MaxLength = 50;
                 this.columnAddress.MaxLength = 50;
                 this.columnEmail.MaxLength = 50;
+                this.columnCategory.MaxLength = 10;
                 this.columnItem_Name.MaxLength = 50;
                 this.columnUnit.MaxLength = 50;
                 this.ExtendedProperties.Add("Generator_TablePropName", "_Purchase");
@@ -859,6 +890,22 @@ namespace CurierManagementSystemCSharp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Category {
+                get {
+                    try {
+                        return ((string)(this[this.tablePurchase.CategoryColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Category\' in table \'Purchase\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePurchase.CategoryColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Item_Name {
                 get {
                     try {
@@ -1075,6 +1122,18 @@ namespace CurierManagementSystemCSharp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetEmailNull() {
                 this[this.tablePurchase.EmailColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCategoryNull() {
+                return this.IsNull(this.tablePurchase.CategoryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCategoryNull() {
+                this[this.tablePurchase.CategoryColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1363,6 +1422,7 @@ namespace CurierManagementSystemCSharp.PurchaseTableAdapters {
             tableMapping.ColumnMappings.Add("Customer_Phone_Number", "Customer_Phone_Number");
             tableMapping.ColumnMappings.Add("Address", "Address");
             tableMapping.ColumnMappings.Add("Email", "Email");
+            tableMapping.ColumnMappings.Add("Category", "Category");
             tableMapping.ColumnMappings.Add("Item_Name", "Item_Name");
             tableMapping.ColumnMappings.Add("Quantity", "Quantity");
             tableMapping.ColumnMappings.Add("Unit", "Unit");
@@ -1376,7 +1436,25 @@ namespace CurierManagementSystemCSharp.PurchaseTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Purchase] WHERE (([Id] = @Original_Id) AND ((@IsNull_Date = 1 AND [Date] IS NULL) OR ([Date] = @Original_Date)) AND ((@IsNull_Customer_Name = 1 AND [Customer_Name] IS NULL) OR ([Customer_Name] = @Original_Customer_Name)) AND ((@IsNull_Customer_Phone_Number = 1 AND [Customer_Phone_Number] IS NULL) OR ([Customer_Phone_Number] = @Original_Customer_Phone_Number)) AND ((@IsNull_Address = 1 AND [Address] IS NULL) OR ([Address] = @Original_Address)) AND ((@IsNull_Email = 1 AND [Email] IS NULL) OR ([Email] = @Original_Email)) AND ((@IsNull_Item_Name = 1 AND [Item_Name] IS NULL) OR ([Item_Name] = @Original_Item_Name)) AND ((@IsNull_Quantity = 1 AND [Quantity] IS NULL) OR ([Quantity] = @Original_Quantity)) AND ((@IsNull_Unit = 1 AND [Unit] IS NULL) OR ([Unit] = @Original_Unit)) AND ((@IsNull_Price = 1 AND [Price] IS NULL) OR ([Price] = @Original_Price)) AND ((@IsNull_Discount = 1 AND [Discount] IS NULL) OR ([Discount] = @Original_Discount)) AND ((@IsNull_Total_Amount = 1 AND [Total_Amount] IS NULL) OR ([Total_Amount] = @Original_Total_Amount)) AND ((@IsNull_Sub_Total = 1 AND [Sub_Total] IS NULL) OR ([Sub_Total] = @Original_Sub_Total)) AND ((@IsNull_VAT = 1 AND [VAT] IS NULL) OR ([VAT] = @Original_VAT)) AND ((@IsNull_Amout_VAT = 1 AND [Amout_VAT] IS NULL) OR ([Amout_VAT] = @Original_Amout_VAT)) AND ((@IsNull_Grand_Total = 1 AND [Grand_Total] IS NULL) OR ([Grand_Total] = @Original_Grand_Total)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Purchase] WHERE (([Id] = @Original_Id) AND ((@IsNull_Date = 1 " +
+                "AND [Date] IS NULL) OR ([Date] = @Original_Date)) AND ((@IsNull_Customer_Name = " +
+                "1 AND [Customer_Name] IS NULL) OR ([Customer_Name] = @Original_Customer_Name)) A" +
+                "ND ((@IsNull_Customer_Phone_Number = 1 AND [Customer_Phone_Number] IS NULL) OR (" +
+                "[Customer_Phone_Number] = @Original_Customer_Phone_Number)) AND ((@IsNull_Addres" +
+                "s = 1 AND [Address] IS NULL) OR ([Address] = @Original_Address)) AND ((@IsNull_E" +
+                "mail = 1 AND [Email] IS NULL) OR ([Email] = @Original_Email)) AND ((@IsNull_Cate" +
+                "gory = 1 AND [Category] IS NULL) OR ([Category] = @Original_Category)) AND ((@Is" +
+                "Null_Item_Name = 1 AND [Item_Name] IS NULL) OR ([Item_Name] = @Original_Item_Nam" +
+                "e)) AND ((@IsNull_Quantity = 1 AND [Quantity] IS NULL) OR ([Quantity] = @Origina" +
+                "l_Quantity)) AND ((@IsNull_Unit = 1 AND [Unit] IS NULL) OR ([Unit] = @Original_U" +
+                "nit)) AND ((@IsNull_Price = 1 AND [Price] IS NULL) OR ([Price] = @Original_Price" +
+                ")) AND ((@IsNull_Discount = 1 AND [Discount] IS NULL) OR ([Discount] = @Original" +
+                "_Discount)) AND ((@IsNull_Total_Amount = 1 AND [Total_Amount] IS NULL) OR ([Tota" +
+                "l_Amount] = @Original_Total_Amount)) AND ((@IsNull_Sub_Total = 1 AND [Sub_Total]" +
+                " IS NULL) OR ([Sub_Total] = @Original_Sub_Total)) AND ((@IsNull_VAT = 1 AND [VAT" +
+                "] IS NULL) OR ([VAT] = @Original_VAT)) AND ((@IsNull_Amout_VAT = 1 AND [Amout_VA" +
+                "T] IS NULL) OR ([Amout_VAT] = @Original_Amout_VAT)) AND ((@IsNull_Grand_Total = " +
+                "1 AND [Grand_Total] IS NULL) OR ([Grand_Total] = @Original_Grand_Total)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1389,6 +1467,8 @@ namespace CurierManagementSystemCSharp.PurchaseTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Address", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Address", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Email", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Category", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Category", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Category", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Category", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Item_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Item_Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Item_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Item_Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1411,14 +1491,15 @@ namespace CurierManagementSystemCSharp.PurchaseTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Grand_Total", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Grand_Total", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Purchase] ([Date], [Customer_Name], [Customer_Phone_Number], [Address], [Email], [Item_Name], [Quantity], [Unit], [Price], [Discount], [Total_Amount], [Sub_Total], [VAT], [Amout_VAT], [Grand_Total]) VALUES (@Date, @Customer_Name, @Customer_Phone_Number, @Address, @Email, @Item_Name, @Quantity, @Unit, @Price, @Discount, @Total_Amount, @Sub_Total, @VAT, @Amout_VAT, @Grand_Total);
-SELECT Id, Date, Customer_Name, Customer_Phone_Number, Address, Email, Item_Name, Quantity, Unit, Price, Discount, Total_Amount, Sub_Total, VAT, Amout_VAT, Grand_Total FROM Purchase WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Purchase] ([Date], [Customer_Name], [Customer_Phone_Number], [Address], [Email], [Category], [Item_Name], [Quantity], [Unit], [Price], [Discount], [Total_Amount], [Sub_Total], [VAT], [Amout_VAT], [Grand_Total]) VALUES (@Date, @Customer_Name, @Customer_Phone_Number, @Address, @Email, @Category, @Item_Name, @Quantity, @Unit, @Price, @Discount, @Total_Amount, @Sub_Total, @VAT, @Amout_VAT, @Grand_Total);
+SELECT Id, Date, Customer_Name, Customer_Phone_Number, Address, Email, Category, Item_Name, Quantity, Unit, Price, Discount, Total_Amount, Sub_Total, VAT, Amout_VAT, Grand_Total FROM Purchase WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Customer_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Customer_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Customer_Phone_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Customer_Phone_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Address", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Address", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Category", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Category", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Item_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Item_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Unit", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Unit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1433,35 +1514,38 @@ SELECT Id, Date, Customer_Name, Customer_Phone_Number, Address, Email, Item_Name
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Purchase] SET [Date] = @Date, [Customer_Name] = @Customer_Name, [Cu" +
                 "stomer_Phone_Number] = @Customer_Phone_Number, [Address] = @Address, [Email] = @" +
-                "Email, [Item_Name] = @Item_Name, [Quantity] = @Quantity, [Unit] = @Unit, [Price]" +
-                " = @Price, [Discount] = @Discount, [Total_Amount] = @Total_Amount, [Sub_Total] =" +
-                " @Sub_Total, [VAT] = @VAT, [Amout_VAT] = @Amout_VAT, [Grand_Total] = @Grand_Tota" +
-                "l WHERE (([Id] = @Original_Id) AND ((@IsNull_Date = 1 AND [Date] IS NULL) OR ([D" +
-                "ate] = @Original_Date)) AND ((@IsNull_Customer_Name = 1 AND [Customer_Name] IS N" +
-                "ULL) OR ([Customer_Name] = @Original_Customer_Name)) AND ((@IsNull_Customer_Phon" +
-                "e_Number = 1 AND [Customer_Phone_Number] IS NULL) OR ([Customer_Phone_Number] = " +
-                "@Original_Customer_Phone_Number)) AND ((@IsNull_Address = 1 AND [Address] IS NUL" +
-                "L) OR ([Address] = @Original_Address)) AND ((@IsNull_Email = 1 AND [Email] IS NU" +
-                "LL) OR ([Email] = @Original_Email)) AND ((@IsNull_Item_Name = 1 AND [Item_Name] " +
-                "IS NULL) OR ([Item_Name] = @Original_Item_Name)) AND ((@IsNull_Quantity = 1 AND " +
-                "[Quantity] IS NULL) OR ([Quantity] = @Original_Quantity)) AND ((@IsNull_Unit = 1" +
-                " AND [Unit] IS NULL) OR ([Unit] = @Original_Unit)) AND ((@IsNull_Price = 1 AND [" +
-                "Price] IS NULL) OR ([Price] = @Original_Price)) AND ((@IsNull_Discount = 1 AND [" +
-                "Discount] IS NULL) OR ([Discount] = @Original_Discount)) AND ((@IsNull_Total_Amo" +
-                "unt = 1 AND [Total_Amount] IS NULL) OR ([Total_Amount] = @Original_Total_Amount)" +
-                ") AND ((@IsNull_Sub_Total = 1 AND [Sub_Total] IS NULL) OR ([Sub_Total] = @Origin" +
-                "al_Sub_Total)) AND ((@IsNull_VAT = 1 AND [VAT] IS NULL) OR ([VAT] = @Original_VA" +
-                "T)) AND ((@IsNull_Amout_VAT = 1 AND [Amout_VAT] IS NULL) OR ([Amout_VAT] = @Orig" +
-                "inal_Amout_VAT)) AND ((@IsNull_Grand_Total = 1 AND [Grand_Total] IS NULL) OR ([G" +
-                "rand_Total] = @Original_Grand_Total)));\r\nSELECT Id, Date, Customer_Name, Custome" +
-                "r_Phone_Number, Address, Email, Item_Name, Quantity, Unit, Price, Discount, Tota" +
-                "l_Amount, Sub_Total, VAT, Amout_VAT, Grand_Total FROM Purchase WHERE (Id = @Id)";
+                "Email, [Category] = @Category, [Item_Name] = @Item_Name, [Quantity] = @Quantity," +
+                " [Unit] = @Unit, [Price] = @Price, [Discount] = @Discount, [Total_Amount] = @Tot" +
+                "al_Amount, [Sub_Total] = @Sub_Total, [VAT] = @VAT, [Amout_VAT] = @Amout_VAT, [Gr" +
+                "and_Total] = @Grand_Total WHERE (([Id] = @Original_Id) AND ((@IsNull_Date = 1 AN" +
+                "D [Date] IS NULL) OR ([Date] = @Original_Date)) AND ((@IsNull_Customer_Name = 1 " +
+                "AND [Customer_Name] IS NULL) OR ([Customer_Name] = @Original_Customer_Name)) AND" +
+                " ((@IsNull_Customer_Phone_Number = 1 AND [Customer_Phone_Number] IS NULL) OR ([C" +
+                "ustomer_Phone_Number] = @Original_Customer_Phone_Number)) AND ((@IsNull_Address " +
+                "= 1 AND [Address] IS NULL) OR ([Address] = @Original_Address)) AND ((@IsNull_Ema" +
+                "il = 1 AND [Email] IS NULL) OR ([Email] = @Original_Email)) AND ((@IsNull_Catego" +
+                "ry = 1 AND [Category] IS NULL) OR ([Category] = @Original_Category)) AND ((@IsNu" +
+                "ll_Item_Name = 1 AND [Item_Name] IS NULL) OR ([Item_Name] = @Original_Item_Name)" +
+                ") AND ((@IsNull_Quantity = 1 AND [Quantity] IS NULL) OR ([Quantity] = @Original_" +
+                "Quantity)) AND ((@IsNull_Unit = 1 AND [Unit] IS NULL) OR ([Unit] = @Original_Uni" +
+                "t)) AND ((@IsNull_Price = 1 AND [Price] IS NULL) OR ([Price] = @Original_Price))" +
+                " AND ((@IsNull_Discount = 1 AND [Discount] IS NULL) OR ([Discount] = @Original_D" +
+                "iscount)) AND ((@IsNull_Total_Amount = 1 AND [Total_Amount] IS NULL) OR ([Total_" +
+                "Amount] = @Original_Total_Amount)) AND ((@IsNull_Sub_Total = 1 AND [Sub_Total] I" +
+                "S NULL) OR ([Sub_Total] = @Original_Sub_Total)) AND ((@IsNull_VAT = 1 AND [VAT] " +
+                "IS NULL) OR ([VAT] = @Original_VAT)) AND ((@IsNull_Amout_VAT = 1 AND [Amout_VAT]" +
+                " IS NULL) OR ([Amout_VAT] = @Original_Amout_VAT)) AND ((@IsNull_Grand_Total = 1 " +
+                "AND [Grand_Total] IS NULL) OR ([Grand_Total] = @Original_Grand_Total)));\r\nSELECT" +
+                " Id, Date, Customer_Name, Customer_Phone_Number, Address, Email, Category, Item_" +
+                "Name, Quantity, Unit, Price, Discount, Total_Amount, Sub_Total, VAT, Amout_VAT, " +
+                "Grand_Total FROM Purchase WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Customer_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Customer_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Customer_Phone_Number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Customer_Phone_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Address", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Address", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Category", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Category", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Item_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Item_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Unit", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Unit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1483,6 +1567,8 @@ SELECT Id, Date, Customer_Name, Customer_Phone_Number, Address, Email, Item_Name
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Address", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Address", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Email", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Category", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Category", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Category", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Category", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Item_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Item_Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Item_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Item_Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1510,7 +1596,7 @@ SELECT Id, Date, Customer_Name, Customer_Phone_Number, Address, Email, Item_Name
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CurierManagementSystemCSharp.Properties.Settings.Default.courierConnectionString1;
+            this._connection.ConnectionString = global::CurierManagementSystemCSharp.Properties.Settings.Default._3758F1E19464CE898E5B8A3A0AC6E1F8_URIERMANAGEMENTSYSTEMCSHA_CURIERMANAGEMENTSYSTEMCSHARP_CURIERMANAGEMENTSYSTEMCSHARP_COURIER_MDFConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1519,9 +1605,9 @@ SELECT Id, Date, Customer_Name, Customer_Phone_Number, Address, Email, Item_Name
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Date, Customer_Name, Customer_Phone_Number, Address, Email, Item_Name," +
-                " Quantity, Unit, Price, Discount, Total_Amount, Sub_Total, VAT, Amout_VAT, Grand" +
-                "_Total FROM dbo.Purchase";
+            this._commandCollection[0].CommandText = "SELECT Id, Date, Customer_Name, Customer_Phone_Number, Address, Email, Category, " +
+                "Item_Name, Quantity, Unit, Price, Discount, Total_Amount, Sub_Total, VAT, Amout_" +
+                "VAT, Grand_Total FROM dbo.Purchase";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1589,6 +1675,7 @@ SELECT Id, Date, Customer_Name, Customer_Phone_Number, Address, Email, Item_Name
                     string Original_Customer_Phone_Number, 
                     string Original_Address, 
                     string Original_Email, 
+                    string Original_Category, 
                     string Original_Item_Name, 
                     global::System.Nullable<double> Original_Quantity, 
                     string Original_Unit, 
@@ -1640,85 +1727,93 @@ SELECT Id, Date, Customer_Name, Customer_Phone_Number, Address, Email, Item_Name
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_Email));
             }
-            if ((Original_Item_Name == null)) {
+            if ((Original_Category == null)) {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_Item_Name));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_Category));
             }
-            if ((Original_Quantity.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((double)(Original_Quantity.Value));
-            }
-            else {
+            if ((Original_Item_Name == null)) {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            if ((Original_Unit == null)) {
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_Item_Name));
+            }
+            if ((Original_Quantity.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((double)(Original_Quantity.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_Unit));
-            }
-            if ((Original_Price.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((double)(Original_Price.Value));
-            }
-            else {
+            if ((Original_Unit == null)) {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            if ((Original_Discount.HasValue == true)) {
+            else {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_Unit));
+            }
+            if ((Original_Price.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((double)(Original_Discount.Value));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((double)(Original_Price.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
-            if ((Original_Total_Amount.HasValue == true)) {
+            if ((Original_Discount.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((double)(Original_Total_Amount.Value));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((double)(Original_Discount.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            if ((Original_Sub_Total.HasValue == true)) {
+            if ((Original_Total_Amount.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[24].Value = ((double)(Original_Sub_Total.Value));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((double)(Original_Total_Amount.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
-            if ((Original_VAT.HasValue == true)) {
+            if ((Original_Sub_Total.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[26].Value = ((double)(Original_VAT.Value));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((double)(Original_Sub_Total.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
-            if ((Original_Amout_VAT.HasValue == true)) {
+            if ((Original_VAT.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[28].Value = ((double)(Original_Amout_VAT.Value));
+                this.Adapter.DeleteCommand.Parameters[28].Value = ((double)(Original_VAT.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
-            if ((Original_Grand_Total.HasValue == true)) {
+            if ((Original_Amout_VAT.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[30].Value = ((double)(Original_Grand_Total.Value));
+                this.Adapter.DeleteCommand.Parameters[30].Value = ((double)(Original_Amout_VAT.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Grand_Total.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[32].Value = ((double)(Original_Grand_Total.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1740,7 +1835,23 @@ SELECT Id, Date, Customer_Name, Customer_Phone_Number, Address, Email, Item_Name
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<global::System.DateTime> Date, string Customer_Name, string Customer_Phone_Number, string Address, string Email, string Item_Name, global::System.Nullable<double> Quantity, string Unit, global::System.Nullable<double> Price, global::System.Nullable<double> Discount, global::System.Nullable<double> Total_Amount, global::System.Nullable<double> Sub_Total, global::System.Nullable<double> VAT, global::System.Nullable<double> Amout_VAT, global::System.Nullable<double> Grand_Total) {
+        public virtual int Insert(
+                    global::System.Nullable<global::System.DateTime> Date, 
+                    string Customer_Name, 
+                    string Customer_Phone_Number, 
+                    string Address, 
+                    string Email, 
+                    string Category, 
+                    string Item_Name, 
+                    global::System.Nullable<double> Quantity, 
+                    string Unit, 
+                    global::System.Nullable<double> Price, 
+                    global::System.Nullable<double> Discount, 
+                    global::System.Nullable<double> Total_Amount, 
+                    global::System.Nullable<double> Sub_Total, 
+                    global::System.Nullable<double> VAT, 
+                    global::System.Nullable<double> Amout_VAT, 
+                    global::System.Nullable<double> Grand_Total) {
             if ((Date.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(Date.Value));
             }
@@ -1771,65 +1882,71 @@ SELECT Id, Date, Customer_Name, Customer_Phone_Number, Address, Email, Item_Name
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Email));
             }
-            if ((Item_Name == null)) {
+            if ((Category == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Item_Name));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Category));
             }
-            if ((Quantity.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((double)(Quantity.Value));
-            }
-            else {
+            if ((Item_Name == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Unit == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Item_Name));
+            }
+            if ((Quantity.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((double)(Quantity.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Unit));
-            }
-            if ((Price.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((double)(Price.Value));
-            }
-            else {
+            if ((Unit == null)) {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Discount.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((double)(Discount.Value));
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Unit));
+            }
+            if ((Price.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((double)(Price.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((Total_Amount.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((double)(Total_Amount.Value));
+            if ((Discount.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((double)(Discount.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Sub_Total.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((double)(Sub_Total.Value));
+            if ((Total_Amount.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((double)(Total_Amount.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((VAT.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((double)(VAT.Value));
+            if ((Sub_Total.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((double)(Sub_Total.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((Amout_VAT.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((double)(Amout_VAT.Value));
+            if ((VAT.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((double)(VAT.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            if ((Grand_Total.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((double)(Grand_Total.Value));
+            if ((Amout_VAT.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((double)(Amout_VAT.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((Grand_Total.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((double)(Grand_Total.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1857,6 +1974,7 @@ SELECT Id, Date, Customer_Name, Customer_Phone_Number, Address, Email, Item_Name
                     string Customer_Phone_Number, 
                     string Address, 
                     string Email, 
+                    string Category, 
                     string Item_Name, 
                     global::System.Nullable<double> Quantity, 
                     string Unit, 
@@ -1873,6 +1991,7 @@ SELECT Id, Date, Customer_Name, Customer_Phone_Number, Address, Email, Item_Name
                     string Original_Customer_Phone_Number, 
                     string Original_Address, 
                     string Original_Email, 
+                    string Original_Category, 
                     string Original_Item_Name, 
                     global::System.Nullable<double> Original_Quantity, 
                     string Original_Unit, 
@@ -1914,188 +2033,202 @@ SELECT Id, Date, Customer_Name, Customer_Phone_Number, Address, Email, Item_Name
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Email));
             }
-            if ((Item_Name == null)) {
+            if ((Category == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Item_Name));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Category));
             }
-            if ((Quantity.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((double)(Quantity.Value));
-            }
-            else {
+            if ((Item_Name == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Unit == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Item_Name));
+            }
+            if ((Quantity.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((double)(Quantity.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Unit));
-            }
-            if ((Price.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((double)(Price.Value));
-            }
-            else {
+            if ((Unit == null)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Discount.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((double)(Discount.Value));
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Unit));
+            }
+            if ((Price.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((double)(Price.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((Total_Amount.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((double)(Total_Amount.Value));
+            if ((Discount.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((double)(Discount.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Sub_Total.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((double)(Sub_Total.Value));
+            if ((Total_Amount.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((double)(Total_Amount.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((VAT.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((double)(VAT.Value));
+            if ((Sub_Total.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((double)(Sub_Total.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((Amout_VAT.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((double)(Amout_VAT.Value));
+            if ((VAT.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((double)(VAT.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            if ((Grand_Total.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((double)(Grand_Total.Value));
+            if ((Amout_VAT.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((double)(Amout_VAT.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_Id));
-            if ((Original_Date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(Original_Date.Value));
+            if ((Grand_Total.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((double)(Grand_Total.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_Id));
+            if ((Original_Date.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(Original_Date.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             if ((Original_Customer_Name == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_Customer_Name));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Customer_Name));
             }
             if ((Original_Customer_Phone_Number == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_Customer_Phone_Number));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_Customer_Phone_Number));
             }
             if ((Original_Address == null)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_Address));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_Address));
             }
             if ((Original_Email == null)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_Email));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_Email));
+            }
+            if ((Original_Category == null)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_Category));
             }
             if ((Original_Item_Name == null)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_Item_Name));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_Item_Name));
             }
             if ((Original_Quantity.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((double)(Original_Quantity.Value));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((double)(Original_Quantity.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             if ((Original_Unit == null)) {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_Unit));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_Unit));
             }
             if ((Original_Price.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((double)(Original_Price.Value));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((double)(Original_Price.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
             if ((Original_Discount.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((double)(Original_Discount.Value));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((double)(Original_Discount.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
             if ((Original_Total_Amount.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((double)(Original_Total_Amount.Value));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((double)(Original_Total_Amount.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
             if ((Original_Sub_Total.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((double)(Original_Sub_Total.Value));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((double)(Original_Sub_Total.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
             if ((Original_VAT.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((double)(Original_VAT.Value));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((double)(Original_VAT.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
             if ((Original_Amout_VAT.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((double)(Original_Amout_VAT.Value));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((double)(Original_Amout_VAT.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
             }
             if ((Original_Grand_Total.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((double)(Original_Grand_Total.Value));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((double)(Original_Grand_Total.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[46].Value = ((int)(Id));
+            this.Adapter.UpdateCommand.Parameters[49].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2122,6 +2255,7 @@ SELECT Id, Date, Customer_Name, Customer_Phone_Number, Address, Email, Item_Name
                     string Customer_Phone_Number, 
                     string Address, 
                     string Email, 
+                    string Category, 
                     string Item_Name, 
                     global::System.Nullable<double> Quantity, 
                     string Unit, 
@@ -2138,6 +2272,7 @@ SELECT Id, Date, Customer_Name, Customer_Phone_Number, Address, Email, Item_Name
                     string Original_Customer_Phone_Number, 
                     string Original_Address, 
                     string Original_Email, 
+                    string Original_Category, 
                     string Original_Item_Name, 
                     global::System.Nullable<double> Original_Quantity, 
                     string Original_Unit, 
@@ -2148,7 +2283,7 @@ SELECT Id, Date, Customer_Name, Customer_Phone_Number, Address, Email, Item_Name
                     global::System.Nullable<double> Original_VAT, 
                     global::System.Nullable<double> Original_Amout_VAT, 
                     global::System.Nullable<double> Original_Grand_Total) {
-            return this.Update(Date, Customer_Name, Customer_Phone_Number, Address, Email, Item_Name, Quantity, Unit, Price, Discount, Total_Amount, Sub_Total, VAT, Amout_VAT, Grand_Total, Original_Id, Original_Date, Original_Customer_Name, Original_Customer_Phone_Number, Original_Address, Original_Email, Original_Item_Name, Original_Quantity, Original_Unit, Original_Price, Original_Discount, Original_Total_Amount, Original_Sub_Total, Original_VAT, Original_Amout_VAT, Original_Grand_Total, Original_Id);
+            return this.Update(Date, Customer_Name, Customer_Phone_Number, Address, Email, Category, Item_Name, Quantity, Unit, Price, Discount, Total_Amount, Sub_Total, VAT, Amout_VAT, Grand_Total, Original_Id, Original_Date, Original_Customer_Name, Original_Customer_Phone_Number, Original_Address, Original_Email, Original_Category, Original_Item_Name, Original_Quantity, Original_Unit, Original_Price, Original_Discount, Original_Total_Amount, Original_Sub_Total, Original_VAT, Original_Amout_VAT, Original_Grand_Total, Original_Id);
         }
     }
     

@@ -38,7 +38,10 @@ namespace CurierManagementSystemCSharp
             loadingpurchaserow();
             loadingsalesrow();
             loadingdeliverydetails();
+            displayexpenses();
         }
+
+      
 
         private void loadingdeliverydetails()
         {
@@ -541,10 +544,7 @@ namespace CurierManagementSystemCSharp
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-           
-        }
+        
 
         private void panel8_Paint(object sender, PaintEventArgs e)
         {
@@ -685,6 +685,147 @@ namespace CurierManagementSystemCSharp
             panel1.Tag = ChildForm;
             ChildForm.BringToFront();
             ChildForm.Show();
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBox3.SelectedItem == "Today Expenses")
+            {
+                using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;"))
+                {
+                    con.Open();
+
+                    // Create a parameterized query for this month
+                    string queryoftoday = "SELECT ISNULL(SUM(total), 0) FROM expenses_real WHERE DATEPART(YEAR, Date) = YEAR(GETDATE()) AND DATEPART(MONTH, Date) = MONTH(GETDATE()) AND DATEPART(DAY, Date) = DAY(GETDATE())";
+
+                    // Create a parameterized query for this year
+                    //string queryThisYear = "SELECT ISNULL(SUM(Grand_Total), 0) FROM Purchase WHERE DATEPART(YEAR, Date) = YEAR(GETDATE())";
+
+                    SqlCommand cmdThisMonth = new SqlCommand(queryoftoday, con);
+                    //SqlCommand cmdThisYear = new SqlCommand(queryThisYear, con);
+
+                    decimal grandTotalThisMonth = Convert.ToDecimal(cmdThisMonth.ExecuteScalar());
+                    //  decimal grandTotalThisYear = Convert.ToDecimal(cmdThisYear.ExecuteScalar());
+
+                    con.Close();
+
+                    // Now, you have the grand totals for this month and this year
+                    // You can use these values as needed, for example, display them in labels.
+                    label9.Text = $"Total Expenses Of Today Rs {grandTotalThisMonth}"; // Assuming you want to format as currency
+                    //label12.Text = grandTotalThisYear.ToString("C");
+                }
+            }
+            else if(comboBox3.SelectedItem == "This Week Expenses")
+            {
+                using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;"))
+                {
+                    con.Open();
+
+                    // Create a parameterized query for this month
+                    string queryOfWeek = "SELECT ISNULL(SUM(total), 0) FROM expenses_real WHERE DATEPART(YEAR, Date) = YEAR(GETDATE()) AND DATEPART(WEEK, Date) = DATEPART(WEEK, GETDATE())";
+
+                    // Create a parameterized query for this year
+                    //string queryThisYear = "SELECT ISNULL(SUM(Grand_Total), 0) FROM Purchase WHERE DATEPART(YEAR, Date) = YEAR(GETDATE())";
+
+                    SqlCommand cmdThisMonth = new SqlCommand(queryOfWeek, con);
+                    //SqlCommand cmdThisYear = new SqlCommand(queryThisYear, con);
+
+                    decimal grandTotalThisMonth = Convert.ToDecimal(cmdThisMonth.ExecuteScalar());
+                    //  decimal grandTotalThisYear = Convert.ToDecimal(cmdThisYear.ExecuteScalar());
+
+                    con.Close();
+
+                    // Now, you have the grand totals for this month and this year
+                    // You can use these values as needed, for example, display them in labels.
+                    label9.Text = $"Expenses Of This Week Rs {grandTotalThisMonth}"; // Assuming you want to format as currency
+                    //label12.Text = grandTotalThisYear.ToString("C");
+                }
+            }
+            else if (comboBox3.SelectedItem == "This Months Expenses")
+            {
+                using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;"))
+                {
+                    con.Open();
+
+                    // Create a parameterized query for this month
+                    string queryThisMonth = "SELECT ISNULL(SUM(total), 0) FROM expenses_real WHERE DATEPART(YEAR, Date) = YEAR(GETDATE()) AND DATEPART(MONTH, Date) = MONTH(GETDATE())";
+
+                    // Create a parameterized query for this year
+                    //string queryThisYear = "SELECT ISNULL(SUM(Grand_Total), 0) FROM Purchase WHERE DATEPART(YEAR, Date) = YEAR(GETDATE())";
+
+                    SqlCommand cmdThisMonth = new SqlCommand(queryThisMonth, con);
+                    //SqlCommand cmdThisYear = new SqlCommand(queryThisYear, con);
+
+                    decimal grandTotalThisMonth = Convert.ToDecimal(cmdThisMonth.ExecuteScalar());
+                    //  decimal grandTotalThisYear = Convert.ToDecimal(cmdThisYear.ExecuteScalar());
+
+                    con.Close();
+
+                    // Now, you have the grand totals for this month and this year
+                    // You can use these values as needed, for example, display them in labels.
+                    label9.Text = $"Total Expenses Of this Month Rs {grandTotalThisMonth}"; // Assuming you want to format as currency
+                    //label12.Text = grandTotalThisYear.ToString("C");
+                }
+            }
+            else if (comboBox3.SelectedItem == "This Year Expenses")
+            {
+                using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;"))
+                {
+                    con.Open();
+
+                    // Create a parameterized query for this month
+                    //string queryThisMonth = "SELECT ISNULL(SUM(Grand_Total), 0) FROM Purchase WHERE DATEPART(YEAR, Date) = YEAR(GETDATE()) AND DATEPART(MONTH, Date) = MONTH(GETDATE())";
+
+                    // Create a parameterized query for this year
+                    string queryThisYear = "SELECT ISNULL(SUM(total), 0) FROM expenses_real WHERE DATEPART(YEAR, Date) = YEAR(GETDATE())";
+
+                    //SqlCommand cmdThisMonth = new SqlCommand(queryThisMonth, con);
+                    SqlCommand cmdThisYear = new SqlCommand(queryThisYear, con);
+
+                    // decimal grandTotalThisMonth = Convert.ToDecimal(cmdThisMonth.ExecuteScalar());
+                    decimal grandTotalThisYear = Convert.ToDecimal(cmdThisYear.ExecuteScalar());
+
+                    con.Close();
+
+                    // Now, you have the grand totals for this month and this year
+                    // You can use these values as needed, for example, display them in labels.
+                    //label12.Text = grandTotalThisMonth.ToString("C"); // Assuming you want to format as currency
+                    label9.Text = $"Total Expenses Of this Year Rs {grandTotalThisYear}";
+                }
+            }
+            else if (comboBox3.SelectedItem == "Entire Expenses")
+            {
+                displayexpenses();
+            }
+        }
+
+        private void displayexpenses()
+        {
+            decimal totalGrandTotal = calculatetotalexpense();
+            label9.Text = $"Expenses: Rs {totalGrandTotal}";
+        }
+
+        private decimal calculatetotalexpense()
+        {
+            decimal totalGrandTotal = 0;
+
+            using (SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\courier.mdf;Integrated Security=True;"))
+            {
+                con.Open();
+
+                string query = "SELECT ISNULL(SUM(total), 0) FROM expenses_real";
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                object result = cmd.ExecuteScalar();
+
+                if (result != DBNull.Value)
+                {
+                    totalGrandTotal = Convert.ToDecimal(result);
+                }
+                con.Close();
+            }
+
+            return totalGrandTotal;
         }
     }
 }

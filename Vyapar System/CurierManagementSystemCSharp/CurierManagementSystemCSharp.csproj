@@ -183,6 +183,43 @@
     <Compile Include="Consignment.Designer.cs">
       <DependentUpon>Consignment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Expenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expenses.Designer.cs">
+      <DependentUpon>Expenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Expensesaddcategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Expensesaddcategory.Designer.cs">
+      <DependentUpon>Expensesaddcategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="expensescategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="expensescategory.Designer.cs">
+      <DependentUpon>expensescategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Expensesdetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expensesdetails.Designer.cs">
+      <DependentUpon>Expensesdetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Expenses_.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Expenses_.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Expenses_real.cs">
+      <DependentUpon>Expenses_real.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Expenses_real.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Expenses_real.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Homeway.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +239,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Itemsdata.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Itemsexpenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Itemsexpenses.Designer.cs">
+      <DependentUpon>Itemsexpenses.cs</DependentUpon>
     </Compile>
     <Compile Include="Items_Transaction.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -374,12 +417,6 @@
     <Compile Include="salesproductdetails.Designer.cs">
       <DependentUpon>salesproductdetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="settings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="settings.Designer.cs">
-      <DependentUpon>settings.cs</DependentUpon>
-    </Compile>
     <Compile Include="showitemsofsales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -447,11 +484,26 @@
     <EmbeddedResource Include="Consignment.resx">
       <DependentUpon>Consignment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Expenses.resx">
+      <DependentUpon>Expenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Expensesaddcategory.resx">
+      <DependentUpon>Expensesaddcategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="expensescategory.resx">
+      <DependentUpon>expensescategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Expensesdetails.resx">
+      <DependentUpon>Expensesdetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Homeway.resx">
       <DependentUpon>Homeway.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Items.resx">
       <DependentUpon>Items.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Itemsexpenses.resx">
+      <DependentUpon>Itemsexpenses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="productdetails.resx">
       <DependentUpon>productdetails.cs</DependentUpon>
@@ -505,9 +557,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="salesproductdetails.resx">
       <DependentUpon>salesproductdetails.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="settings.resx">
-      <DependentUpon>settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="showitemsofsales.resx">
       <DependentUpon>showitemsofsales.cs</DependentUpon>
@@ -618,6 +667,28 @@
     </None>
     <None Include="customer_payement.xss">
       <DependentUpon>customer_payement.xsd</DependentUpon>
+    </None>
+    <None Include="Expenses_.xsc">
+      <DependentUpon>Expenses_.xsd</DependentUpon>
+    </None>
+    <None Include="Expenses_.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Expenses_.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Expenses_.xss">
+      <DependentUpon>Expenses_.xsd</DependentUpon>
+    </None>
+    <None Include="Expenses_real.xsc">
+      <DependentUpon>Expenses_real.xsd</DependentUpon>
+    </None>
+    <None Include="Expenses_real.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Expenses_real.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Expenses_real.xss">
+      <DependentUpon>Expenses_real.xsd</DependentUpon>
     </None>
     <None Include="Itemsdata.xsc">
       <DependentUpon>Itemsdata.xsd</DependentUpon>
@@ -733,26 +804,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <PublishFile Include="courier.mdf">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>File</FileType>
-    </PublishFile>
-    <PublishFile Include="courier_log.ldf">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>File</FileType>
-    </PublishFile>
     <PublishFile Include="stdole">
       <Visible>False</Visible>
       <Group>
@@ -765,14 +816,29 @@
     </PublishFile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Data Backup.png" />
+    <None Include="Resources\Data Backup1.png" />
+    <None Include="Resources\Refresh.png" />
+    <None Include="Resources\Staff.png" />
+    <None Include="Resources\Update staff.png" />
+    <None Include="Resources\Customer.png" />
+    <None Include="Resources\Staff1.png" />
+    <None Include="Resources\Business Documentation.png" />
+    <None Include="Resources\Item.png" />
+    <None Include="Resources\item Buy.png" />
+    <None Include="Resources\Item Sale.png" />
+    <None Include="Resources\Budget.png" />
+    <None Include="Resources\Depreciation.png" />
+    <None Include="Resources\PURCHASE Report.png" />
+    <None Include="Resources\Total Sales.png" />
+    <None Include="Resources\Statistics Report.png" />
+    <None Include="Resources\ConsReport.png" />
     <Content Include="courier.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="courier_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\Data Backup.png" />
-    <None Include="Resources\Data Backup1.png" />
     <Content Include="V Key.ico" />
     <None Include="Resources\Settings1.png" />
     <None Include="Resources\Settings.png" />

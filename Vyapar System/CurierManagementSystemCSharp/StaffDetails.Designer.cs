@@ -53,9 +53,6 @@
             this.textBox5 = new System.Windows.Forms.ComboBox();
             this.textBox6 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.staffBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.courierDataSet4 = new CurierManagementSystemCSharp.courierDataSet4();
-            this.staffTableAdapter = new CurierManagementSystemCSharp.courierDataSet4TableAdapters.staffTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +62,9 @@
             this.Qualifications = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Designation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staffBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.courierDataSet4 = new CurierManagementSystemCSharp.courierDataSet4();
+            this.staffTableAdapter = new CurierManagementSystemCSharp.courierDataSet4TableAdapters.staffTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courierDataSet4)).BeginInit();
@@ -346,20 +346,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1182, 285);
             this.dataGridView1.TabIndex = 30;
             // 
-            // staffBindingSource
-            // 
-            this.staffBindingSource.DataMember = "staff";
-            this.staffBindingSource.DataSource = this.courierDataSet4;
-            // 
-            // courierDataSet4
-            // 
-            this.courierDataSet4.DataSetName = "courierDataSet4";
-            this.courierDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // staffTableAdapter
-            // 
-            this.staffTableAdapter.ClearBeforeFill = true;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -415,6 +401,20 @@
             this.Address.HeaderText = "Address";
             this.Address.Name = "Address";
             // 
+            // staffBindingSource
+            // 
+            this.staffBindingSource.DataMember = "staff";
+            this.staffBindingSource.DataSource = this.courierDataSet4;
+            // 
+            // courierDataSet4
+            // 
+            this.courierDataSet4.DataSetName = "courierDataSet4";
+            this.courierDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // staffTableAdapter
+            // 
+            this.staffTableAdapter.ClearBeforeFill = true;
+            // 
             // StaffDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -442,9 +442,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "StaffDetails";
             this.Load += new System.EventHandler(this.StaffDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).EndInit();
